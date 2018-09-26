@@ -9,7 +9,8 @@ List of names:
 Nicolas Samaha 40027961 <br />
 Joshua Butler 40045825 <br />
 Justin Carrier 40026363<br />
-Suruthi Raju 40084709
+Suruthi Raju 40084709<br />
+Razine Ahmed Bensari 40029076<br />
 
 
 Thank you!

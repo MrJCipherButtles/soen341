@@ -14,7 +14,7 @@ CREATE TABLE books (
 	author VARCHAR(50),
 	num_pages INT,
 	publisher VARCHAR(50),
-	year_published INT,
+	year_published YEAR(4),
 	language VARCHAR(50),
 	isbn_10 CHAR(10),
 	isbn_13 CHAR(13),

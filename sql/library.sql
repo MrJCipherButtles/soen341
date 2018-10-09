@@ -6,6 +6,11 @@ on a MYSQL Server
 CREATE DATABASE library;
 USE library;
 
+-- hardcoded admin
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin'; -- username = admin / password = admin
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost';
+
 -- entity tables
 
 CREATE TABLE books (

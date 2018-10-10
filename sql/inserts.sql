@@ -14,7 +14,10 @@ INSERT INTO magazines (title,publisher,year_published,language,isbn_10,isbn_13)
 VALUES
 ('Sports Illustrated Magazine','Meredith Corporation',2018,'English',NULL,NULL),
 ('Food & Wine Magazine','Meredith Corporation',2018,'English',NULL,NULL),
-('Truckin Magazine','The Enthusiast Network',2018,'English',NULL,NULL);
+('Truckin Magazine','The Enthusiast Network',2018,'English',NULL,NULL),
+('Gym and Fitness Magazine','BuzzFit',2018,'English',NULL,NULL),
+('PC Magazine','Ziff Davis',2018,'English',NULL,NULL),
+('Car Magazine','Bauer Consumer Media',2018,'English',NULL,NULL);
 
 
 INSERT INTO musics (type,title,release_date,artist,label,asin)

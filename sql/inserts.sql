@@ -14,9 +14,6 @@ VALUES
 ('Truckin Magazine','The Enthusiast Network',2018,'English',NULL,NULL);
 
 
-
-
-
 INSERT INTO musics (type,title,release_date,artist,label,asin)
 VALUES
 ();

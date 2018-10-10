@@ -20,3 +20,9 @@ VALUES
 ('CD', 'I am ZA Best', '2018-03-03', 'Rassiol Bambini', 'Xtreme Muzik', '2323498901'),
 ('CD', 'Hello Good Morning', '1976-03-27', 'Gorgio Lancini', 'Fedrolia', '1905678901');
 
+INSERT INTO magazines (title, publisher, year_published, language, isbn_10, isbn_13)
+VALUES 
+('Design News','UBM','1946','English','9000119407','987-9000119407'),
+('Bon Appétit','Craig Kostelic','1956','French','9000066990','987-9000066990'),
+('House Beautiful','Hearst Magazines','1996','English','9000186422','987-9000186422') ;
+

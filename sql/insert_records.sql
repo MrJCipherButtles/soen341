@@ -20,4 +20,7 @@ INSERT INTO library.clients (firstname, lastname, address, email, phone, isAdmin
 VALUES
 ('Justin', 'Malone', '950 real street, Montreal', 'justind.malone@domain.ca','514-514-5145', 'FALSE'),
 ('Alex', 'Baker', '42 Baker street, Sherbrooke', 'alex.baker1997@domain.ca','514-514-5165', 'FALSE'),
-('Alfred', 'Augustus', '5716 Summer boulevard, Quebec City', 'AA@domain.ca','418-385-3893', 'FALSE');
+('Alfred', 'Augustus', '5716 Summer boulevard, Quebec City', 'AA@domain.ca','418-385-3893', 'FALSE'),
+('Razine Ahmed', 'Bensari', '1049 Galt', 'bensaria97@gmail.com', '514-514-5144', 'TRUE'),
+('Charles', 'Charlie', '1234 biol', 'charles@charlie.com', '438-438-4388', 'FALSE');
+

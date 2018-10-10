@@ -1,17 +1,17 @@
 INSERT INTO books (title,author,num_pages,publisher,year_published,language,isbn_10,isbn_13)
 VALUES 
-('Fifty Shades of Grey','E. L. James',514,'Vintage Books',2011,'English', '0345803485','978-0345803481'),
+('Fifty Shades of Grey','E. L. James',514,'Vintage Books',2011,'English','0345803485','978-0345803481'),
 ('The Subtle Art of Not Giving a F*ck','Mark Manson',224,'Harper',2016,'English','0062641549','978-0062641540'),
 ('Of Mice and Men','John Steinbeck',112,'Penguin Books',1993,'English','0140177396','978-0140177398'),
-('The Intelligent Investor: The Definitive Book on Value Investing','Benjamin Graham','Paperback',640,'Harper Business; REV edition',2006,'English','9780060555665','978-0060555665'),
-('Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!','Robert T. Kiyosaki','Paperback',336,'Plata Publishing; Second edition',2017,'English','1612680194','978-1612680194'),
-('The Elements of Pizza: Unlocking the Secrets to World-Class Pies at Home','Ken Forkish','Hardcover',256,'Ten Speed Press',2016,'English','160774838X','978-1607748380');
-('The five Element','Razine Bens',459,'Za Publish','2018','English','0345803123','978-0062641512'),
-('The Big MAC','Mark BigMac', 233, 'FoodAndBooks', '2017', 'German, English', '0140337396', '978-0011641540'),
-('The Big Three','Jeremy Steinfield',599,'MarketPub','2016','Arabic, English','0345803499','978-0166677398'),
+('The Intelligent Investor: The Definitive Book on Value Investing','Benjamin Graham',640,'Harper Business; REV edition',2006,'English','0060555665','978-0060555665'),
+('Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!','Robert T. Kiyosaki',336,'Plata Publishing; Second edition',2017,'English','1612680194','978-1612680194'),
+('The Elements of Pizza: Unlocking the Secrets to World-Class Pies at Home','Ken Forkish',256,'Ten Speed Press',2016,'English','160774838X','978-1607748380'),
+('The Five Element','Razine Bens',459,'Za Publish',2018,'English','0345803123','978-0062641512'),
+('The Big MAC','Mark BigMac', 233, 'FoodAndBooks',2017,'German, English','0140337396','978-0011641540'),
+('The Big Three','Jeremy Steinfield',599,'MarketPub',2016,'Arabic, English','0345803499','978-0166677398'),
 ('Grapes of Wrath','John Steinbeck',241,'Penguin Publishing',1931,'English','7593648531','834-7593648531'),
 ('Le monde sans Faim','George Lecavalier',53,'Access Litterature',1994,'French','9301756562','123-9301756562'),
-('People are Animals','Jane Joyce', 347,'Worldwide',2008,'English','9044591234','892-9044591234');
+('People are Animals','Jane Joyce', 347,'Worldwide',2008,'English','9044591234','892-9044591234'),
 ('The Giver','Lois Lowry',240,'HMH Books for Young Readers',2014,'English', '0544336267','978-0544336261'),
 ('Leonis','Mario Francis',300,'Les Intouchables ',2004,'French', '2895491380','978-2895491385'),
 ('Cravings: Hungry for More','Chrissy Teigen',256,'Clarkson Potter',2018,'English', '1524759724','978-1524759728');
@@ -27,7 +27,7 @@ VALUES
 ('Truckin Magazine','The Enthusiast Network',2018,'English',NULL,NULL),
 ('Le Monde','Le Monde Publishing',2005,'French','8937293950','847-8937293950'),
 ('Cosmopolitan','No Name Publishing',2015,'English','5723957738','920-5723957738'),
-('Actuary Weekly','CPA',2004,'English','9504762930','583-9504762930');
+('Actuary Weekly','CPA',2004,'English','9504762930','583-9504762930'),
 ('Gym and Fitness Magazine','BuzzFit',2018,'English',NULL,NULL),
 ('PC Magazine','Ziff Davis',2018,'English',NULL,NULL),
 ('Car Magazine','Bauer Consumer Media',2018,'English',NULL,NULL);
@@ -62,10 +62,7 @@ VALUES
 ('The Fate of the Furious','F. Gary Gray','Neal H. Moritz, Vin Diesel, Michael Fottrell, Chris Morgan','Vin Diesel, Dwayne Johnson, Jason Statham, Michelle Rodriguez, Tyrese Gibson, Chris "Ludacris" Bridges, Scott Eastwood, Nathalie Emmanuel, Elsa Pataky, Kurt Russell, Charlize Theron','English','English, French, Spanish','English, French','2017-04-14','136'),
 ('The Dark Knight','Christopher Nolan','Emma Thomas, Charles Roven, Christopher Nolan','Christian Bale, Michael Caine, Health Ledger','English, French','Spanish, French, English, Arabic','English, French, German, Hindi','2008-07-14','152'),
 ('The Nun','Corin Hardy','Peter Safran, James Wan','Demian Bichir, Taissa Farmiga, Jonas Bloquet','Arabic, French, English','Arabic, French, English','Arabic, French, English','2018-09-07','96'),
-('Rush Hour','Brett Ratner', 'Roger Birnbaum, Jonathan Glickman, Arthur M. Sarkissian','Jackie Chan, Chris Tucker','French, English','French, English','Arabic, French, English, Spanish, Mandarin','1998-09-18','98'),
-('Vinyl','House of Balloons','2011-03-21','The Weeknd','XO','B011IOGYL0'),
-('CD','Thursday','2011-08-18','The Weeknd','XO','B010NUQNGQ'),
-('Digital','Echoes of Silence','2011-12-22','The Weeknd','Universal Republic Records','B00TINRK9E');
+('Rush Hour','Brett Ratner', 'Roger Birnbaum, Jonathan Glickman, Arthur M. Sarkissian','Jackie Chan, Chris Tucker','French, English','French, English','Arabic, French, English, Spanish, Mandarin','1998-09-18','98');
 
 
 INSERT INTO clients (firstName,lastName,address,email,phone,isAdmin)

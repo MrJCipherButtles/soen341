@@ -22,7 +22,7 @@ CREATE TABLE books (
 	year_published YEAR(4),
 	language VARCHAR(50),
 	isbn_10 CHAR(10),
-	isbn_13 CHAR(13),
+	isbn_13 CHAR(14),
 	PRIMARY KEY (id)
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE magazines (
 	year_published YEAR(4), -- MYSQL YEAR Type
 	language VARCHAR(50),
 	isbn_10 CHAR(10),
-	isbn_13 CHAR(13),
+	isbn_13 CHAR(14),
 	PRIMARY KEY (id)
 );
 

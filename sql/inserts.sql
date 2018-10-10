@@ -54,26 +54,19 @@ VALUES
 
 INSERT INTO movies (title,director,producer,actors,languages,subtitles,dubbed,release_date,runtime)
 VALUES
-<<<<<<< HEAD
-	('Vincent','Cerri','2356 rue de vigeois','vincent.cerri@gmail.com','514-591-1642',TRUE),
-	('Emilio','Phish','P Sherman 42 Wallaby Way','emilio.phish@yahoo.ca','456-975-7726',FALSE),
-	('Julia','Runia','5081 Rue Taillon','julia.runia@live.ca','450-999-9879',FALSE),
-    ('Naimur','Rashid','12243 Chemin Du Roi','naimur.rashid@gmail.com','514-937-1337',TRUE),
-	('Abel','Tesfaye','65 Spencer Avenue','abel.tesfaye@xo.ca','647-824-4331',FALSE),
-	('Aubrey','Graham','82 Queen Street','drizzy@ovo.ca','647-233-0489',FALSE),
-	('Nicolas','Samaha','272 Montpellier','nicolasnsamaha@hotmail.com','514-623-4325',FALSE);
-=======
-('Spider-Man','Sam Raimi','Laura Ziskin, Ian Bryce','Raz Bens, Suruthi Priya, Naimur Namur','English, French','Spanish, French, English, Arabic','English, French, German, Hindi','2002-04-29','121'),
-('The super MAC','Raz Booboo','Nicolas Samaha','Nocolas Samaha, Joshua Butler','Arabic, French, English','Arabic, French, English','Arabic, French, English','2017-01-01','129'),
-('The Big Fish','Rami Eldiaz','Barbara Samaha','Nocolas Saluti, Josh Aller','French, English','French, English','Arabic, French, English, Spanish, Mandarin','2006-05-01','139'),
-('Ride Along 2','Tim Story','Will Packer, Ice Cube, Matt Alvarez, Larry Brezner','Kevin Hart, Ice Cube, Ken Jeong, Benjamin Bratt, Olivia Munn, Bruce McGill','English','English, French, Arabic, Chinese, Spanish','English, Spanish, French, Hindi, Russian','2016-01-15','102'),
-('Just Go With It','Dennis Dugan','Adam Sandler, Jack Giarraputo, Heather Parry','Adam Sandler, Jennifer Aniston, Nick Swardson, Brooklyn Decker, Dave Matthews, Bailee Madison, Nicole Kidman','English','English, French','English, French','2011-01-11','117'),
-('The Fate of the Furious','F. Gary Gray','Neal H. Moritz, Vin Diesel, Michael Fottrell, Chris Morgan','Vin Diesel, Dwayne Johnson, Jason Statham, Michelle Rodriguez, Tyrese Gibson, Chris "Ludacris" Bridges, Scott Eastwood, Nathalie Emmanuel, Elsa Pataky, Kurt Russell, Charlize Theron','English','English, French, Spanish','English, French','2017-04-14','136'),
-('The Dark Knight','Christopher Nolan','Emma Thomas, Charles Roven, Christopher Nolan','Christian Bale, Michael Caine, Health Ledger','English, French','Spanish, French, English, Arabic','English, French, German, Hindi','2008-07-14','152'),
-('The Nun','Corin Hardy','Peter Safran, James Wan','Demian Bichir, Taissa Farmiga, Jonas Bloquet','Arabic, French, English','Arabic, French, English','Arabic, French, English','2018-09-07','96'),
-('Rush Hour','Brett Ratner', 'Roger Birnbaum, Jonathan Glickman, Arthur M. Sarkissian','Jackie Chan, Chris Tucker','French, English','French, English','Arabic, French, English, Spanish, Mandarin','1998-09-18','98');
+('Spider-Man','Sam Raimi','Laura Ziskin, Ian Bryce','Raz Bens, Suruthi Priya, Naimur Namur','English, French','Spanish, French, English, Arabic','English, French, German, Hindi','2002-04-29',121),
+('The super MAC','Raz Booboo','Nicolas Samaha','Nocolas Samaha, Joshua Butler','Arabic, French, English','Arabic, French, English','Arabic, French, English','2017-01-01',129),
+('The Big Fish','Rami Eldiaz','Barbara Samaha','Nocolas Saluti, Josh Aller','French, English','French, English','Arabic, French, English, Spanish, Mandarin','2006-05-01',139),
+('Ride Along 2','Tim Story','Will Packer, Ice Cube, Matt Alvarez, Larry Brezner','Kevin Hart, Ice Cube, Ken Jeong, Benjamin Bratt, Olivia Munn, Bruce McGill','English','English, French, Arabic, Chinese, Spanish','English, Spanish, French, Hindi, Russian','2016-01-15',102),
+('Just Go With It','Dennis Dugan','Adam Sandler, Jack Giarraputo, Heather Parry','Adam Sandler, Jennifer Aniston, Nick Swardson, Brooklyn Decker, Dave Matthews, Bailee Madison, Nicole Kidman','English','English, French','English, French','2011-01-11',117),
+('The Fate of the Furious','F. Gary Gray','Neal H. Moritz, Vin Diesel, Michael Fottrell, Chris Morgan','Vin Diesel, Dwayne Johnson, Jason Statham, Michelle Rodriguez, Tyrese Gibson, Chris "Ludacris" Bridges, Scott Eastwood, Nathalie Emmanuel, Elsa Pataky, Kurt Russell, Charlize Theron','English','English, French, Spanish','English, French','2017-04-14',136),
+('The Dark Knight','Christopher Nolan','Emma Thomas, Charles Roven, Christopher Nolan','Christian Bale, Michael Caine, Health Ledger','English, French','Spanish, French, English, Arabic','English, French, German, Hindi','2008-07-14',152),
+('The Nun','Corin Hardy','Peter Safran, James Wan','Demian Bichir, Taissa Farmiga, Jonas Bloquet','Arabic, French, English','Arabic, French, English','Arabic, French, English','2018-09-07',96),
+('Rush Hour','Brett Ratner', 'Roger Birnbaum, Jonathan Glickman, Arthur M. Sarkissian','Jackie Chan, Chris Tucker','French, English','French, English','Arabic, French, English, Spanish, Mandarin','1998-09-18',98),
+('Bee Movie','Simon J. Smith','Jerry Seinfeld','Jerry Seinfeld, Renée Zellweger','English','English, French, Spanish','French, Spanish, Italian','2007-11-02',91),
+('Deadpool','Tim Miller','Simon Kinberg, Ryan Reynolds','Ryan Reynolds, Morena Baccarin, T.J. Miller','English','English, French, Spanish','French, Spanish, Italian','2016-02-08',108),
+('The Shawshank Redemption','Frank Darabont','Niki Marvin','Tim Robbins, Morgan Freeman, Bob Gunton','English','English, French, Spanish','French, Spanish, Italian','1994-09-10',142);
 
->>>>>>> e8353788d279947bd5299ce11a8238b7a5b9ed83
 
 INSERT INTO clients (firstName,lastName,address,email,phone,isAdmin)
 VALUES
@@ -90,4 +83,7 @@ VALUES
 ('ADMIN','D','Number 88, Test, QC, CA.','ADMIN@gmail.com','5678941234','TRUE'),
 ('Naimur','Rashid','12243 Chemin Du Roi','naimur.rashid@gmail.com','514-937-1337','TRUE'),
 ('Abel','Tesfaye','65 Spencer Avenue','abel.tesfaye@xo.ca','647-824-4331','FALSE'),
-('Aubrey','Graham','82 Queen Street','drizzy@ovo.ca','647-233-0489','FALSE');
+('Aubrey','Graham','82 Queen Street','drizzy@ovo.ca','647-233-0489','FALSE'),
+('Nicolas','Samaha','272 Rue Montpellier','nicolasnsamaha@hotmail.com','514-623-4325','FALSE'),
+('Hugh','Jethighs','555 Falseroad','hughjethighs@gmail.com','754-837-8475','FALSE'),
+('Po','Zhu','54 Young Street','Po.Zhu@gmail.com','444-474-4747','FALSE');

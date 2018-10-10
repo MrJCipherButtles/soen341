@@ -28,6 +28,9 @@ VALUES
 ('Le Monde','Le Monde Publishing',2005,'French','8937293950','847-8937293950'),
 ('Cosmopolitan','No Name Publishing',2015,'English','5723957738','920-5723957738'),
 ('Actuary Weekly','CPA',2004,'English','9504762930','583-9504762930');
+('Gym and Fitness Magazine','BuzzFit',2018,'English',NULL,NULL),
+('PC Magazine','Ziff Davis',2018,'English',NULL,NULL),
+('Car Magazine','Bauer Consumer Media',2018,'English',NULL,NULL);
 
 
 INSERT INTO musics (type,title,release_date,artist,label,asin)

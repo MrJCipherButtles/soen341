@@ -17,4 +17,9 @@ VALUES
 
 INSERT INTO clients (firstName,lastName,addresse,email,phone,isAdmin)
 VALUES
-();
+	('Vincent','Cerri','2356 rue de vigeois','vincent.cerri@gmail.com','514-591-1642',TRUE),
+	('Emilio','Phish','P Sherman 42 Wallaby Way','emilio.phish@yahoo.ca','456-975-7726',FALSE),
+	('Julia','Runia','5081 Rue Taillon','julia.runia@live.ca','450-999-9879',FALSE);
+
+
+

@@ -9,7 +9,13 @@ VALUES
 
 INSERT INTO magazines (title,publisher,year_published,language,isbn_10,isbn_13)
 VALUES
-();
+('Sports Illustrated Magazine','Meredith Corporation',2018,'English',NULL,NULL),
+('Food & Wine Magazine','Meredith Corporation',2018,'English',NULL,NULL),
+('Truckin Magazine','The Enthusiast Network',2018,'English',NULL,NULL);
+
+
+
+
 
 INSERT INTO musics (type,title,release_date,artist,label,asin)
 VALUES

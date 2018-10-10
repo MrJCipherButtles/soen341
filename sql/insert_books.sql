@@ -12,4 +12,7 @@ INSERT INTO musics (type, title, release_date, artist, label, asin)
 VALUES 
 ('CD','Stormy Monday','1990-12-12','The Allman Brothers Band','At Fillmore East','1234567890'),
 ('CD','The Chipmunk Song','1959-12-12','Ross Bagdasarian Sr.','Liberty','3456789012'),
-('CD','Green Christmas','1958-12-02','Stan Freberg','Capitol Records','2345678901') ;
+('CD','Green Christmas','1958-12-02','Stan Freberg','Capitol Records','2345678901') ,
+('CD','Bangarang','2011-12-23','Skrillex','Big Beat, Atlantic, OWSLA','B005FLX1HS'),
+('Vinyl','Another One Bites The Dust','1980-12-21','Queen','EMI','B00EX6LCNG'),
+('CD','Starlight','2006-09-04','Muse','Warner Bros.','B002CNUSFK');

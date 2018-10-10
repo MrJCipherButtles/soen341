@@ -9,12 +9,18 @@ VALUES
 ('Le Monde', 'Le Monde Publishing', 2005, 'French', 8937293950, '847-8937293950'),
 ('Cosmopolitan', 'No Name Publishing', 2015, 'English', 5723957738, '920-5723957738'),
 ('Actuary Weekly', 'CPA', 2004, 'English', 9504762930, '583-9504762930');
+('Nintendo Power Issue #1','Nintendo of America','1988','English',NULL,NULL), 
+('The New Yorker','Condé Nast','1925','English',NULL,NULL),                   
+('Mens Health - September 2018','Hearst Magazines','2018',NULL,NULL);       
 
 INSERT INTO library.musics (type, title, release_date, artist, label, asin)
 VALUES
 ('Vinyl', 'The Reign of Kindo EP', '2011-02-11',  'The Reign of Kindo','Independant', NULL),
 ('Digital', 'The Mountain', '2013-04-21',  'Haken','Universal', NULL),
-('CD', 'Best Of the Commodores', '1990-05-30',  'Commodores','Motown', NULL);
+('CD', 'Best Of the Commodores', '1990-05-30',  'Commodores','Motown', NULL),
+('CD','A Nightmare to Remember','2009-09-15','Dream Theater','Roadrunner',NULL),
+('Digital','Missingno','2018-05-25','Chime','Firepower Records',NULL),
+('Digital','Needed U','2018-07-30','Gammer','Monstercat',NULL);
 
 INSERT INTO library.clients (firstname, lastname, address, email, phone, isAdmin)
 VALUES

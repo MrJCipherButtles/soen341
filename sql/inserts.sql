@@ -16,13 +16,17 @@ VALUES
 
 INSERT INTO musics (type,title,release_date,artist,label,asin)
 VALUES
-();
+('Vinyl','House of Balloons','2011-03-21','The Weeknd','XO','B011IOGYL0'),
+('CD','Thursday','2011-08-18','The Weeknd','XO','B010NUQNGQ'),
+('Digital','Echoes of Silence','2011-12-22','The Weeknd','Universal Republic Records','B00TINRK9E');
 
 INSERT INTO clients (firstName,lastName,addresse,email,phone,isAdmin)
 VALUES
 	('Vincent','Cerri','2356 rue de vigeois','vincent.cerri@gmail.com','514-591-1642',TRUE),
 	('Emilio','Phish','P Sherman 42 Wallaby Way','emilio.phish@yahoo.ca','456-975-7726',FALSE),
-	('Julia','Runia','5081 Rue Taillon','julia.runia@live.ca','450-999-9879',FALSE);
+	('Julia','Runia','5081 Rue Taillon','julia.runia@live.ca','450-999-9879',FALSE),
 
-
+    ('Naimur','Rashid','12243 Chemin Du Roi','naimur.rashid@gmail.com','514-937-1337',TRUE),
+	('Abel','Tesfaye','65 Spencer Avenue','abel.tesfaye@xo.ca','647-824-4331',FALSE),
+	('Aubrey','Graham','82 Queen Street','drizzy@ovo.ca','647-233-0489',FALSE);
 

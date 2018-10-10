@@ -31,8 +31,8 @@ VALUES
 	('Vincent','Cerri','2356 rue de vigeois','vincent.cerri@gmail.com','514-591-1642',TRUE),
 	('Emilio','Phish','P Sherman 42 Wallaby Way','emilio.phish@yahoo.ca','456-975-7726',FALSE),
 	('Julia','Runia','5081 Rue Taillon','julia.runia@live.ca','450-999-9879',FALSE),
-
     ('Naimur','Rashid','12243 Chemin Du Roi','naimur.rashid@gmail.com','514-937-1337',TRUE),
 	('Abel','Tesfaye','65 Spencer Avenue','abel.tesfaye@xo.ca','647-824-4331',FALSE),
-	('Aubrey','Graham','82 Queen Street','drizzy@ovo.ca','647-233-0489',FALSE);
+	('Aubrey','Graham','82 Queen Street','drizzy@ovo.ca','647-233-0489',FALSE),
+	('Nicolas','Samaha','272 Montpellier','nicolasnsamaha@hotmail.com','514-623-4325',FALSE);
 

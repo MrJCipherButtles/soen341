@@ -28,5 +28,6 @@ VALUES
 ('Alex', 'Baker', '42 Baker street, Sherbrooke', 'alex.baker1997@domain.ca','514-514-5165', 'FALSE'),
 ('Alfred', 'Augustus', '5716 Summer boulevard, Quebec City', 'AA@domain.ca','418-385-3893', 'FALSE'),
 ('Razine Ahmed', 'Bensari', '1049 Galt', 'bensaria97@gmail.com', '514-514-5144', 'TRUE'),
-('Charles', 'Charlie', '1234 biol', 'charles@charlie.com', '438-438-4388', 'FALSE');
+('Charles', 'Charlie', '1234 biol', 'charles@charlie.com', '438-438-4388', 'FALSE'),
+('Nicolas','Samaha','272 Montpellier street, Montreal','nicolasnsamaha@hotmail.com','514-623-4325','FALSE');
 

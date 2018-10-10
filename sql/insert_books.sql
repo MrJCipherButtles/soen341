@@ -15,7 +15,17 @@ INSERT INTO musics (type, title, release_date, artist, label, asin)
 VALUES
 ('CD','Stormy Monday','1990-12-12','The Allman Brothers Band','At Fillmore East','1234567890'),
 ('CD','The Chipmunk Song','1959-12-12','Ross Bagdasarian Sr.','Liberty','3456789012'),
-('CD','Green Christmas','1958-12-02','Stan Freberg','Capitol Records','2345678901'),
+('CD','Green Christmas','1958-12-02','Stan Freberg','Capitol Records','2345678901') ,
+('CD','Bangarang','2011-12-23','Skrillex','Big Beat, Atlantic, OWSLA','B005FLX1HS'),
+('Vinyl','Another One Bites The Dust','1980-12-21','Queen','EMI','B00EX6LCNG'),
+('CD','Starlight','2006-09-04','Muse','Warner Bros.','B002CNUSFK'),
 ('CD', 'Wake me up in September', '2001-04-02', 'Lincooln Park', 'DC-Label', '2345633345'),
 ('CD', 'I am ZA Best', '2018-03-03', 'Rassiol Bambini', 'Xtreme Muzik', '2323498901'),
 ('CD', 'Hello Good Morning', '1976-03-27', 'Gorgio Lancini', 'Fedrolia', '1905678901');
+
+INSERT INTO magazines (title, publisher, year_published, language, isbn_10, isbn_13)
+VALUES 
+('Design News','UBM','1946','English','9000119407','987-9000119407'),
+('Bon Appétit','Craig Kostelic','1956','French','9000066990','987-9000066990'),
+('House Beautiful','Hearst Magazines','1996','English','9000186422','987-9000186422') ;
+

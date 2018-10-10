@@ -29,3 +29,8 @@ VALUES
 ('Bon Appétit','Craig Kostelic','1956','French','9000066990','987-9000066990'),
 ('House Beautiful','Hearst Magazines','1996','English','9000186422','987-9000186422') ;
 
+INSERT INTO clients(firstName, lastName, addresse, email, phone, isAdmin)
+values
+('SURUTHI','R','Number 8, Test, QC, CA.','suruthi@gmail.com','9629923077','TRUE'),
+('EXAMPLE','NOADMIN','Number 15, Test, QC, CA.','EXAMPLE@gmail.com','123456789','FALSE'),
+('ADMIN','D','Number 88, Test, QC, CA.','ADMIN@gmail.com','5678941234','TRUE');

@@ -1,5 +1,4 @@
-from flask import Flask, Response, render_template, request
-import os.path
+from flask import Flask, render_template, request
 from db_config import db_host, db_name, db_password, db_user
 from flaskext.mysql import MySQL
 
@@ -17,6 +16,7 @@ mysql.init_app(app)
 conn = mysql.connect()
 cursor = conn.cursor()
 
+
 @app.route("/login", methods=['GET', 'POST'])
 def hello():
     if request.method == 'GET':
@@ -29,7 +29,6 @@ def hello():
         if cursor.rowcount == 0:
             return "Does not exist"
         return "login successful"
-
 
 
 if __name__ == "__main__":

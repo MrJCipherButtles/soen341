@@ -1,0 +1,3 @@
+class ClientMapper:
+    def __init__(self, **kwargs):
+        ...

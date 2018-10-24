@@ -1,0 +1,3 @@
+class AdminMapper:
+    def __init__(self, **kwargs):
+        ...

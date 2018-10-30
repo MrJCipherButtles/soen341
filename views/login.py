@@ -14,4 +14,4 @@ def verify_login(db_gateway, request):
 
 
 def show_login_page():
-    return render_template('index.html')
+    return render_template('login.html')

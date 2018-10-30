@@ -9,7 +9,7 @@ def register_user(db_gateway, request):
     country = request.form['country']
     email = request.form['email']
     password = request.form['psw']
-    psw_repeat = request.form['psw']
+    psw_repeat = request.form['psw-repeat']
     phone = request.form['phone']
 
     if password != psw_repeat:

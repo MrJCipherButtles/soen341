@@ -2,7 +2,7 @@ from models.item.item import Item
 
 
 class Book(Item):
-    def __init__(self, **kwargs, title, author, num_pages, publisher, year_published, language, isbn_10, isbn_13):
+    def __init__(self, title, author, num_pages, publisher, year_published, language, isbn_10, isbn_13, **kwargs):
         super().__init__(**kwargs)
         self.title = title
         self.author = author

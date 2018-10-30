@@ -2,7 +2,7 @@ from models.item.item import Item
 
 
 class Movie(Item):
-    def __init__(self, **kwargs, title, director, producer, actors, languages, subtitles, dubbed, release_date, runtime):
+    def __init__(self, title, director, producer, actors, languages, subtitles, dubbed, release_date, runtime, **kwargs):
         super().__init__(**kwargs)
         self.title = title
         self.director = director

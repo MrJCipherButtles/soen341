@@ -5,4 +5,3 @@ class Client:
         self.address=address
         self.email=email
         self.phone=phone
-        self.is_admin=false

@@ -1,0 +1,50 @@
+body
+{
+	background-image: url("./backgrounds/clouds.jpg");
+	background-repeat: no-repeat;
+}
+
+.container
+{
+	text-align:center;
+	font-family:apu;
+	padding: 10px;
+}
+
+.container.titles
+{
+	font-size: 100px;
+	font-stretch:expanded
+}
+.container.sub_titles
+{
+	font-family:t100f;
+	font-size:45px;
+	position:relative;
+	bottom:175px;
+	color: rgb(58, 19, 167);
+	font-weight:bold;
+}
+.label_text
+{
+	font-family:tb;
+	opacity:1;
+}
+
+#user_login_title
+{
+	font-family:tb;
+	font-size:50px;
+	position:relative;
+	bottom:35px;
+}
+
+#login_box
+{
+	border-style: solid;
+	border-color:black;
+	background: rgba(42, 199, 226, 0.2);
+	color: rgb(0, 0, 0);
+	border-spacing:0;
+}
+

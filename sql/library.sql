@@ -6,6 +6,9 @@ on a MYSQL Server
 CREATE DATABASE library;
 USE library;
 
+-- admin user creation --
+GRANT ALL PRIVILEGES ON library TO 'admin'@'localhost' IDENTIFIED BY 'admin';
+
 -- entity tables
 
 CREATE TABLE books (

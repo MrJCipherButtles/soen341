@@ -1,14 +1,29 @@
-SELECT *
-FROM books;
+-- All users
+SELECT * FROM users;
 
-SELECT *
-FROM clients;
+-- All clients
+SELECT * FROM users WHERE privilegeLevel = 'CLIENT';
 
-SELECT *
-FROM magazines;
+-- All Administrators
+SELECT * FROM users WHERE privilegeLevel = 'ADMIN';
 
-SELECT *
-FROM movies;
+-- All Prints
+SELECT * FROM prints INNER JOIN items ON itemId = id;
 
-SELECT *
-FROM musics;
+-- All Books
+SELECT * FROM prints INNER JOIN items ON itemId = id WHERE itemType = 'BOOK';
+
+-- All Magazines
+SELECT * FROM prints INNER JOIN items ON itemId = id WHERE itemType = 'MAGAZINE';
+
+-- All Medias
+SELECT * FROM medias INNER JOIN items ON itemId = id;
+
+-- All Movies
+SELECT * FROM medias INNER JOIN items ON itemId = id WHERE itemType = 'MOVIE';
+
+-- All Musics
+SELECT * FROM medias INNER JOIN items ON itemId = id WHERE itemType = 'MUSIC';
+
+-- All Loans
+SELECT * FROM loans;

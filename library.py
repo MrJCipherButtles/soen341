@@ -11,7 +11,7 @@ db_gateway = DBGateway(app)
 def login():
     if request.method == 'GET':
         return Login.show_login_page()
-    else:
+    elif request.method == 'POST':
         return Login.verify_login(db_gateway, request)
 
 
@@ -19,7 +19,7 @@ def login():
 def register():
     if request.method == 'GET':
         return render_template('register.html')
-    else:
+    elif request.method == 'POST':
         return Register.register_user(db_gateway, request)
 
 

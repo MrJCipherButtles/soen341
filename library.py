@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect
 from db_connection import DBGateway
 from views.login import Login
 from views.register import Register
 
 app = Flask(__name__)
 db_gateway = DBGateway(app)
+
+
+@app.route('/')
+def _():
+    return redirect(url_for('login'))
 
 
 @app.route("/login", methods=['GET', 'POST'])

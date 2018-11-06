@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect
+from utils.login_required import login_required
 from db_connection import DBGateway
 from views.login import Login
 from views.register import Register
+from views.catalog import view_catalog
 
 app = Flask(__name__)
 db_gateway = DBGateway(app)
@@ -27,11 +29,18 @@ def register():
     elif request.method == 'POST':
         return Register.register_user(db_gateway, request)
 
+
 # @app.route("/dashboard/<firstname>_<lastname>", methods=['GET','POST'])
 # def dashboard(firstname, lastname):
 #     if request.method == 'GET':
 #         return render_template('dashboard.html',())
 #     elif request.method == 'POST':
+
+
+@app.route("/catalog")
+# @login_required
+def catalog():
+    return view_catalog(db_gateway, request)
 
 
 if __name__ == "__main__":

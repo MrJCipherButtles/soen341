@@ -2,7 +2,8 @@ from models.item.item import Item
 
 
 class Book(Item):
-    def __init__(self, title, author, num_pages, publisher, year_published, language, isbn_10, isbn_13, **kwargs):
+    def __init__(self, title=None, author=None, num_pages=None, publisher=None, year_published=None, language=None,
+                 isbn_10=None, isbn_13=None, **kwargs):
         super().__init__(**kwargs)
         self.title = title
         self.author = author
@@ -12,4 +13,3 @@ class Book(Item):
         self.language = language
         self.isbn_10 = isbn_10
         self.isbn_13 = isbn_13
-

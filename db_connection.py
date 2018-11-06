@@ -15,3 +15,19 @@ class DBGateway:
 
         self.conn = self.mysql.connect()
         self.cursor = self.conn.cursor()
+
+    def get_all(self, Class, table_name):
+        res = []
+        self.cursor.execute(
+            "SELECT * FROM library.%s" % table_name)
+        data = self.cursor.fetchall()
+        args = [d[0] for d in self.cursor.description]
+        for record in data:
+            kwargs = {}
+            for i in range(len(args)):
+                kwargs[args[i]] = record[i]
+            item = Class(**kwargs)
+            res.append(item)
+        return res
+
+

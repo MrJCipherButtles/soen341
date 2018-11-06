@@ -2,7 +2,7 @@ from models.item.item import Item
 
 
 class Magazine(Item):
-    def __init__(self, title, publisher, year_published, language, isbn_10, isbn_13, **kwargs):
+    def __init__(self, title=None, publisher=None, year_published=None, language=None, isbn_10=None, isbn_13=None, **kwargs):
         super().__init__(**kwargs)
         self.title = title
         self.publisher = publisher

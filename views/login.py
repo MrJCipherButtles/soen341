@@ -1,4 +1,5 @@
-from flask import render_template
+from flask import render_template, url_for, redirect
+from models.book.book import Book
 
 
 class Login:
@@ -12,7 +13,7 @@ class Login:
         db_gateway.cursor.fetchall()
         if db_gateway.cursor.rowcount == 0:
             return "Does not exist"
-        return "login successful"
+        return redirect(url_for('catalog'))
 
     @staticmethod
     def show_login_page():

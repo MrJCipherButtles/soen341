@@ -2,10 +2,47 @@ body
 {
     text-align:center;
     background-image: url("backgrounds/clouds.jpg");
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 .container
 {
+    font-size:40px;
     font-family:t100f;
+}
+
+.container p
+{
+    font-weight:bold;
+}
+
+.container h1
+{
+    font-family:apu;
+    font-size:40px;
+}
+
+.container p, .container h1,
+{
+    border-block-end: 50px;
+    background-color:rgb(175, 157, 255);
+    opacity:50%;
+}
+
+.link
+{
+    font-family:'Times New Roman', Times, serif;
+    border-style: double;
+}
+
+.clearfix button
+{
+    background-color:white;
+    border:black;
+    border-style:ridge;
+    color:black;
+    font-size: 25px;
+    font-weight:bold;
+    font-family: t100f;
+    cursor:pointer;
 }

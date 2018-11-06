@@ -22,6 +22,12 @@ def register():
     elif request.method == 'POST':
         return Register.register_user(db_gateway, request)
 
+# @app.route("/dashboard/<firstname>_<lastname>", methods=['GET','POST'])
+# def dashboard(firstname, lastname):
+#     if request.method == 'GET':
+#         return render_template('dashboard.html',())
+#     elif request.method == 'POST':
+
 
 if __name__ == "__main__":
     app.run()

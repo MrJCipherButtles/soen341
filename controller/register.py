@@ -17,8 +17,8 @@ class Register:
         if password != psw_repeat:
             return "Passwords do not match"
         db_gateway.cursor.execute(
-            "INSERT INTO library.clients (firstName, lastName, address, email, phone) VALUES ('%s', '%s', '%s', '%s', '%s')" % (
+            "INSERT INTO library.users (firstName, lastName, address, email, phone, pswd) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" % (
                 fname, lname, address_1 + ' ' + address_2 + ' ' + city + ' ' + state + ' ' + postal + ' ' + country,
-                email, str(phone)))
+                email, str(phone), password))
         db_gateway.conn.commit()
         return "registration successful"

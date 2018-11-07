@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect
 from utils.login_required import login_required
 from db_connection import DBGateway
-from views.login import Login
-from views.register import Register
-from views.catalog import view_catalog
+from controller.login import Login
+from controller.register import Register
+from controller.catalog import view_catalog
 
 app = Flask(__name__)
 db_gateway = DBGateway(app)
@@ -37,10 +37,10 @@ def register():
 #     elif request.method == 'POST':
 
 
-@app.route("/catalog")
-# @login_required
-def catalog():
-    return view_catalog(db_gateway, request)
+# @app.route("/catalog")
+# # @login_required
+# def catalog():
+#     return view_catalog(db_gateway, request)
 
 
 if __name__ == "__main__":

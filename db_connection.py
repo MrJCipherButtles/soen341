@@ -1,5 +1,5 @@
 from flaskext.mysql import MySQL
-from db_config import db_user, db_password, db_name, db_host
+from helper.db_config import db_user, db_password, db_name, db_host
 
 
 class DBGateway:

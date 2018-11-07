@@ -7,6 +7,8 @@ from controller.catalog import view_catalog
 
 app = Flask(__name__)
 db_gateway = DBGateway(app)
+app.template_folder = 'view/templates'
+app.static_folder = 'view/static'
 
 
 @app.route('/')

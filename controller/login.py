@@ -13,7 +13,7 @@ class Login:
         db_gateway.cursor.fetchall()
         if db_gateway.cursor.rowcount == 0:
             return "Does not exist"
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('view_catalog'))
 
     @staticmethod
     def show_login_page():

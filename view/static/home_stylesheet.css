@@ -3,8 +3,6 @@ body
     font-family:t100f;
     font-weight:bold;
     font-size:17;
-    background-image: url("backgrounds/basic_background_4.jpg");
-    background-repeat:repeat-y;
 }
 
 .greeting
@@ -12,7 +10,13 @@ body
     border-style:solid;
     padding:10;
     font-family:apu;
-    padding-top: 3%
+    padding-top: 3%;
+    color:black;
+}
+
+.greeting #log_out_btn
+{
+    font-family:'Times New Roman', Times, serif;
 }
 
 .menu_nav
@@ -40,7 +44,6 @@ body
 
 .list_title
 {
-    color:white;
     text-decoration: underline;
 }
 

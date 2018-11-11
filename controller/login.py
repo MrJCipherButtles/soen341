@@ -1,19 +1,18 @@
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, session, make_response
 from models.book.book import Book
 
 
 class Login:
     @staticmethod
-    def verify_login(db_gateway, request):
-        fname = request.form['user']
-        lname = request.form['psw']
-        # TODO: Include raw sql inside db_gateway
-        db_gateway.cursor.execute(
-            "SELECT * FROM library.users WHERE firstName = '%s' AND lastName = '%s'" % (fname, lname))
-        db_gateway.cursor.fetchall()
-        if db_gateway.cursor.rowcount == 0:
+    def verify_login(db_gateway, request=None, user=None, pswd=None):
+        user = request.form['user']
+        pswd = request.form['psw']
+        if not db_gateway.verify_login(user, pswd):
             return "Does not exist"
-        return redirect(url_for('dashboard'))
+        session['username'] = user
+        resp = make_response(redirect(url_for('dashboard')))
+        resp.set_cookie('username', user)
+        return resp
 
     @staticmethod
     def show_login_page():

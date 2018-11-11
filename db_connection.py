@@ -72,3 +72,14 @@ class DBGateway:
     def remove_item(self, id):
         self.cursor.execute("DELETE FROM items WHERE id = %s" % id)
         self.conn.commit()
+
+    def verify_login(self, user, password):
+        self.cursor.execute(
+            "SELECT * FROM library.users WHERE email = '%s' AND pswd = '%s'" % (user, password))
+        self.cursor.fetchall()
+        return self.cursor.rowcount != 0
+
+    def verify_admin(self, email):
+        self.cursor.execute("SELECT * FROM users WHERE email = '%s' AND privilegeLevel = 'ADMIN'" % email)
+        self.cursor.fetchall()
+        return self.cursor.rowcount != 0

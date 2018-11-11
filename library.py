@@ -5,7 +5,7 @@ from db_connection import DBGateway
 from controller.login import Login
 from controller.register import Register
 from controller.process_item import ProcessItem
-from controller.catalog import view_catalog
+from controller.catalog import Catalog
 
 app = Flask(__name__)
 db_gateway = DBGateway(app)
@@ -47,11 +47,12 @@ def delete_item():
         return ProcessItem.remove(request, db_gateway)
     return render_template('delete_item.html')
 
-# @app.route("/dashboard/<>", methods=['GET','POST'])
-# def dashboard(firstname, lastname):
-#     if request.method == 'GET':
-#         return render_template('dashboard.html',())
-#     elif request.method == 'POST':
+@app.route("/dashboard", methods=['GET','POST'])
+def dashboard():
+    if request.method == 'GET':
+        return Catalog.view_catalog(db_gateway, request)
+    elif request.method == 'POST':
+        return null
 
 
 # @app.route("/catalog")

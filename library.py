@@ -44,7 +44,6 @@ def add_item():
         ProcessItem.add(request, db_gateway)
     return render_template('add_item.html')
 
-
 @app.route("/delete_item", methods=['GET', 'POST'])
 @admin_required(db_gateway)
 def delete_item():
@@ -74,6 +73,34 @@ def logout():
 def loan():
     if request.method == 'GET':
         return render_template('loan_cart.html')
+    elif request.method == 'POST':
+        return Loan.loan_item(db_gateway, request)
+
+@app.route("/DeleteItem", methods=['GET', 'POST'])
+def deleteItem():
+    if request.method == 'GET':
+        return render_template('DeleteItem.html')
+    elif request.method == 'POST':
+        return Loan.loan_item(db_gateway, request)
+
+@app.route("/AddItem", methods=['GET', 'POST'])
+def addItem():
+    if request.method == 'GET':
+        return render_template('AddItem.html')
+    elif request.method == 'POST':
+        return Loan.loan_item(db_gateway, request)
+
+@app.route("/EditItem", methods=['GET', 'POST'])
+def editItem():
+    if request.method == 'GET':
+        return render_template('EditItem.html')
+    elif request.method == 'POST':
+        return Loan.loan_item(db_gateway, request)
+
+@app.route("/search", methods=['GET', 'POST'])
+def search():
+    if request.method == 'GET':
+        return render_template('search.html')
     elif request.method == 'POST':
         return Loan.loan_item(db_gateway, request)
 

@@ -5,6 +5,23 @@
         <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function load_search() {
+                 document.getElementById("content").innerHTML='<object type="text/html" data="search" style="width: 83% !important; height: 100% !important;"></object>';
+            }
+            function load_loancart() {
+                 document.getElementById("content").innerHTML='<object type="text/html" data="loan_cart" style="width: 83% !important; height: 100% !important;" ></object>';
+            }
+            function load_addItem() {
+                 document.getElementById("content").innerHTML='<object type="text/html" data="AddItem" style="width: 83% !important; height: 100% !important;"></object>';
+            }
+            function load_editItem() {
+                 document.getElementById("content").innerHTML='<object type="text/html" data="EditItem" style="width: 83% !important; height: 100% !important;" ></object>';
+            }
+            function load_deleteItem() {
+                 document.getElementById("content").innerHTML='<object type="text/html" data="DeleteItem" style="width: 83% !important; height: 100% !important;"></object>';
+            }
+        </script>
     </head>
     <body>
         <div class="greeting">
@@ -15,21 +32,19 @@
         <div class="menu_nav col-sm-2">
             <p class="list_title actions_list">User Actions</p>
             <ul class="actions_list">
-                <li><button class="button" type="button">Custom Search</button></li>
-                <li><button class="button" type="button">View Active Loans</button></li>
-                <li><button class="button" type="button">Loan Checkout</button></li>
+                <li><button class="button" type="button" onclick="load_search()">Custom Search</button></li>
+                <li><button class="button" type="button" >View Active Loans</button></li>
+                <li><button class="button" type="button" onclick="load_loancart()">View Loan Cart</button></li>
             </ul>
             <p class="list_title actions_list">Administrator Actions</p>
             <ul class="actions_list">
-                <li><button class="button" type="button">Add Library Record</button></li>
-                <li><button class="button" type="button">Modify Library Record</button></li>
-                <li><button class="button" type="button">Remove Library Record</button></li>
+                <li><button class="button" type="button" onclick="load_addItem()">Add Library Record</button></li>
+                <li><button class="button" type="button" onclick="load_editItem()">Modify Library Record</button></li>
+                <li><button class="button" type="button" onclick="load_deleteItem()">Remove Library Record</button></li>
                 <li><button class="button" type="button">Manage Library Users</button></li>
             </ul>
         </div>
-        <div class="content col-sm-10">
-            {%block content %}
-            {%endblock%}
+        <div id="content" clas="col-sm-10">
         </div>
     </body>
 </html>

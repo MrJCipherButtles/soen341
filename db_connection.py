@@ -16,10 +16,20 @@ class DBGateway:
         self.conn = self.mysql.connect()
         self.cursor = self.conn.cursor()
 
-    def get_all(self, Class, table_name):
+        self.class_to_table = {"BOOK": "prints", "MAGAZINE": "prints", "MOVIE": "medias", "MUSIC": "medias"}
+
+    def get_all(self, Class):
         res = []
         self.cursor.execute(
-            "SELECT * FROM library.%s" % table_name)
+            "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper())
+        ids = [res[0] for res in self.cursor.fetchall()]
+        ids_str = "(" + str(ids)[1:len(str(ids)) - 1] + ")"
+        query = "SELECT * FROM library.%s WHERE itemId IN %s;" % (self.class_to_table[Class.__name__.upper()], ids_str)
+        print(query)
+        self.cursor.execute(
+            query
+        )
+        # print(self.cursor.fetchall())
         data = self.cursor.fetchall()
         args = [d[0] for d in self.cursor.description]
         for record in data:
@@ -29,5 +39,3 @@ class DBGateway:
             item = Class(**kwargs)
             res.append(item)
         return res
-
-

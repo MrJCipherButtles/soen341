@@ -46,7 +46,7 @@
 </head>
 
 <body>
-	<form method="POST" style="border:1px solid #ccc">
+	<form style="border:1px solid #ccc">
   		<div class="container">
 			<h1>Add an Item</h1>
 			<p>
@@ -62,57 +62,88 @@
           	</p>
           	<div id="display_Book" style="display: none">
           		<p>Please enter following field to add a --- BOOK </p>
-          		<form>
-          				Title : <input type="text" name="Title" ><br>
-          				Author : <input type="text" name="Author" ><br>
-          				Format : <input type="text" name="Format" ><br>
-          				Pages : <input type="text" name="Pages" ><br>
-          				Publisher : <input type="text" name="Publisher" ><br>
-          				Language : <input type="text" name="Language" ><br>
-          				ISBN-10 : <input type="text" name="ISBN-10" ><br>
-          				ISBN-13 : <input type="text" name="ISBN-13" ><br>
-          			<button type="button">Add!</button>
+          		<form name="book" method="post">
+          			<label for="title">Title : </label>
+                              <input type="text" name="title"/> <br>
+                         <label for="author">Author : </label>
+                              <input type="text"  name="author"/> <br>
+                         <label for="num_pages">Number of pages : </label>
+                              <input type="text"  name="num_pages"/> <br>
+                         <label for="publisher">Publisher : </label>
+                              <input type="text" name="publisher"/> <br>
+                         <label for="year_published">Year Published : </label>
+                              <input type="text" name="year_published"/> <br>
+                         <label for="language">Language : </label>
+                              <input type="text" name="language"/> <br>
+                         <label for="isbn_10">ISBN 10 : </label>
+                              <input type="text" name="isbn_10"/> <br>
+                         <label for="isbn_13">ISBN 13 : </label>
+                              <input type="text"  name="isbn_13"/> <br>
+                         <input name="media_type" value="BOOK" style="display: none"></br>
+                         <button type="submit" formmethod="POST" class="signupbtn">Add new Book</button>
           		</form>
           	</div>
           	<div id ="display_Magazine" style="display: none">
-          		<p>Please enter following field to add a --- MAGAZINE</p>
-          		<form>
-          				Title : <input type="text" name="Title" ><br>
-          				Publisher : <input type="text" name="Publisher" ><br>
-          				Language : <input type="text" name="Language" ><br>
-          				ISBN-10 : <input type="text" name="ISBN-10" ><br>
-          				ISBN-13 : <input type="text" name="ISBN-13" ><br>
-          			<button type="button">Add!</button>
-          		</form>          		
+          		<form name="magazine" method="post">
+                        <label for="title">Title : </label>
+                        <input type="text" name="title"/> <br>
+                        <label for="publisher">Publisher : </label>
+                        <input type="text" name="publisher"/> <br>
+                        <label for="year_published">Year Published : </label>
+                        <input type="text" name="year_published"/> <br>
+                        <label for="language">Language : </label>
+                        <input type="text" name="language"/> <br>
+                        <label for="isbn_10">ISBN 10 : </label>
+                        <input type="text" name="isbn_10"/> <br>
+                        <label for="isbn_13">ISBN 13 : </label>
+                        <input type="text" name="isbn_13"/> <br>
+                        <input name="media_type" value="MAGAZINE" style="display: none"></br>
+                        <button type="submit" formmethod="POST" class="signupbtn">Add new Magazine</button>
+                    </form>         		
           	</div>
           	<div id="display_Movies" style="display: none">
           		<p>Please enter following field to add a  --- MOVIE</p>
-          		<form>
-          				Title : <input type="text" name="Title" ><br>
-          				Director : <input type="text" name="Director" ><br>
-          				Producers : <input type="text" name="Producers" ><br>
-          				Actors : <input type="text" name="Actors" ><br>
-          				Language : <input type="text" name="Language" ><br>
-          				Subtitles : <input type="text" name="Subtitles" ><br>
-          				Dubbed : <input type="text" name="Dubbed" ><br>
-          				Release Date : <input type="date" name="Release Date" ><br>
-          				Run Time : <input type="text" name="Run Time" ><br>
-          			<button type="button">Add!</button>
-          		</form>
+          		<form name="movie" method="post">
+                        <label for="title">Title : </label>
+                        <input type="text" name="title"/> <br>
+                        <label for="director">Director : </label>
+                        <input type="text" name="director"/> <br>
+                        <label for="producer">Producer : </label>
+                        <input type="text" name="producer"/> <br>
+                        <label for="actors">Actors : </label>
+                        <input type="text" name="actors"/> <br>
+                        <label for="language">Langugage : </label>
+                        <input type="text" name="languages"/> <br>
+                        <label for="subtitles">Subtitles : </label>
+                        <input type="text" name="subtitles"/> <br>
+                        <label for="dubbed">Dubbed : </label>
+                        <input type="text" name="dubbed"/> <br>
+                        <label for="release_date">Release Date : </label>
+                        <input type="text" name="release_date"/> <br>
+                        <label for="runtime">Runtime : </label>
+                        <input type="text" name="runtime"/> <br>
+                        <input name="media_type" value="MOVIE" style="display: none"></br>
+                        <button type="submit" formmethod="POST" class="signupbtn">Add new Movie</button>
+                    </form>
           	</div>
           	<div id="display_Musics" style="display: none">
           		<p>Please enter following field to add a --- MUSIC</p>
-          		<form>
-          				Type : <input type="text" name="Type" ><br>
-          				Title : <input type="text" name="Title" ><br>
-          				Artist : <input type="text" name="Artist" ><br>
-          				Label : <input type="text" name="Label" ><br>
-          				Release Date : <input type="date" name="Release Date" ><br>
-          				ASIN : <input type="text" name="ASIN" ><br>
-          			<button type="button">Add!</button>
-          		</form>
-          	</div>
-          	<div>
+          		<form name="music" method="post">
+                        <label for="title">Title : </label>
+                        <input type="text" name="title"/> <br>
+                        <label for="mediaType">Media Type : </label>
+                        <input type="text" name="mediaType"> <br>
+                        <label for="release_date">Release Date : </label>
+                        <input type="text" name="release_date"/> <br>
+                        <label for="artist">Artist : </label>
+                        <input type="text" name="artist"/> <br>
+                        <label for="label">Label : </label>
+                        <input type="text" name="label"/> <br>
+                        <label for="asin">ASIN : </label>
+                        <input type="text" name="asin"/> <br>
+                        <input name="media_type" value="MUSIC" style="display: none"></br>
+                        <button type="submit" formmethod="POST" class="signupbtn">Add new Music</button>
+                    </form>
           	</div>	
   		</div>
 	</form> 

@@ -1,0 +1,84 @@
+{%extends 'home.html'%}
+{% block content%}
+<h3>BOOK</h3>
+<form name="book" method="post">
+    <label for="title">Title</label>
+    <input name="title"/>
+    <label for="author">Author</label>
+    <input name="author"/>
+    <label for="num_pages">Number of pages</label>
+    <input name="num_pages"/>
+    <label for="publisher">Publisher</label>
+    <input name="publisher"/>
+    <label for="year_published">Year Published</label>
+    <input name="year_published"/>
+    <label for="language">Language</label>
+    <input name="language"/>
+    <label for="isbn_10">ISBN 10</label>
+    <input name="isbn_10"/>
+    <label for="isbn_13">ISBN 13</label>
+    <input name="isbn_13"/>
+    <input name="media_type" value="BOOK" style="display: none"></br>
+    <button type="submit" formmethod="POST" class="signupbtn">Add new Book</button>
+</form>
+<h3>MAGAZINE</h3>
+<form name="magazine" method="post">
+    <label for="title">Title</label>
+    <input name="title"/>
+    <label for="publisher">Publisher</label>
+    <input name="publisher"/>
+    <label for="year_published">Year Published</label>
+    <input name="year_published"/>
+    <label for="language">Language</label>
+    <input name="language"/>
+    <label for="isbn_10">ISBN 10</label>
+    <input name="isbn_10"/>
+    <label for="isbn_13">ISBN 13</label>
+    <input name="isbn_13"/>
+    <input name="media_type" value="MAGAZINE" style="display: none"></br>
+
+    <button type="submit" formmethod="POST" class="signupbtn">Add new Magazine</button>
+</form>
+<h3>MUSIC</h3>
+<form name="music" method="post">
+    <label for="title">Title</label>
+    <input name="title"/>
+    <label for="mediaType">Media Type</label>
+    <input name="mediaType">
+    <label for="release_date">Release Date</label>
+    <input name="release_date"/>
+    <label for="artist">Artist</label>
+    <input name="artist"/>
+    <label for="label">Label</label>
+    <input name="label"/>
+    <label for="asin">ASIN</label>
+    <input name="asin"/>
+    <input name="media_type" value="MUSIC" style="display: none"></br>
+
+    <button type="submit" formmethod="POST" class="signupbtn">Add new Music</button>
+
+</form>
+<h3>MOVIE</h3>
+<form name="movie" method="post">
+    <label for="title">Title</label>
+    <input name="title"/>
+    <label for="director">Director</label>
+    <input name="director"/>
+    <label for="producer">Producer</label>
+    <input name="producer"/>
+    <label for="actors">Actors</label>
+    <input name="actors"/>
+    <label for="language">Langugage</label>
+    <input name="languages"/>
+    <label for="subtitles">Subtitles</label>
+    <input name="subtitles"/>
+    <label for="dubbed">Dubbed</label>
+    <input name="dubbed"/>
+    <label for="release_date">Release Date</label>
+    <input name="release_date"/>
+    <label for="runtime">Runtime</label>
+    <input name="runtime"/>
+    <input name="media_type" value="MOVIE" style="display: none"></br>
+    <button type="submit" formmethod="POST" class="signupbtn">Add new Movie</button>
+</form>
+{%endblock%}

@@ -1,0 +1,36 @@
+@font-face 
+{
+	font-family:'eznov';
+	src: url('fonts/eznov.ttf'); /* IE9 Compat Modes */
+	src: url('fonts/eznov.eot') format('embedded-opentype'), /* IE6-IE8 */
+		url('fonts/eznov.woff') format('woff'), /* Modern Browsers */
+		url('fonts/eznov.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url('fonts/eznov.ttf') format('svg'); /* Legacy iOS */
+}
+@font-face
+{
+	font-family:'apu';
+	src: url('fonts/apu.ttf'); /* IE9 Compat Modes */
+	src: url('fonts/apu.eot') format('embedded-opentype'), /* IE6-IE8 */
+		url('fonts/apu.woff') format('woff'), /* Modern Browsers */
+		url('fonts/apu.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url('fonts/apu.ttf') format('svg'); /* Legacy iOS */
+}
+@font-face
+{
+	font-family:'t100f';
+	src: url('fonts/trench100free.ttf'); /* IE9 Compat Modes */
+	src: url('fonts/trench100free.eot') format('embedded-opentype'), /* IE6-IE8 */
+		url('fonts/trench100free.woff') format('woff'), /* Modern Browsers */
+		url('fonts/trench100free.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url('fonts/trench100free.ttf') format('svg'); /* Legacy iOS */
+}
+@font-face
+{
+	font-family:'tb';
+	src: url('fonts/timeburnernormal.ttf'); /* IE9 Compat Modes */
+	src: url('fonts/timeburnernormal.eot') format('embedded-opentype'), /* IE6-IE8 */
+		url('fonts/timeburnernormal.woff') format('woff'), /* Modern Browsers */
+		url('fonts/timeburnernormal.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url('fonts/timeburnernormal.ttf') format('svg'); /* Legacy iOS */
+}

@@ -68,3 +68,7 @@ class DBGateway:
         print(query)
         self.cursor.execute(query)
         self.conn.commit()
+
+    def remove_item(self, id):
+        self.cursor.execute("DELETE FROM items WHERE id = %s" % id)
+        self.conn.commit()

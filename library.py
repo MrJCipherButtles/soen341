@@ -6,6 +6,7 @@ from controller.login import Login
 from controller.register import Register
 from controller.process_item import ProcessItem
 from controller.catalog import Catalog
+from controller.loan import Loan
 
 app = Flask(__name__)
 db_gateway = DBGateway(app)
@@ -53,6 +54,13 @@ def dashboard():
         return Catalog.view_catalog(db_gateway, request)
     elif request.method == 'POST':
         return null
+
+@app.route("/loan_cart", methods=['GET', 'POST'])
+def loan():
+    if request.method == 'GET':
+        return render_template('loan_cart.html')
+    elif request.method == 'POST':
+        return Loan.loan_item(db_gateway, request)
 
 
 # @app.route("/catalog")

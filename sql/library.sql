@@ -80,4 +80,4 @@ CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin'; -- username = admin / pas
 GRANT ALL PRIVILEGES ON library.* TO 'admin'@'localhost'
 	WITH GRANT OPTION;
     
-INSERT INTO users VALUES ('Joshua', 'Butler', NULL, 'admin@localhost', 'admin', NULL, 'ADMIN');
+INSERT INTO users VALUES ('Joshua', 'Butler', NULL, 'admin@localhost', '21232f297a57a5a743894a0e4a801fc3', NULL, 'ADMIN');

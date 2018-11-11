@@ -1,0 +1,42 @@
+body
+{
+    font-family:t100f;
+    font-weight:bold;
+    font-size:17;
+    background-image: url("backgrounds/basic_background.png");
+}
+
+.greeting
+{
+    border-style:solid;
+    padding:10;
+}
+
+.menu_nav
+{
+    border-style: solid;
+    width:14%;
+    height:100%;
+    left:0;
+    text-align:left;
+    position:sticky;
+}
+
+.menu_nav .actions_list
+{
+    list-style-type:none;
+    position:relative;
+    margin:3;
+    padding:5;
+}
+
+.catalog
+{
+    border-style:solid;
+    height:100%;
+}
+
+.button
+{
+    width:90%;
+}

@@ -32,7 +32,7 @@ def register():
         return Register.register_user(db_gateway, request)
 
 
-# @app.route("/dashboard/<firstname>_<lastname>", methods=['GET','POST'])
+# @app.route("/dashboard/<>", methods=['GET','POST'])
 # def dashboard(firstname, lastname):
 #     if request.method == 'GET':
 #         return render_template('dashboard.html',())

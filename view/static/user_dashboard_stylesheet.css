@@ -4,8 +4,7 @@ body
     font-weight:bold;
     font-size:17;
     background-image: url("backgrounds/basic_background_4.jpg");
-    background-repeat: no-repeat;
-    background-color:black;
+    background-repeat:repeat-y;
 }
 
 .greeting
@@ -21,7 +20,6 @@ body
     border-style: solid;
     width:14%;
     height:100%;
-    left:0;
     text-align:left;
     position:sticky;
     background-color:rgba(0,0,0,0.2);
@@ -38,8 +36,8 @@ body
 .catalog
 {
     border-style:solid;
-    height:100%;
     background-color:rgba(0,0,0,0.2);
+    margin-bottom: 5;
 }
 
 .button

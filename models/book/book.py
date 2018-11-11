@@ -1,7 +1,8 @@
 from models.item.item import Item
+from models.loanable.loanable import Loanable
 
 
-class Book(Item):
+class Book(Item, Loanable):
     def __init__(self, title=None, author=None, num_pages=None, publisher=None, year_published=None, language=None,
                  isbn_10=None, isbn_13=None, **kwargs):
         super().__init__(**kwargs)

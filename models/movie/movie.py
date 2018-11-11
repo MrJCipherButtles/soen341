@@ -1,7 +1,8 @@
 from models.item.item import Item
+from models.loanable.loanable import Loanable
 
 
-class Movie(Item):
+class Movie(Item, Loanable):
     def __init__(self, title=None, director=None, producer=None, actors=None, languages=None, subtitles=None,
                  dubbed=None, release_date=None, runtime=None, **kwargs):
         super().__init__(**kwargs)

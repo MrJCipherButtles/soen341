@@ -3,13 +3,17 @@ body
     font-family:t100f;
     font-weight:bold;
     font-size:17;
-    background-image: url("backgrounds/basic_background.png");
+    background-image: url("backgrounds/basic_background_4.jpg");
+    background-repeat: no-repeat;
+    background-color:black;
 }
 
 .greeting
 {
     border-style:solid;
     padding:10;
+    font-family:apu;
+    padding-top: 3%
 }
 
 .menu_nav
@@ -20,6 +24,7 @@ body
     left:0;
     text-align:left;
     position:sticky;
+    background-color:rgba(0,0,0,0.2);
 }
 
 .menu_nav .actions_list
@@ -34,9 +39,16 @@ body
 {
     border-style:solid;
     height:100%;
+    background-color:rgba(0,0,0,0.2);
 }
 
 .button
 {
     width:90%;
+}
+
+.list_title
+{
+    color:white;
+    text-decoration: underline;
 }

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Welcome to Bibli.io</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='home_stylesheet.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="greeting">
+            <h1 style="color:white;">Welcome to Bibli.io</h1>
+            <button type="button"></button>
+        </div>
+        
+        <div class="menu_nav col-sm-2">
+            <p class="list_title actions_list">User Actions</p>
+            <ul class="actions_list">
+                <li><button class="button" type="button">Custom Search</button></li>
+                <li><button class="button" type="button">View Active Loans</button></li>
+                <li><button class="button" type="button">View Loan Cart</button></li>
+            </ul>
+            <p class="list_title actions_list">Administrator Actions</p>
+            <ul class="actions_list">
+                <li><button class="button" type="button">Add Library Record</button></li>
+                <li><button class="button" type="button">Modify Library Record</button></li>
+                <li><button class="button" type="button">Remove Library Record</button></li>
+                <li><button class="button" type="button">Manage Library Users</button></li>
+            </ul>
+        </div>
+        <div class="content col-sm-10">
+            {%block content %}
+            {%endblock%}
+        </div>
+    </body>
+</html>

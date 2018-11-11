@@ -1,3 +1,5 @@
+{%extends 'home.html'%}
+{% block content%}
 <h3>BOOK</h3>
 <form name="book" method="post">
     <label for="title">Title</label>
@@ -79,3 +81,4 @@
     <input name="media_type" value="MOVIE" style="display: none"></br>
     <button type="submit" formmethod="POST" class="signupbtn">Add new Movie</button>
 </form>
+{%endblock%}

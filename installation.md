@@ -10,4 +10,4 @@ Steps:
 5. Navigate to `localhost:5000`
 
 When making changes, stop the server with `Ctrl+C`. Restart it by
-running `python library.py` again.
+running `python library.py` again

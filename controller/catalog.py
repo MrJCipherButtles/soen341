@@ -14,4 +14,4 @@ class Catalog():
         musics = db_gateway.get_all(Music)
         movies = db_gateway.get_all(Movie)
 
-        return render_template('user_dashboard.html', books=books, magazines=magazines, musics=musics, movies=movies)
+        return render_template('home.html', books=books, magazines=magazines, musics=musics, movies=movies)

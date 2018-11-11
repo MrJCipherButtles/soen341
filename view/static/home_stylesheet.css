@@ -33,13 +33,6 @@ body
     padding:5;
 }
 
-.catalog
-{
-    border-style:solid;
-    background-color:rgba(0,0,0,0.2);
-    margin-bottom: 5;
-}
-
 .button
 {
     width:90%;
@@ -50,3 +43,14 @@ body
     color:white;
     text-decoration: underline;
 }
+
+.content
+{
+    border-style:solid;
+    background-color:rgba(0,0,0,0.2);
+    margin-bottom: 5;
+}
+
+
+
+

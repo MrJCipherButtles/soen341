@@ -19,16 +19,16 @@ cursor = conn.cursor()
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-    if request.method == 'GET':
-        return render_template('index.html')
-    else:
-        fname = request.form['user']
-        lname = request.form['psw']
-        cursor.execute("SELECT * FROM library.clients WHERE firstName = '%s' AND lastName = '%s'" % (fname, lname))
-        cursor.fetchall()
-        if cursor.rowcount == 0:
-            return "Does not exist"
-        return "login successful"
+  if request.method == 'GET':
+    return render_template('index.html')
+  else:
+    fname = request.form['user']
+    lname = request.form['psw']
+    cursor.execute("SELECT * FROM library.clients WHERE firstName = '%s' AND lastName = '%s'" % (fname, lname))
+    cursor.fetchall()
+    if cursor.rowcount == 0:
+      return "Does not exist"
+    return "login successful"
 
 
 @app.route("/register", methods=['GET', 'POST'])

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Search</title>
+	<link rel="stylesheet" href="../static/fonts.css">
+	<link rel="stylesheet" href="../static/search_style.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$( "#myList" ).change(function() {
+				if(this.value == "1"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').hide();	
+				}
+				if(this.value == "2"){
+					$('#display_Book').show();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').hide();	
+				}
+				if(this.value == "3"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').show();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').hide();
+				}
+				if(this.value == "4"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').show();
+     				$('#display_Musics').hide();
+				}
+				if(this.value == "5"){
+					$('#display_Book').hide();
+     				$('#display_Magazine').hide();
+     				$('#display_Movies').hide();
+     				$('#display_Musics').show();
+				}
+  				
+			});
+	
+	  });
+	</script>
+</head>
+
+<body>
+	<form method="POST" style="border:1px solid #ccc">
+  		<div class="container">
+			<h1>Custom Search</h1>
+			<p>
+             	<label>Please Select the item you want to Search</label>
+             	<br>
+             	<select id = "myList" class="dropdown" name="myList" >
+               		<option value="1" selected>--- Please Select an Item ---</option>
+               		<option id = "Book" value = "2">Book</option>
+               		<option id = "Magazine" value = "3">Magazine</option>
+               		<option id = "Movies" value = "4">Movies</option>
+               		<option id = "Musics" value = "5">Musics</option>
+             	</select>
+          	</p>
+          	<div id="display_Book" style="display: none">
+          		<p>Please enter an field to search --- BOOKS </p>
+          		<form>
+          				Title : <input type="text" name="Title" ><br>
+          				Author : <input type="text" name="Author" ><br>
+          				Format : <input type="text" name="Format" ><br>
+          				Pages : <input type="text" name="Pages" ><br>
+          				Publisher : <input type="text" name="Publisher" ><br>
+          				Language : <input type="text" name="Language" ><br>
+          				ISBN-10 : <input type="text" name="ISBN-10" ><br>
+          				ISBN-13 : <input type="text" name="ISBN-13" ><br>
+          			<button type="button">Search!</button>
+          		</form>
+          	</div>
+          	<div id ="display_Magazine" style="display: none">
+          		<p>Please enter an field to search --- MAGAZINES</p>
+          		<form>
+          				Title : <input type="text" name="Title" ><br>
+          				Publisher : <input type="text" name="Publisher" ><br>
+          				Language : <input type="text" name="Language" ><br>
+          				ISBN-10 : <input type="text" name="ISBN-10" ><br>
+          				ISBN-13 : <input type="text" name="ISBN-13" ><br>
+          			<button type="button">Search!</button>
+          		</form>          		
+          	</div>
+          	<div id="display_Movies" style="display: none">
+          		<p>Please enter an field to search --- MOVIES</p>
+          		<form>
+          				Title : <input type="text" name="Title" ><br>
+          				Director : <input type="text" name="Director" ><br>
+          				Producers : <input type="text" name="Producers" ><br>
+          				Actors : <input type="text" name="Actors" ><br>
+          				Language : <input type="text" name="Language" ><br>
+          				Subtitles : <input type="text" name="Subtitles" ><br>
+          				Dubbed : <input type="text" name="Dubbed" ><br>
+          				Release Date : <input type="date" name="Release Date" ><br>
+          				Run Time : <input type="text" name="Run Time" ><br>
+          			<button type="button">Search!</button>
+          		</form>
+          	</div>
+          	<div id="display_Musics" style="display: none">
+          		<p>Please enter an field to search --- MUSICS</p>
+          		<form>
+          				Type : <input type="text" name="Type" ><br>
+          				Title : <input type="text" name="Title" ><br>
+          				Artist : <input type="text" name="Artist" ><br>
+          				Label : <input type="text" name="Label" ><br>
+          				Release Date : <input type="date" name="Release Date" ><br>
+          				ASIN : <input type="text" name="ASIN" ><br>
+          			<button type="button">Search!</button>
+          		</form>
+          	</div>
+          	<div>
+          	</div>	
+  		</div>
+	</form> 
+</body>
+</html>

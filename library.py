@@ -4,6 +4,7 @@ from utils.login_required import login_required
 from db_connection import DBGateway
 from controller.login import Login
 from controller.register import Register
+from controller.process_item import ProcessItem
 from controller.catalog import view_catalog
 
 app = Flask(__name__)
@@ -32,6 +33,19 @@ def register():
     elif request.method == 'POST':
         return Register.register_user(db_gateway, request)
 
+
+@app.route("/add_item", methods=['GET', 'POST'])
+def add_item():
+    if (request.method == 'POST'):
+        ProcessItem.add(request, db_gateway)
+    return render_template('add_item.html')
+
+
+@app.route("/delete_item", methods=['GET', 'POST'])
+def delete_item():
+    if request.method == 'POST':
+        return ProcessItem.remove(request, db_gateway)
+    return render_template('delete_item.html')
 
 # @app.route("/dashboard/<>", methods=['GET','POST'])
 # def dashboard(firstname, lastname):

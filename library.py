@@ -1,21 +1,24 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, session, make_response
 
-from utils.login_required import login_required
+from utils.login_required import login_required, admin_required
 from db_connection import DBGateway
 from controller.login import Login
 from controller.register import Register
 from controller.process_item import ProcessItem
 from controller.catalog import Catalog
+from controller.loan import Loan
 
 app = Flask(__name__)
+app.secret_key = b'\xfb\xcf\x9e\x10\xd2\xdc2\x86\xe3\xf8\xf6\xf1\x89\xe1\xf8R'
 db_gateway = DBGateway(app)
 app.template_folder = 'view/templates'
 app.static_folder = 'view/static'
 
 
 @app.route('/')
-def _():
-    return redirect(url_for('login'))
+@login_required
+def index():
+    return redirect(url_for('dashboard'))
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -35,6 +38,7 @@ def register():
 
 
 @app.route("/add_item", methods=['GET', 'POST'])
+@admin_required(db_gateway)
 def add_item():
     if (request.method == 'POST'):
         ProcessItem.add(request, db_gateway)
@@ -42,17 +46,36 @@ def add_item():
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
+@admin_required(db_gateway)
 def delete_item():
     if request.method == 'POST':
         return ProcessItem.remove(request, db_gateway)
     return render_template('delete_item.html')
+
 
 @app.route("/dashboard", methods=['GET','POST'])
 def dashboard():
     if request.method == 'GET':
         return Catalog.view_catalog(db_gateway, request)
     elif request.method == 'POST':
-        return null
+        return None
+
+
+@app.route("/logout")
+@login_required
+def logout():
+    resp = make_response(redirect(url_for('login')))
+    resp.delete_cookie('username')
+    session.pop('username', None)
+    print(request.cookies.get('username'))
+    return resp
+
+@app.route("/loan_cart", methods=['GET', 'POST'])
+def loan():
+    if request.method == 'GET':
+        return render_template('loan_cart.html')
+    elif request.method == 'POST':
+        return Loan.loan_item(db_gateway, request)
 
 
 # @app.route("/catalog")

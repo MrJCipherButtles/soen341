@@ -3,9 +3,11 @@ This is SQL code for creating a library database
 on a MYSQL Server
 */
 
+/*
 SET GLOBAL validate_password_policy=LOW;
 SET GLOBAL validate_password_length=5;
 SET GLOBAL max_user_connections=1;
+*/
 
 CREATE DATABASE library;
 USE library;
@@ -80,4 +82,4 @@ CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin'; -- username = admin / pas
 GRANT ALL PRIVILEGES ON library.* TO 'admin'@'localhost'
 	WITH GRANT OPTION;
     
-INSERT INTO users VALUES ('Joshua', 'Butler', NULL, 'admin@localhost', 'admin', NULL, 'ADMIN');
+INSERT INTO users VALUES ('Joshua', 'Butler', NULL, 'admin@localhost', '21232f297a57a5a743894a0e4a801fc3', NULL, 'ADMIN');

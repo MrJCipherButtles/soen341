@@ -22,11 +22,11 @@ def admin_required(db_gateway):
         def wrapper(*args, **kwargs):
             user = request.cookies.get('username')
             if user is None:
-                return redirect(url_for('index'))
+                return redirect(url_for('restricted'))
             if db_gateway.verify_admin(user):
                 return f(*args, **kwargs)
             else:
-                return redirect(url_for('index'))
+                return redirect(url_for('restricted'))
 
         return wrapper
     return decorator

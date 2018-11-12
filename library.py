@@ -70,6 +70,7 @@ def logout():
     return resp
 
 @app.route("/loan_cart", methods=['GET', 'POST'])
+@login_required
 def loan():
     if request.method == 'GET':
         return render_template('loan_cart.html')
@@ -77,20 +78,23 @@ def loan():
         return Loan.loan_item(db_gateway)
 
 @app.route("/DeleteItem", methods=['GET', 'POST'])
+@admin_required(db_gateway)
 def deleteItem():
     if request.method == 'GET':
         return render_template('DeleteItem.html')
     elif request.method == 'POST':
-        return Loan.loan_item(db_gateway, request)
+        return ProcessItem.remove(request, db_gateway)
 
 @app.route("/AddItem", methods=['GET', 'POST'])
+@admin_required(db_gateway)
 def addItem():
     if request.method == 'GET':
         return render_template('AddItem.html')
     elif request.method == 'POST':
-        return Loan.loan_item(db_gateway, request)
+        ProcessItem.add(request, db_gateway)
 
 @app.route("/EditItem", methods=['GET', 'POST'])
+@admin_required(db_gateway)
 def editItem():
     if request.method == 'GET':
         return render_template('EditItem.html')
@@ -103,6 +107,10 @@ def search():
         return render_template('search.html')
     elif request.method == 'POST':
         return Loan.loan_item(db_gateway, request)
+
+@app.route("/restricted")
+def restricted():
+        return render_template('restriction.html')
 
 
 # @app.route("/catalog")

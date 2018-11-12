@@ -3,7 +3,7 @@ import datetime
 
 class Loan:
     @staticmethod
-    def loan_item(db_gateway, request1):
+    def loan_item(db_gateway):
         user = request.cookies.get('username')
         itemID = request.form['itemID']
 

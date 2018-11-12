@@ -74,7 +74,7 @@ def loan():
     if request.method == 'GET':
         return render_template('loan_cart.html')
     elif request.method == 'POST':
-        return Loan.loan_item(db_gateway, request)
+        return Loan.loan_item(db_gateway)
 
 @app.route("/DeleteItem", methods=['GET', 'POST'])
 def deleteItem():

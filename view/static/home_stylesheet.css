@@ -9,14 +9,19 @@ body
 {
     border-style:solid;
     padding:10;
-    font-family:apu;
     padding-top: 3%;
     color:black;
 }
 
+.greeting #title
+{
+    font-family:apu;
+}
+
 .greeting #log_out_btn
 {
-    font-family:'Times New Roman', Times, serif;
+    float:right;
+    color:red;
 }
 
 .menu_nav

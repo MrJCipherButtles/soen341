@@ -3,25 +3,21 @@ body
     font-family:t100f;
     font-weight:bold;
     font-size:17;
+    background-image: url("backgrounds/basic_background_4.jpg");
+    background-repeat:repeat-y;
 }
 
 .greeting
 {
     border-style:solid;
     padding:10;
-    padding-top: 3%;
-    color:black;
+    font-family:apu;
+    padding-top: 3%
 }
 
-.greeting #title
+.greeting a h1
 {
     font-family:apu;
-}
-
-.greeting #log_out_btn
-{
-    float:right;
-    color:red;
 }
 
 .logout {
@@ -61,6 +57,7 @@ body
 
 .list_title
 {
+    color:white;
     text-decoration: underline;
 }
 

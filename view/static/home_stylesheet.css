@@ -24,6 +24,18 @@ body
     color:red;
 }
 
+.logout {
+     line-height: 6px;
+     width: 5px;
+     font-size: 8pt;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     right:0;
+ }
+
 .menu_nav
 {
     border-style: solid;

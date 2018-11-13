@@ -1,3 +1,5 @@
+import hashlib
+
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
 
@@ -72,3 +74,41 @@ class DBGateway:
     def remove_item(self, id):
         self.cursor.execute("DELETE FROM items WHERE id = %s" % id)
         self.conn.commit()
+
+    def verify_login(self, user, password):
+        h = hashlib.md5(bytes(password, "utf-8"))
+        pwd = h.hexdigest()
+        self.cursor.execute(
+            "SELECT * FROM library.users WHERE email = '%s' AND pswd = '%s'" % (user, pwd))
+        self.cursor.fetchall()
+        return self.cursor.rowcount != 0
+
+    def verify_admin(self, email):
+        self.cursor.execute("SELECT * FROM users WHERE email = '%s' AND privilegeLevel = 'ADMIN'" % email)
+        self.cursor.fetchall()
+        return self.cursor.rowcount != 0
+
+    def register_user(self, request):
+        fname = request.form['firstname']
+        lname = request.form['lastname']
+        address_1 = request.form['address-1']
+        address_2 = request.form['address-2']
+        city = request.form['city']
+        state = request.form['state']
+        postal = request.form['postal']
+        country = request.form['country']
+        email = request.form['email']
+        password = request.form['psw']
+        psw_repeat = request.form['psw-repeat']
+        phone = request.form['phone']
+
+        if password != psw_repeat:
+            return "Passwords do not match"
+        h = hashlib.md5(bytes(password, "utf-8"))
+        pwd = h.hexdigest()
+        self.cursor.execute(
+            "INSERT INTO library.users (firstName, lastName, address, email, phone, pswd) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" % (
+                fname, lname, address_1 + ' ' + address_2 + ' ' + city + ' ' + state + ' ' + postal + ' ' + country,
+                email, str(phone), pwd))
+        self.conn.commit()
+        return "registration successful"

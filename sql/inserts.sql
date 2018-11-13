@@ -124,7 +124,7 @@ VALUES
 (53,'Deadpool','Tim Miller','Simon Kinberg, Ryan Reynolds','Ryan Reynolds, Morena Baccarin, T.J. Miller','English','English, French, Spanish','French, Spanish, Italian','2016-02-08',108),
 (54,'The Shawshank Redemption','Frank Darabont','Niki Marvin','Tim Robbins, Morgan Freeman, Bob Gunton','English','English, French, Spanish','French, Spanish, Italian','1994-09-10',142);
 
-
+/*
 INSERT INTO users (firstName,lastName,address,email,pswd,phone,privilegeLevel)
 VALUES
 ('Justin','Malone','950 real street, Montreal','justind.malone@domain.ca','tester','514-514-5145','ADMIN'),
@@ -144,3 +144,4 @@ VALUES
 ('Nicolas','Samaha','272 Rue Montpellier','nicolasnsamaha@hotmail.com','tester','514-623-4325','ADMIN'),
 ('Hugh','Jethighs','555 Nroad','hughjethighs@gmail.com','tester','754-837-8475','CLIENT'),
 ('Po','Zhu','54 Young Street','Po.Zhu@gmail.com','tester','444-474-4747','CLIENT');
+*/

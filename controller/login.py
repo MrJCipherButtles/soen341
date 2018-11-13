@@ -10,6 +10,7 @@ class Login:
         if not db_gateway.verify_login(user, pswd):
             return "Does not exist"
         session['username'] = user
+        
         resp = make_response(redirect(url_for('dashboard')))
         resp.set_cookie('username', user)
         return resp

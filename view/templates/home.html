@@ -26,17 +26,13 @@
     </head>
     <body>
         <div class="greeting">
-           <a href="/"><h1>Welcome to Bibli.io</h1></a>
-
-
+            <a href="/"><h1 id="title">Welcome to Bibli.io</h1></a>
+            <div id="logout">
+                <button  onclick="window.location.href='/logout'">Log Out</button> {{ request.cookies.get('username') }}
+            </div>
         </div>
 
-        <div class="logout">
-            <button  onclick="window.location.href='/logout'">Log Out</button> {{ request.cookies.get('username') }}
-        </div>
-
-
-
+        
         
         <div class="menu_nav col-sm-2">
             <p class="list_title actions_list">User Actions</p>

@@ -15,12 +15,14 @@ body
     padding-top: 3%
 }
 
-.greeting a h1
+#title
 {
     font-family:apu;
 }
 
-.logout {
+
+#logout
+{
      line-height: 6px;
      width: 5px;
      font-size: 8pt;

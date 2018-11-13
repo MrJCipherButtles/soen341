@@ -51,14 +51,9 @@ def delete_item():
         return ProcessItem.remove(request, db_gateway)
     return render_template('delete_item.html')
 
-<<<<<<< HEAD
-@app.route("/home/view_catalog", methods=['GET','POST'])
-def view_catalog():
-=======
 
 @app.route("/dashboard", methods=['GET','POST'])
 def dashboard():
->>>>>>> 3358e3edbfb3d9a95e753fa6ce43a2fce21f903c
     if request.method == 'GET':
         return Catalog.view_catalog(db_gateway, request)
     elif request.method == 'POST':

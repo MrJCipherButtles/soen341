@@ -45,6 +45,14 @@ def registeradmin():
     return Register.register_user_admin(db_gateway, request)
 
 
+@app.route("/successLogin", methods=['GET'])
+def successLogin():
+  if request.method == 'GET':
+    return render_template('successLogin,html')
+  elif not (request.method == 'GET'):
+    return "Illegal action"
+
+
 @app.route("/add_item", methods=['GET', 'POST'])
 @admin_required(db_gateway)
 def add_item():

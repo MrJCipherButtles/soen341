@@ -112,3 +112,28 @@ class DBGateway:
                 email, str(phone), pwd))
         self.conn.commit()
         return "registration successful"
+
+    def register_user_admin(self, request):
+        fname = request.form['firstname']
+        lname = request.form['lastname']
+        address_1 = request.form['address-1']
+        address_2 = request.form['address-2']
+        city = request.form['city']
+        state = request.form['state']
+        postal = request.form['postal']
+        country = request.form['country']
+        email = request.form['email']
+        password = request.form['psw']
+        psw_repeat = request.form['psw-repeat']
+        phone = request.form['phone']
+        typeuser = 'ADMIN'
+        if password != psw_repeat:
+          return "Passwords do not match"
+        h = hashlib.md5(bytes(password, "utf-8"))
+        pwd = h.hexdigest()
+        self.cursor.execute(
+            "INSERT INTO library.users (firstName, lastName, address, email, phone, pswd, typeuser) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (
+                fname, lname, address_1 + ' ' + address_2 + ' ' + city + ' ' + state + ' ' + postal + ' ' + country,
+                email, str(phone), pwd, typeuser))
+        self.conn.commit()
+        return "registration successful"

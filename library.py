@@ -36,6 +36,13 @@ def register():
     elif request.method == 'POST':
         return Register.register_user(db_gateway, request)
 
+@app.route("registerAdmin", methods=['GET', 'POST'])
+def registerAdmin():
+  if request.method == 'GET':
+    return render_template('makeAdmin.html')
+  elif request.method == 'POST':
+    return Register.register_user_admin(db_gateway, request)
+
 
 @app.route("/add_item", methods=['GET', 'POST'])
 @admin_required(db_gateway)

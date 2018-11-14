@@ -23,7 +23,6 @@ body
 .container p, .container h1
 {
     border-block-end: 50px;
-    background-color:rgb(175, 157, 255);
     opacity:50%;
 }
 

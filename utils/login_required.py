@@ -16,14 +16,14 @@ def login_required(f):
     return wrap
 
 
-def admin_required(db_gateway):
+def admin(db_gateway, denied=False):
     def decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
             user = request.cookies.get('username')
             if user is None:
                 return redirect(url_for('restricted'))
-            if db_gateway.verify_admin(user):
+            if not denied == db_gateway.verify_admin(user):
                 return f(*args, **kwargs)
             else:
                 return redirect(url_for('restricted'))

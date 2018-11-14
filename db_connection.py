@@ -20,11 +20,17 @@ class DBGateway:
 
         self.class_to_table = {"BOOK": "prints", "MAGAZINE": "prints", "MOVIE": "medias", "MUSIC": "medias"}
 
-    def get_all(self, Class):
+    def get_all(self, Class, email=None):
         res = []
-        self.cursor.execute(
-            "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper())
+        if email is None:
+            query = "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper()
+        else:
+            query = "SELECT * FROM library.items INNER JOIN loans ON items.id = loans.itemId WHERE items.itemType = '%s' AND loans.clientId = '%s';" % (
+            Class.__name__.upper(), email)
+        self.cursor.execute(query)
         ids = [res[0] for res in self.cursor.fetchall()]
+        if len(ids) == 0:
+            return []
         ids_str = self.arr_to_mysqlarr(ids)
         query = "SELECT * FROM library.%s WHERE itemId IN %s;" % (self.class_to_table[Class.__name__.upper()], ids_str)
         print(query)
@@ -128,7 +134,7 @@ class DBGateway:
         phone = request.form['phone']
         typeuser = 'ADMIN'
         if password != psw_repeat:
-          return "Passwords do not match"
+            return "Passwords do not match"
         h = hashlib.md5(bytes(password, "utf-8"))
         pwd = h.hexdigest()
         self.cursor.execute(
@@ -137,4 +143,6 @@ class DBGateway:
                 email, str(phone), pwd, typeuser))
         self.conn.commit()
         return "registration successful"
-    
+
+    def get_loans_for_user(self, c, email):
+        return self.get_all(c, email)

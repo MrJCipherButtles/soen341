@@ -41,16 +41,17 @@
             <div class="navlist">
                 <p class="list_title">User Actions</p>
                 <ul class="actions_list">
-                    <li><a href="{{url_for('search')}}">Custom Search</a></li>
+                    <li><a href="{{url_for('search')}}">Search</a></li>
                     <li><a href="{{url_for('active_loans')}}">View Active Loans</a></li>
                     <li><a href="{{url_for('loan')}}">Make Loan</a></li> <!--new edit-->
                 </ul>
                 <p class="list_title">Administrator Actions</p>
                 <ul class="actions_list">
-                    <li><a href="add_item">Add Library Record</a></li>
-                    <li><a href="editItem">Modify Library Record</a></li>
-                    <li><a href="deleteItem">Remove Library Record</a></li>
-                    <li><a href="registerAdmin">Manage Administrators</a></li>
+                    <li><a href="{{url_for('add_item')}}">Add Library Record</a></li>
+                    <li><a href="{{url_for('editItem')}}">Modify Library Record</a></li>
+                    <li><a href="{{url_for('deleteItem')}}">Remove Library Record</a></li>
+                    <li><a href="{{url_for('registeradmin')}}">Register Administrator</a></li>
+                    <li><a href="{{url_for('active_users')}}">View Active User Count</a></li>
                 </ul>
                 <p class="list_title">Exit</p>
                 <ul class="actions_list">
@@ -61,89 +62,6 @@
         <div class="main">
           <div id="content" class="col-sm-10">
             {% block content %}
-            <!-- {% if books | length != 0 %}
-                <h6 class="table_title">BOOKS</h6>
-                <table>
-                    <tr>
-                        <td>Title</td>
-                        <td>Author</td>
-                        <td>Publisher</td>
-                        <td>Year Published</td>
-                        <td>Language</td>
-                        <td>ISBN</td>
-                    </tr>
-                    {% for book in books %}
-                    <tr>
-                        <td>{{book.title}}</td>
-                        <td>{{book.author}}</td>
-                        <td>{{book.publisher}}</td>
-                        <td>{{book.year_published}}</td>
-                        <td>{{book.language}}</td>
-                        <td>{{book.isbn_13}}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            {% endif %}
-            
-            {% if movies | length != 0%}
-                <h6 class="table_title">MOVIES</h6>
-                <table>
-                    <tr>
-                        <td>Title</td>
-                        <td>Director</td>
-                        <td>Producer</td>
-                        <td>Release Date</td>
-                    </tr>
-                    {% for movie in movies %}
-                    <tr>
-                        <td>{{movie.title}}</td>
-                        <td>{{movie.director}}</td>
-                        <td>{{movie.producer}}</td>
-                        <td>{{movie.release_date}}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            {% endif %}
-            {% if magazines | length != 0 %}
-                <h6 class="table_title">MAGAZINES</h6>
-                <table>
-                    <tr>
-                        <td>Title</td>
-                        <td>Publisher</td>
-                        <td>Year Published</td>
-                        <td>ISBN</td>
-                    </tr>
-                    {% for magazine in magazines %}
-                    <tr>
-                        <td>{{magazine.title}}</td>
-                        <td>{{magazine.publisher}}</td>
-                        <td>{{magazine.year_published}}</td>
-                        <td>{{magazine.isbn_13}}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            {% endif %}
-            {% if musics | length != 0 %}
-                <h6 class="table_title">MUSIC</h6>
-                <table>
-                    <tr>
-                        <td>Title</td>
-                        <td>Artist</td>
-                        <td>Label</td>
-                        <td>Type</td>
-                        <td>Release Date</td>
-                    </tr>
-                    {% for music in musics %}
-                    <tr>
-                        <td>{{music.title}}</td>
-                        <td>{{music.artist}}</td>
-                        <td>{{music.label}}</td>
-                        <td>{{music.type}}</td>
-                        <td>{{music.release_date}}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            {% endif %} -->
             {% endblock %}
           </div>
         </div>

@@ -16,9 +16,11 @@ html {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.labels{
-    line-height: 40px;
-}
 
 
 
+.labels {
+    margin-left:auto;
+    margin-right:auto;
+	text-align: left;
+  }

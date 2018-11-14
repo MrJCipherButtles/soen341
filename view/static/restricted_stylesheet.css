@@ -1,0 +1,61 @@
+body
+{
+    font-family:t100f;
+    font-weight:bold;
+    font-size:17;
+
+    background-image: url("backgrounds/basic_background_4.jpg");
+    background-repeat: no-repeat;
+    background-color:black;
+}
+
+
+.message
+{
+    color:white;
+
+}
+.greeting
+{
+    border-style:solid;
+    padding:10;
+    font-family:apu;
+    padding-top: 3%
+}
+
+.menu_nav
+{
+    border-style: solid;
+    width:14%;
+    height:100%;
+    left:0;
+    text-align:left;
+    position:sticky;
+    background-color:rgba(0,0,0,0.2);
+}
+
+.menu_nav .actions_list
+{
+    list-style-type:none;
+    position:relative;
+    margin:3;
+    padding:5;
+}
+
+.catalog
+{
+    border-style:solid;
+    height:100%;
+    background-color:rgba(0,0,0,0.2);
+}
+
+.button
+{
+    width:90%;
+}
+
+.list_title
+{
+    color:white;
+    text-decoration: underline;
+}

@@ -1,33 +1,13 @@
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Welcome to Bibli.io</title>
-        <link rel="stylesheet" href="../static/user_dashboard_stylesheet.css">
-        <link rel="stylesheet" href="../static/fonts.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="greeting">
-            <h1 style="color:white;">Welcome to Bibli.io</h1>
-        </div>
-        <div>
-        <div class="menu_nav col-sm-2">
-            <p class="list_title actions_list">User Actions</p>
-            <ul class="actions_list">
-                <li><button class="button" type="button">Custom Search</button></li>
-                <li><button class="button" type="button">View Active Loans</button></li>
-                <li><button class="button" type="button">View Loan Cart</button></li>
-            </ul>
-            <p class="list_title actions_list">Administrator Actions</p>
-            <ul class="actions_list">
-                <li><button class="button" type="button">Add Library Record</button></li>
-                <li><button class="button" type="button">Modify Library Record</button></li>
-                <li><button class="button" type="button">Remove Library Record</button></li>
-                <li><button class="button" type="button">Manage Library Users</button></li>
-            </ul>
-        </div>
-        <div class="catalog col-sm-10">
-            <form method="POST" style="border:1px solid #ccc">
+<head>
+	<title>Custom Search</title>
+	<link rel="stylesheet" href="../static/fonts.css">
+	<link rel="stylesheet" href="../static/deleteItem_style.css">
+</head>
+<body>
+	<form method="post" style="border:1px solid #ccc">
   		<div class="container">
 			<h1>Loan Checkout</h1>
 			<p>Please fill in required information for the item.</p>
@@ -42,7 +22,5 @@
     		<a class="link" href="\dashboard">Cancel Loan</a>
   		</div>
 	</form>
-        </div>
-        </div>
-    </body>
+</body>
 </html>

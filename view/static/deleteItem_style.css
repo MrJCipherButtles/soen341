@@ -23,10 +23,15 @@ body
 .container p, .container h1,
 {
     border-block-end: 50px;
-    background-color:rgb(175, 157, 255);
     opacity:50%;
 }
-
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black !important;
+}
 .link
 {
     font-family:'Times New Roman', Times, serif;

@@ -23,7 +23,14 @@ html {
   color: rgb(58, 19, 167);
   font-weight:bold;
 }
-
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:90%;
+    color: black !important;
+}
 .label_text {
   font-family:tb;
   opacity:1;

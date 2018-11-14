@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect, session, make_response
 
-from utils.login_required import login_required, admin_required
+from models.book.book import Book
+from models.movie.movie import Movie
+from models.music.music import Music
+from utils.login_required import login_required, admin
 from db_connection import DBGateway
 from controller.login import Login
 from controller.register import Register
@@ -20,8 +23,8 @@ app.active_users = 0
 @app.route('/', defaults={'path': ''})
 @app.route("/<path:path>")
 @login_required
-def index():
-  return redirect(url_for('home'))
+def index(path):
+    return redirect(url_for('home'))
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -41,6 +44,7 @@ def register():
 
 
 @app.route("/registerAdmin", methods=['GET', 'POST'])
+@admin(db_gateway)
 def registeradmin():
     if request.method == 'GET':
         return render_template('registerAdmin.html')
@@ -50,14 +54,14 @@ def registeradmin():
 
 @app.route("/successLogin", methods=['GET'])
 def successLogin():
-  if request.method == 'GET':
-    return render_template('successLogin.html')
-  elif not (request.method == 'GET'):
-    return "Illegal action"
+    if request.method == 'GET':
+        return render_template('successLogin.html')
+    elif not (request.method == 'GET'):
+        return "Illegal action"
 
 
 @app.route("/add_item", methods=['GET', 'POST'])
-@admin_required(db_gateway)
+@admin(db_gateway)
 def add_item():
     if request.method == 'POST':
         ProcessItem.add(request, db_gateway)
@@ -65,7 +69,7 @@ def add_item():
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
-@admin_required(db_gateway)
+@admin(db_gateway)
 def delete_item():
     if request.method == 'POST':
         return ProcessItem.remove(request, db_gateway)
@@ -73,6 +77,7 @@ def delete_item():
 
 
 @app.route("/home", methods=['GET', 'POST'])
+@login_required
 def home():
   if request.method == 'GET':
     return Catalog.view_catalog(db_gateway, request)
@@ -88,6 +93,7 @@ def logout():
 
 @app.route("/loan_cart", methods=['GET', 'POST'])
 @login_required
+@admin(db_gateway, denied=True)
 def loan():
     if request.method == 'GET':
         return render_template('loan_cart.html')
@@ -96,7 +102,7 @@ def loan():
 
 
 @app.route("/DeleteItem", methods=['GET', 'POST'])
-@admin_required(db_gateway)
+@admin(db_gateway)
 def deleteItem():
     if request.method == 'GET':
         return render_template('DeleteItem.html')
@@ -105,7 +111,7 @@ def deleteItem():
 
 
 @app.route("/AddItem", methods=['GET', 'POST'])
-@admin_required(db_gateway)
+@admin(db_gateway)
 def addItem():
     if request.method == 'GET':
         return render_template('AddItem.html')
@@ -114,7 +120,7 @@ def addItem():
 
 
 @app.route("/EditItem", methods=['GET', 'POST'])
-@admin_required(db_gateway)
+@admin(db_gateway)
 def editItem():
     if request.method == 'GET':
         return render_template('EditItem.html')
@@ -123,6 +129,8 @@ def editItem():
 
 
 @app.route("/search", methods=['GET', 'POST'])
+@login_required
+@admin(db_gateway, denied=True)
 def search():
     if request.method == 'GET':
         return render_template('search.html')
@@ -133,6 +141,19 @@ def search():
 @app.route("/restricted")
 def restricted():
     return render_template('restriction.html')
+
+
+@app.route("/active_loans")
+@login_required
+@admin(db_gateway, denied=True)
+def active_loans():
+    return Loan.view_active_loans(request, db_gateway)
+
+
+@app.route("/active_users")
+@admin(db_gateway)
+def active_users():
+    return render_template('active_users.html', active_users=Login.active_users)
 
 
 # @app.route("/catalog")

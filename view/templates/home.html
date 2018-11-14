@@ -22,6 +22,9 @@
             function load_deleteItem() {
                  document.getElementById("content").innerHTML='<object type="text/html" data="DeleteItem" style="width: 83% !important; height: 100% !important;"></object>';
             }
+            function addAdminUser() {
+                document.getElementById("content").innerHTML='<object type="text/html" data="registerAdmin" style="width: 83% !important; height: 100% !important;"></object>';
+            }
         </script>
     </head>
     <body>
@@ -32,8 +35,8 @@
             </div>
         </div>
 
-        
-        
+
+
         <div class="menu_nav col-sm-2">
             <p class="list_title actions_list">User Actions</p>
             <ul class="actions_list">
@@ -46,7 +49,7 @@
                 <li><button class="button" type="button" onclick="load_addItem()">Add Library Record</button></li>
                 <li><button class="button" type="button" onclick="load_editItem()">Modify Library Record</button></li>
                 <li><button class="button" type="button" onclick="load_deleteItem()">Remove Library Record</button></li>
-                <li><button class="button" type="button">Manage Library Users</button></li>
+                <li><button class="button" type="button" onclick="load_addAdminUser()">Manage Library Users</button></li>
             </ul>
         </div>
         <div id="content" clas="col-sm-10">

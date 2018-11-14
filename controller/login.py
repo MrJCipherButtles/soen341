@@ -11,7 +11,7 @@ class Login:
             return "Does not exist"
         session['username'] = user
         
-        resp = make_response(redirect(url_for('dashboard')))
+        resp = make_response(redirect(url_for('home')))
         resp.set_cookie('username', user)
         return resp
 

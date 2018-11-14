@@ -1,3 +1,5 @@
+{% extends 'home.html' %}
+{% block content %}
 {% if books | length != 0 %}
     <h6>BOOKS</h6>
     <table>
@@ -81,3 +83,4 @@
         {% endfor %}
     </table>
 {% endif %}
+{% endblock %}

@@ -137,3 +137,4 @@ class DBGateway:
                 email, str(phone), pwd, typeuser))
         self.conn.commit()
         return "registration successful"
+    

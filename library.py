@@ -18,7 +18,7 @@ app.static_folder = 'view/static'
 @app.route('/')
 @login_required
 def index():
-  return redirect(url_for('dashboard'))
+  return redirect(url_for('home'))
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -69,8 +69,8 @@ def delete_item():
   return render_template('delete_item.html')
 
 
-@app.route("/dashboard", methods=['GET', 'POST'])
-def dashboard():
+@app.route("/home", methods=['GET', 'POST'])
+def home():
   if request.method == 'GET':
     return Catalog.view_catalog(db_gateway, request)
   elif request.method == 'POST':

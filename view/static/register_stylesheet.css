@@ -1,51 +1,24 @@
-body
-{
-    text-align:center;
-    background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow-y: scroll;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+
+
+html {
+	background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+
 }
 
-.container
-{
-    font-size:40px;
-    font-family:t100f;
+.container {
+	text-align:center;
+	font-family: 'Open Sans', sans-serif;
 }
 
-.container p
-{
-    font-weight:bold;
+.labels{
+    line-height: 40px;
 }
 
-.container h1
-{
-    font-family:apu;
-    font-size:40px;
-}
 
-.container p, .container h1,
-{
-    border-block-end: 50px;
-    background-color:rgb(175, 157, 255);
-    opacity:50%;
-}
 
-.link
-{
-    font-family:'Times New Roman', Times, serif;
-    border-style: double;
-}
-
-.clearfix button
-{
-    background-color:white;
-    border:black;
-    border-style:ridge;
-    color:black;
-    font-size: 25px;
-    font-weight:bold;
-    font-family: t100f;
-    cursor:pointer;
-}

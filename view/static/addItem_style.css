@@ -23,7 +23,6 @@ body
 .container p, .container h1
 {
     border-block-end: 50px;
-    background-color:rgb(175, 157, 255);
     opacity:50%;
 }
 
@@ -44,4 +43,10 @@ body
     font-family: t100f;
     cursor:pointer;
 }
-
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black !important;
+}

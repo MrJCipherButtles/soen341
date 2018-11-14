@@ -48,7 +48,7 @@ def registeradmin():
 @app.route("/successLogin", methods=['GET'])
 def successLogin():
   if request.method == 'GET':
-    return render_template('successLogin,html')
+    return render_template('successLogin.html')
   elif not (request.method == 'GET'):
     return "Illegal action"
 

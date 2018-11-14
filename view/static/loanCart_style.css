@@ -19,14 +19,8 @@ body
     font-family:apu;
     font-size:40px;
 }
-.button {
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    color: black !important;
-}
-.container p, .container h1,
+
+.container p, .container h1
 {
     border-block-end: 50px;
     opacity:50%;
@@ -48,5 +42,12 @@ body
     font-weight:bold;
     font-family: t100f;
     cursor:pointer;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black !important;
 }
 

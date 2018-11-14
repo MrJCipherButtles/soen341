@@ -58,7 +58,7 @@ def successLogin():
 def add_item():
   if request.method == 'POST':
     ProcessItem.add(request, db_gateway)
-  return render_template('add_item.html')
+  return render_template('AddItem.html')
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
@@ -66,7 +66,7 @@ def add_item():
 def delete_item():
   if request.method == 'POST':
     return ProcessItem.remove(request, db_gateway)
-  return render_template('delete_item.html')
+  return render_template('DeleteItem.html')
 
 
 @app.route("/home", methods=['GET', 'POST'])

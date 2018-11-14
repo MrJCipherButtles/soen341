@@ -45,28 +45,13 @@
                     <li><button class="button" type="button" onclick="load_addItem()">Add Library Record</button></li>
                     <li><button class="button" type="button" onclick="load_editItem()">Modify Library Record</button></li>
                     <li><button class="button" type="button" onclick="load_deleteItem()">Remove Library Record</button></li>
-                    <li><button class="button" type="button">Manage Administrators</button></li> <!--new edit-->
+                    <li><button class="button" type="button" onclick="load_addAdminUser()">Manage Administrators</button></li> <!--new edit-->
                 </ul>
                 <p class="list_title">Exit</p>
                 <ul class="actions_list">
                     <li><button class="button" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>
                 </ul>
             </div>
-        </div>
-        <div class="menu_nav col-sm-2">
-            <p class="list_title actions_list">User Actions</p>
-            <ul class="actions_list">
-                <li><button class="button" type="button" onclick="load_search()">Custom Search</button></li>
-                <li><button class="button" type="button" >View Active Loans</button></li>
-                <li><button class="button" type="button" onclick="load_loancart()">View Loan Cart</button></li>
-            </ul>
-            <p class="list_title actions_list">Administrator Actions</p>
-            <ul class="actions_list">
-                <li><button class="button" type="button" onclick="load_addItem()">Add Library Record</button></li>
-                <li><button class="button" type="button" onclick="load_editItem()">Modify Library Record</button></li>
-                <li><button class="button" type="button" onclick="load_deleteItem()">Remove Library Record</button></li>
-                <li><button class="button" type="button" onclick="load_addAdminUser()">Manage Library Users</button></li>
-            </ul>
         </div>
         <div class="main">
           <div id="content" class="col-sm-10"></div>

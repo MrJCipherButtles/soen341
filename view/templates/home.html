@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
     <head>
         <title>Welcome to Bibli.io</title>
@@ -8,19 +8,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript">
             function load_search() {
-                 document.getElementById("content").innerHTML='<object type="text/html" data="search" style="width: 83% !important; height: 100% !important;"></object>';
+                document.getElementById("content").innerHTML='<object type="text/html" data="search" style="width: 768px !important; height: 1366px !important;"></object>';
             }
-            function load_loancart() {
-                 document.getElementById("content").innerHTML='<object type="text/html" data="loan_cart" style="width: 83% !important; height: 100% !important;" ></object>';
+            function load_loan() {
+                document.getElementById("content").innerHTML='<object type="text/html" data="loan_cart" style="width: 768px; height: 1366px;" ></object>';
             }
             function load_addItem() {
-                 document.getElementById("content").innerHTML='<object type="text/html" data="AddItem" style="width: 83% !important; height: 100% !important;"></object>';
+                document.getElementById("content").innerHTML='<object type="text/html" data="AddItem" style="width: 768px !important; height: 1366px !important;" ></object>';
             }
             function load_editItem() {
-                 document.getElementById("content").innerHTML='<object type="text/html" data="EditItem" style="width: 83% !important; height: 100% !important;" ></object>';
+                document.getElementById("content").innerHTML='<object type="text/html" data="EditItem" style="width: 768px !important; height: 1366px !important;" ></object>';
             }
             function load_deleteItem() {
-                 document.getElementById("content").innerHTML='<object type="text/html" data="DeleteItem" style="width: 83% !important; height: 100% !important;"></object>';
+                document.getElementById("content").innerHTML='<object type="text/html" data="DeleteItem" style="width: 768px !important; height: 1366px !important;"></object>';
             }
             function load_addAdminUser() {
                 document.getElementById("content").innerHTML='<object type="text/html" data="registerAdmin" style="width: 83% !important; height: 100% !important;"></object>';
@@ -28,12 +28,32 @@
         </script>
     </head>
     <body>
-        <div class="greeting">
-            <a href="/"><h1 id="title">Welcome to Bibli.io</h1></a>
-            <div id="logout">
-                <button  onclick="window.location.href='/logout'">Log Out</button> {{ request.cookies.get('username') }}
+        <div class="sidenav">
+            <div class="header">
+                <a href="/" class="logo"><h1>Welcome to Bibli.io</h1></a>
+                <p>Logged in as: {{ request.cookies.get('username') }}</p>
+            </div>
+            <div class="navlist">
+                <p class="list_title">User Actions</p>
+                <ul class="actions_list">
+                    <li><button class="button" type="button" onclick="load_search()">Custom Search</button></li>
+                    <li><button class="button" type="button" >View Active Loans</button></li>
+                    <li><button class="button" type="button" onclick="load_loan()">Make Loan</button></li> <!--new edit-->
+                </ul>
+                <p class="list_title">Administrator Actions</p>
+                <ul class="actions_list">
+                    <li><button class="button" type="button" onclick="load_addItem()">Add Library Record</button></li>
+                    <li><button class="button" type="button" onclick="load_editItem()">Modify Library Record</button></li>
+                    <li><button class="button" type="button" onclick="load_deleteItem()">Remove Library Record</button></li>
+                    <li><button class="button" type="button">Manage Administrators</button></li> <!--new edit-->
+                </ul>
+                <p class="list_title">Exit</p>
+                <ul class="actions_list">
+                    <li><button class="button" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>
+                </ul> 
             </div>
         </div>
+<<<<<<< HEAD
 
 
 
@@ -53,6 +73,10 @@
             </ul>
         </div>
         <div id="content" clas="col-sm-10">
+=======
+        <div class="main">
+            <div id="content" class="col-sm-10"></div>
+>>>>>>> 9becc6b2798de27ce25f7b7f7abe59a0e80f1128
         </div>
     </body>
 </html>

@@ -1,8 +1,7 @@
 body
 {
     text-align:center;
-    background-image: url("backgrounds/clouds.jpg");
-    background-repeat: no-repeat;
+    background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
 }
 
 .container

@@ -22,6 +22,13 @@
             function load_deleteItem() {
                 document.getElementById("content").innerHTML='<object type="text/html" data="DeleteItem" style="width: 768px !important; height: 1366px !important;"></object>';
             }
+            function load_addAdminUser() {
+                document.getElementById("content").innerHTML='<object type="text/html" data="registerAdmin" style="width: 768px !important; height: 1366px !important;"></object>';
+            }
+            function helper() {
+              document.getElementById("content").innerHTML='<object type="text/html" data="successLogin" style="width: 768px !important; height: 1366px !important;"></object>';
+              load_addAdminUser();
+            }
         </script>
     </head>
     <body>
@@ -42,16 +49,16 @@
                     <li><button class="button" type="button" onclick="load_addItem()">Add Library Record</button></li>
                     <li><button class="button" type="button" onclick="load_editItem()">Modify Library Record</button></li>
                     <li><button class="button" type="button" onclick="load_deleteItem()">Remove Library Record</button></li>
-                    <li><button class="button" type="button">Manage Administrators</button></li> <!--new edit-->
+                    <li><button class="button" type="button" onclick="helper()">Manage Administrators</button></li>
                 </ul>
                 <p class="list_title">Exit</p>
                 <ul class="actions_list">
                     <li><button class="button" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>
-                </ul> 
+                </ul>
             </div>
         </div>
         <div class="main">
-            <div id="content" class="col-sm-10"></div>
+          <div id="content" class="col-sm-10"></div>
         </div>
     </body>
 </html>

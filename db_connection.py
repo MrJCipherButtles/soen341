@@ -132,7 +132,7 @@ class DBGateway:
         h = hashlib.md5(bytes(password, "utf-8"))
         pwd = h.hexdigest()
         self.cursor.execute(
-            "INSERT INTO library.users (firstName, lastName, address, email, phone, pswd, typeuser) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (
+            "INSERT INTO library.users (firstName, lastName, address, email, phone, pswd, privilegeLevel) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (
                 fname, lname, address_1 + ' ' + address_2 + ' ' + city + ' ' + state + ' ' + postal + ' ' + country,
                 email, str(phone), pwd, typeuser))
         self.conn.commit()

@@ -2,7 +2,7 @@ html {
 	background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
 	background-size: cover;
 	height: 100%;
-	overflow: hidden;
+	overflow: auto;
 }
 
 .container {

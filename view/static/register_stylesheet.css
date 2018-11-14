@@ -2,6 +2,10 @@ body
 {
     text-align:center;
     background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
 }
 
 .container

@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
 INSERT INTO items (loanable,itemType)
 VALUES
 ('Y','BOOK'),
@@ -55,14 +57,15 @@ VALUES
 ('Y','MOVIE'),
 ('Y','MOVIE');
 
+-- noinspection SqlNoDataSourceInspection
 INSERT INTO prints (itemId,title,author,num_pages,publisher,year_published,language,isbn_10,isbn_13) -- Books
 VALUES 
 (1,'Fifty Shades of Grey','E. L. James',514,'Vintage Books',2011,'English','0345803485','978-0345803481'),
 (2,'The Subtle Art of Not Giving a F*ck','Mark Manson',224,'Harper',2016,'English','0062641549','978-0062641540'),
 (3,'Of Mice and Men','John Steinbeck',112,'Penguin Books',1993,'English','0140177396','978-0140177398'),
-(4,'The Intelligent Investor: The Definitive Book on Value Investing','Benjamin Graham',640,'Harper Business; REV edition',2006,'English','0060555665','978-0060555665'),
-(5,'Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not!','Robert T. Kiyosaki',336,'Plata Publishing; Second edition',2017,'English','1612680194','978-1612680194'),
-(6,'The Elements of Pizza: Unlocking the Secrets to World-Class Pies at Home','Ken Forkish',256,'Ten Speed Press',2016,'English','160774838X','978-1607748380'),
+(4,'The Intelligent Investor','Benjamin Graham',640,'Harper Business; REV edition',2006,'English','0060555665','978-0060555665'),
+(5,'Rich Dad Poor Dad','Robert T. Kiyosaki',336,'Plata Publishing; Second edition',2017,'English','1612680194','978-1612680194'),
+(6,'The Elements of Pizza','Ken Forkish',256,'Ten Speed Press',2016,'English','160774838X','978-1607748380'),
 (7,'The Five Element','Razine Bens',459,'Za Publish',2018,'English','0345803123','978-0062641512'),
 (8,'The Big MAC','Mark BigMac', 233, 'FoodAndBooks',2017,'German, English','0140337396','978-0011641540'),
 (9,'The Big Three','Jeremy Steinfield',599,'MarketPub',2016,'Arabic, English','0345803499','978-0166677398'),

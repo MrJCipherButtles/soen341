@@ -24,6 +24,9 @@ body
     font-size: 70%;
     font-weight: bolder;
 }
+input[type=date].textFieldStyle{
+    font-size: 70%;
+}
 .dropdownMenu{
     font-size: 100%;
     font-weight: bolder;
@@ -34,13 +37,25 @@ body
     margin: 4px 2px;
     cursor: pointer;
     color: black !important;
+    width: auto;
+    font-size: medium;
+}
+.labelStyle{
+    font-size: 90%;
+    float: right;
+}
+input[type=text].textFieldStyle{
+    font-size: 70%;
 }
 .link
 {
     font-family:'Times New Roman', Times, serif;
     border-style: double;
 }
-
+.tableAlignment{
+    margin-left: auto;
+    margin-right: auto;
+}
 .clearfix button
 {
     background-color:white;

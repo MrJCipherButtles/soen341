@@ -20,12 +20,22 @@ body
     font-size:30px;
     padding-top: 5%;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number].numberFieldStyle{
+    font-size: 70%;
+}
 .button {
     text-decoration: none;
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
     color: black !important;
+    width: auto;
+    font-size: medium;
 }
 .link
 {

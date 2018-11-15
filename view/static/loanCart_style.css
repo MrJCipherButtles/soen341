@@ -44,5 +44,6 @@ body
     cursor: pointer;
     width:auto !important;
     color: black !important;
+    font-size: medium;
 }
 

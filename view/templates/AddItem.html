@@ -64,22 +64,40 @@
           	<div id="display_Book" style="display: none">
           		<p>Please enter following field to add a --- BOOK </p>
           		<form name="book" method="post">
-          			<label for="title">Title : </label>
-                              <input type="text" name="title"/> <br>
-                         <label for="author">Author : </label>
-                              <input type="text"  name="author"/> <br>
-                         <label for="num_pages">Number of pages : </label>
-                              <input type="text"  name="num_pages"/> <br>
-                         <label for="publisher">Publisher : </label>
-                              <input type="text" name="publisher"/> <br>
-                         <label for="year_published">Year Published : </label>
-                              <input type="text" name="year_published"/> <br>
-                         <label for="language">Language : </label>
-                              <input type="text" name="language"/> <br>
-                         <label for="isbn_10">ISBN 10 : </label>
-                              <input type="text" name="isbn_10"/> <br>
-                         <label for="isbn_13">ISBN 13 : </label>
-                              <input type="text"  name="isbn_13"/> <br>
+                  <table class="tableAlignment">
+                    <tr>
+          			         <td><label class="labelStyle" for="title">Title : </label></td>
+                              <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="author">Author : </label></td>
+                              <td><input class="textFieldStyle" placeholder="Enter Author Name" type="text"  name="author"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="num_pages">Number of pages : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter Number of Pages" name="num_pages"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="publisher">Publisher : </label></td>
+                              <td><input class="textFieldStyle" type="text" placeholder="Enter Publisher" name="publisher"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="year_published">Year Published : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter Year Published" name="year_published"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="language">Language : </label></td>
+                         <td><input class="textFieldStyle" type="text" placeholder="Enter Language" name="language"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="isbn_10">ISBN 10 : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter ISBN 10" name="isbn_10"/></td>
+                    </tr> 
+                    <tr>
+                         <td><label class="labelStyle" for="isbn_13">ISBN 13 : </label></td>
+                          <td><input class="textFieldStyle" type="text" placeholder="Enter ISBN 13" name="isbn_13"/></td>
+                    </tr> 
+                    </table>
                          <input name="media_type" value="BOOK" style="display: none"></br>
                          <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Book</button>
           		</form>
@@ -87,18 +105,32 @@
 			  <div id ="display_Magazine" style="display: none">
 				<p>Please enter following field to add a --- MAGAZINE </p>
           		<form name="magazine" method="post">
-                        <label for="title">Title : </label>
-                        <input type="text" name="title"/> <br>
-                        <label for="publisher">Publisher : </label>
-                        <input type="text" name="publisher"/> <br>
-                        <label for="year_published">Year Published : </label>
-                        <input type="text" name="year_published"/> <br>
-                        <label for="language">Language : </label>
-                        <input type="text" name="language"/> <br>
-                        <label for="isbn_10">ISBN 10 : </label>
-                        <input type="text" name="isbn_10"/> <br>
-                        <label for="isbn_13">ISBN 13 : </label>
-                        <input type="text" name="isbn_13"/> <br>
+                 <table class="tableAlignment">
+                     <tr>
+                        <td><label class="labelStyle" for="title">Title : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="publisher">Publisher : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Publisher" type="text" name="publisher"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="year_published">Year Published : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Year Published" type="text" name="year_published"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="language">Language : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Language" type="text" name="language"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="isbn_10">ISBN 10 : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter ISBN 10" type="text" name="isbn_10"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="isbn_13">ISBN 13 : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter ISBN 13" type="text" name="isbn_13"/></td>
+                    </tr> 
+                    </table>
                         <input name="media_type" value="MAGAZINE" style="display: none"></br>
                         <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Magazine</button>
                     </form>         		
@@ -106,24 +138,44 @@
           	<div id="display_Movies" style="display: none">
           		<p>Please enter following field to add a  --- MOVIE</p>
           		<form name="movie" method="post">
-                        <label for="title">Title : </label>
-                        <input type="text" name="title"/> <br>
-                        <label for="director">Director : </label>
-                        <input type="text" name="director"/> <br>
-                        <label for="producer">Producer : </label>
-                        <input type="text" name="producer"/> <br>
-                        <label for="actors">Actors : </label>
-                        <input type="text" name="actors"/> <br>
-                        <label for="language">Langugage : </label>
-                        <input type="text" name="languages"/> <br>
-                        <label for="subtitles">Subtitles : </label>
-                        <input type="text" name="subtitles"/> <br>
-                        <label for="dubbed">Dubbed : </label>
-                        <input type="text" name="dubbed"/> <br>
-                        <label for="release_date">Release Date : </label>
-                        <input type="text" name="release_date"/> <br>
-                        <label for="runtime">Runtime : </label>
-                        <input type="text" name="runtime"/> <br>
+                <table class="tableAlignment">
+                    <tr>
+                        <td><label class="labelStyle" for="title">Title : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="director">Director : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Director Name" type="text" name="director"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="producer">Producer : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Producer Name" type="text" name="producer"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="actors">Actors : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Actors Name" type="text" name="actors"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="language">Langugage : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Langugage" type="text" name="languages"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="subtitles">Subtitles : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Subtitles" type="text" name="subtitles"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="dubbed">Dubbed : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Dubbed" type="text" name="dubbed"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="release_date">Release Date : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="release_date"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="runtime">Runtime : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Runtime" type="text" name="runtime"/></td>
+                    </tr> 
+                    </table>
                         <input name="media_type" value="MOVIE" style="display: none"></br>
                         <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Movie</button>
                     </form>
@@ -131,18 +183,32 @@
           	<div id="display_Musics" style="display: none">
           		<p>Please enter following field to add a --- MUSIC</p>
           		<form name="music" method="post">
-                        <label for="title">Title : </label>
-                        <input type="text" name="title"/> <br>
-                        <label for="mediaType">Media Type : </label>
-                        <input type="text" name="mediaType"> <br>
-                        <label for="release_date">Release Date : </label>
-                        <input type="text" name="release_date"/> <br>
-                        <label for="artist">Artist : </label>
-                        <input type="text" name="artist"/> <br>
-                        <label for="label">Label : </label>
-                        <input type="text" name="label"/> <br>
-                        <label for="asin">ASIN : </label>
-                        <input type="text" name="asin"/> <br>
+                  <table class="tableAlignment">
+                    <tr>
+                        <td><label class="labelStyle" for="title">Title : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="title"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="mediaType">Media Type : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Media Type" type="text" name="mediaType"></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="release_date">Release Date : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="release_date"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="artist">Artist : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter Artist Name" type="text" name="artist"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="label">Label : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter FLabel" type="text" name="label"/></td>
+                    </tr> 
+                    <tr>
+                        <td><label class="labelStyle" for="asin">ASIN : </label></td>
+                        <td><input class="textFieldStyle" placeholder="Enter ASIN" type="text" name="asin"/></td>
+                    </tr> 
+                    </table>
                         <input name="media_type" value="MUSIC" style="display: none"></br>
                         <button class="button" type="submit" formmethod="POST" class="signupbtn">Add new Music</button>
                     </form>

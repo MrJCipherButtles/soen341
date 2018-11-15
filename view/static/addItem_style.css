@@ -20,6 +20,10 @@
     font-size:30px;
     padding-top: 5%;
 }
+.tableAlignment{
+    margin-left: auto;
+    margin-right: auto;
+}
 .dropdownStyle{
     font-size: 70%;
     font-weight: bolder;
@@ -33,17 +37,15 @@
     font-family:'Times New Roman', Times, serif;
     border-style: double;
 }
-
-.clearfix button
-{
-    background-color:white;
-    border:black;
-    border-style:ridge;
-    color:black;
-    font-size: 25px;
-    font-weight:bold;
-    font-family: t100f;
-    cursor:pointer;
+.labelStyle{
+    font-size: 90%;
+    float: right;
+}
+input[type=text].textFieldStyle{
+    font-size: 70%;
+}
+input[type=date].textFieldStyle{
+    font-size: 70%;
 }
 .button {
     text-decoration: none;
@@ -52,4 +54,5 @@
     cursor: pointer;
     color: black !important;
     width:auto !important;
+    font-size: medium;
 }

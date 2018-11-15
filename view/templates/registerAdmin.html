@@ -9,95 +9,96 @@
 <body>
 <form method="POST" style="border:1px solid #ccc">
   <div class="container">
+    <h1>Register Administrator</h1>
     <p>Please fill in this form to create an Admin account.</p>
-   <table class="labels">
+   <table class="tableAlignment">
                     <tr>
                         <td>
-                            <label for="firstname"><b>First name</b></label> </td>
+                            <label class="labelStyle" for="firstname"><b>First name : </b></label> </td>
                         <td>
-                            <input type="text" placeholder="Enter First Name" name="firstname" required> </td>
+                            <input class="textFieldStyle" type="text" placeholder="Enter First Name" name="firstname" required> </td>
                     </tr>
 
                      <tr>
                          <td>
-                             <label for="lastname"><b>Last name</b></label></td>
+                             <label class="labelStyle" for="lastname"><b>Last name : </b></label></td>
                          <td>
-                             <input type="text" placeholder="Enter Last Name" name="lastname" required></td>
+                             <input class="textFieldStyle" type="text" placeholder="Enter Last Name" name="lastname" required></td>
                      </tr>
 
                      <tr>
                          <td>
-                             <label for="address-1"><b>Address Line 1</b></label> </td>
+                             <label class="labelStyle" for="address-1"><b>Address Line 1 : </b></label> </td>
                         <td>
-                            <input type="text" placeholder="Enter Address Line 1" name="address-1" required></td>
+                            <input class="textFieldStyle" type="text" placeholder="Enter Address Line 1" name="address-1" required></td>
                      </tr>
 
                     <tr>
                         <td>
-                            <label for="address-2"><b>Address Line 2</b></label></td>
-                        <td><input type="text" placeholder="Enter Address Line 2" name="address-2" required></td>
+                            <label class="labelStyle" for="address-2"><b>Address Line 2 : </b></label></td>
+                        <td><input class="textFieldStyle" type="text" placeholder="Enter Address Line 2" name="address-2" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="city"><b>City</b></label></td>
+                            <label class="labelStyle" for="city"><b>City : </b></label></td>
                         <td>
-                            <input type="text" placeholder="Enter City" name="city" required></td>
+                            <input class="textFieldStyle" type="text" placeholder="Enter City" name="city" required></td>
                     </tr>
 
                     <tr>
                     <td>
-                        <label for="state"><b>State/Province</b></label></td>
+                        <label class="labelStyle" for="state"><b>State/Province : </b></label></td>
                     <td>
-                        <input type="text" placeholder="Enter State/Province" name="state" required></td>
+                        <input class="textFieldStyle" type="text" placeholder="Enter State/Province" name="state" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="postal"><b>Postal / Zip Code</b></label></td>
+                            <label class="labelStyle" for="postal"><b>Postal / Zip Code : </b></label></td>
                         <td>
-                            <input type="text" placeholder="Enter Postal / Zip Code" name="postal" required></td>
+                            <input class="textFieldStyle" type="text" placeholder="Enter Postal / Zip Code" name="postal" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="country"><b>Country</b></label></td>
+                            <label class="labelStyle" for="country"><b>Country : </b></label></td>
                     <td>
-                        <input type="text" placeholder="Enter Country" name="country" required></td>
+                        <input class="textFieldStyle" type="text" placeholder="Enter Country" name="country" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="email"><b>Email</b></label></td>
+                            <label class="labelStyle" for="email"><b>Email : </b></label></td>
                         <td>
-                            <input type="text" placeholder="Enter Email" name="email" required></td>
+                            <input class="textFieldStyle" type="text" placeholder="Enter Email" name="email" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="phone"><b>Phone</b></label></td>
+                            <label class="labelStyle" for="phone"><b>Phone : </b></label></td>
                         <td>
-                            <input type="text" placeholder="Enter Phone Number" name="phone" required></td>
+                            <input class="textFieldStyle" type="text" placeholder="Enter Phone Number" name="phone" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="psw"><b>Password</b></label></td>
+                            <label class="labelStyle" for="psw"><b>Password : </b></label></td>
                         <td>
-                            <input type="password" placeholder="Enter Password" name="psw" required></td>
+                            <input class="textFieldStyle" type="password" placeholder="Enter Password" name="psw" required></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="psw-repeat"><b>Repeat Password</b></label></td>
+                            <label class="labelStyle" for="psw-repeat"><b>Repeat Password : </b></label></td>
                         <td>
-                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required></td>
+                            <input class="textFieldStyle" type="password" placeholder="Repeat Password" name="psw-repeat" required></td>
                     </tr>
                 </table>
     <br>
-    <div class="clearfix">
-      <button type="submit" onclick="load_successLogin()" formmethod="POST" class="signupbtn">Register Admin</button>
-      <button type="reset" class="resetbtn">Reset</button>
+    <div>
+      <button class ="button" type="submit" onclick="load_successLogin()" formmethod="POST" class="signupbtn">Register Admin</button>
+      <button class ="button" type="reset" class="resetbtn">Reset</button>
     </div>
     <br>
   </div>

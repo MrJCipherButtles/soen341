@@ -20,19 +20,42 @@ body
     font-size:30px;
     padding-top: 5%;
 }
+input[type=date].textFieldStyle{
+    font-size: 70%;
+}
+.labelStyle{
+    font-size: 90%;
+    float: right;
+}
+.tableAlignment{
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type=text].textFieldStyle{
+    font-size: 70%;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number].numberFieldStyle{
+    font-size: 70%;
+}
 .button {
     text-decoration: none;
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
     color: black !important;
+    width: auto;
+    font-size: medium;
 }
 .link
 {
     font-family:'Times New Roman', Times, serif;
     border-style: double;
 }
-
 .clearfix button
 {
     background-color:white;

@@ -7,12 +7,61 @@ html {
 
 }
 
-.container {
-	text-align:center;
-	font-family: 'Open Sans', sans-serif;
+.bodyOfContent
+{
+    text-align:center;
 }
-.labels {
-    margin-left:auto;
-    margin-right:auto;
-	text-align: left;
-  }
+
+.container
+{
+    font-size:25px;
+    font-family:t100f;
+}
+
+.container p
+{
+    font-weight:bold;
+}
+
+.container h1
+{
+    font-family:apu;
+    font-size:30px;
+    padding-top: 5%;
+}
+.tableAlignment{
+    margin-left: auto;
+    margin-right: auto;
+}
+.dropdownStyle{
+    font-size: 70%;
+    font-weight: bolder;
+}
+.dropdownMenu{
+    font-size: 100%;
+    font-weight: bolder;
+}
+.link
+{
+    font-family:'Times New Roman', Times, serif;
+    border-style: double;
+}
+.labelStyle{
+    font-size: 90%;
+    float: right;
+}
+input[type=text].textFieldStyle{
+    font-size: 70%;
+}
+input[type=password].textFieldStyle{
+    font-size: 70%;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black !important;
+    width:auto !important;
+    font-size: medium;
+}

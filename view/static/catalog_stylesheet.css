@@ -1,4 +1,33 @@
-div#content
+#content
 {
-    
+
+margin-left: 250px;
+
 }
+
+
+table
+{
+    border-collapse: collapse;
+
+}
+
+
+
+td
+{
+
+
+    border: 1px solid white;
+    padding: 10px;
+    color:white;
+
+}
+
+#movies, #books, #magazines, #music
+{
+    padding: 20px 0px ;
+}
+
+tr:hover {background-color: #BFDDE0;}
+

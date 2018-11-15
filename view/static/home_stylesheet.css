@@ -103,6 +103,23 @@ input[type="button"].button-menu
     color: black !important;
 }
 
+.table_title
+{
+    font-family:apu;
+}
+table tr td
+{
+    font-family:t100f;
+    font-weight:bold;
+    text-align:left;
+    border-style:solid;
+    border-color:black;
+    padding:5px;
+}
+
+
+
+
 
 
 

@@ -6,31 +6,6 @@
         <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{url_for('static', filename='catalog_stylesheet.css')}}">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            function load_search() {
-                document.getElementById("content").innerHTML='<object type="text/html" data="search" style="width: 768px !important; height: 1366px !important;"></object>';
-            }
-            function load_loan() {
-                document.getElementById("content").innerHTML='<object type="text/html" data="loan_cart" style="width: 768px; height: 1366px;" ></object>';
-            }
-            function load_addItem() {
-                document.getElementById("content").innerHTML='<object type="text/html" data="AddItem" style="width: 768px !important; height: 1366px !important;" ></object>';
-            }
-            function load_editItem() {
-                document.getElementById("content").innerHTML='<object type="text/html" data="EditItem" style="width: 768px !important; height: 1366px !important;" ></object>';
-            }
-            function load_deleteItem() {
-                document.getElementById("content").innerHTML='<object type="text/html" data="DeleteItem" style="width: 768px !important; height: 1366px !important;"></object>';
-            }
-            function load_addAdminUser() {
-                document.getElementById("content").innerHTML='<object type="text/html" data="registerAdmin" style="width: 768px !important; height: 1366px !important;"></object>';
-            }
-            function helper() {
-              document.getElementById("content").innerHTML='<object type="text/html" data="successLogin" style="width: 768px !important; height: 1366px !important;"></object>';
-              load_addAdminUser();
-            }
-        </script>
     </head>
     <body>
         <div class="sidenav">
@@ -41,21 +16,61 @@
             <div class="navlist">
                 <p class="list_title">User Actions</p>
                 <ul class="actions_list">
-                    <li><a href="{{url_for('search')}}">Search</a></li>
-                    <li><a href="{{url_for('active_loans')}}">View Active Loans</a></li>
-                    <li><a href="{{url_for('loan')}}">Make Loan</a></li> <!--new edit-->
+                    <li>
+                        <form> 
+                            <input class="button-menu" type="button" value="Search" 
+                            onclick="window.location.href='{{url_for('search')}}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form >
+                            <input class="button-menu" type="button" value="View Active Loans" 
+                            onclick="window.location.href='{{url_for('active_loans')}}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Make Loan" 
+                            onclick="window.location.href='{{url_for('loan')}}'" />
+                        </form>
+                    </li> 
                 </ul>
                 <p class="list_title">Administrator Actions</p>
                 <ul class="actions_list">
-                    <li><a href="{{url_for('add_item')}}">Add Library Record</a></li>
-                    <li><a href="{{url_for('editItem')}}">Modify Library Record</a></li>
-                    <li><a href="{{url_for('deleteItem')}}">Remove Library Record</a></li>
-                    <li><a href="{{url_for('registeradmin')}}">Register Administrator</a></li>
-                    <li><a href="{{url_for('active_users')}}">View Active User Count</a></li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Add Library Record" 
+                            onclick="window.location.href='{{url_for('add_item')}}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Modify Library Record" 
+                            onclick="window.location.href='{{url_for('editItem')}}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Remove Library Record" 
+                            onclick="window.location.href='{{url_for('deleteItem')}}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Register Administrator" 
+                            onclick="window.location.href='{{url_for('registeradmin')}}'" />
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="View Active User Count" 
+                            onclick="window.location.href='{{url_for('active_users')}}'" />
+                        </form>
+                    </li>
                 </ul>
                 <p class="list_title">Exit</p>
                 <ul class="actions_list">
-                    <li><button class="button" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>
+                    <li><button class="button button-menu" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>
                 </ul>
             </div>
         </div>

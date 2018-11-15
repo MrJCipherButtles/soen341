@@ -5,7 +5,7 @@ body
 
 .container
 {
-    font-size:40px;
+    font-size:25px;
     font-family:t100f;
 }
 
@@ -17,13 +17,8 @@ body
 .container h1
 {
     font-family:apu;
-    font-size:40px;
-}
-
-.container p, .container h1,
-{
-    border-block-end: 50px;
-    opacity:50%;
+    font-size:30px;
+    padding-top: 5%;
 }
 .button {
     text-decoration: none;

@@ -1,11 +1,11 @@
-body
+.bodyOfContent
 {
     text-align:center;
 }
 
 .container
 {
-    font-size:40px;
+    font-size:25px;
     font-family:t100f;
 }
 
@@ -17,15 +17,17 @@ body
 .container h1
 {
     font-family:apu;
-    font-size:40px;
+    font-size:30px;
+    padding-top: 5%;
 }
-
-.container p, .container h1
-{
-    border-block-end: 50px;
-    opacity:50%;
+.dropdownStyle{
+    font-size: 70%;
+    font-weight: bolder;
 }
-
+.dropdownMenu{
+    font-size: 100%;
+    font-weight: bolder;
+}
 .link
 {
     font-family:'Times New Roman', Times, serif;

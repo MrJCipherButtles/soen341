@@ -1,9 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-
-
-
 html {
 	background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
 	background-size: cover;
@@ -15,10 +11,6 @@ html {
 	text-align:center;
 	font-family: 'Open Sans', sans-serif;
 }
-
-
-
-
 .labels {
     margin-left:auto;
     margin-right:auto;

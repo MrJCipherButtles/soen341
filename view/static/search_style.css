@@ -5,7 +5,7 @@ body
 
 .container
 {
-    font-size:40px;
+    font-size:25px;
     font-family:t100f;
 }
 
@@ -17,14 +17,16 @@ body
 .container h1
 {
     font-family:apu;
-    font-size:40px;
+    font-size:30px;
+    padding-top: 5%;
 }
-
-.container p, .container h1,
-{
-    border-block-end: 50px;
-    background-color:rgb(175, 157, 255);
-    opacity:50%;
+.dropdownStyle{
+    font-size: 70%;
+    font-weight: bolder;
+}
+.dropdownMenu{
+    font-size: 100%;
+    font-weight: bolder;
 }
 .button {
     text-decoration: none;

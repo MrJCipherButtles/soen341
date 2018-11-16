@@ -1,7 +1,7 @@
 {% extends 'home.html' %}
 {% block content %}
 {% if books | length != 0 %}
-    <h4 id="catalog_title">View Catalog Below</h4>
+    <h4 id="catalog_title">View Catalog</h4>
     <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
 
     <table id="book_table">
@@ -68,7 +68,7 @@
     </table>
 {% endif %}
 <br><br>
-    
+
 {% if musics | length != 0 %}
     <h6 class="table_title"><img src="../static/images/music.png"> MUSIC</h6>
     <table id="music_table">

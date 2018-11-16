@@ -106,9 +106,10 @@ input[type="button"].button-menu
 /*css for catalog table views*/
 #catalog_title
 {
-    font-family:t100f;
+    font-family:apu;
     font-weight:bold;
     font-size:30px;
+    padding-top: 15px;
 }
 
 .table_title

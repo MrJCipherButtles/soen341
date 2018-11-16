@@ -1,9 +1,11 @@
 {% extends 'home.html' %}
 {% block content %}
 {% if books | length != 0 %}
-    <h6>BOOKS</h6>
-    <table>
-        <tr>
+    <h4 id="catalog_title">View Active Loans</h4>
+    <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
+
+    <table id="book_table">
+        <tr class="row_header">
             <td>Title</td>
             <td>Author</td>
             <td>Publisher</td>
@@ -23,11 +25,33 @@
         {% endfor %}
     </table>
 {% endif %}
+<br><br>
+
+{% if magazines | length != 0 %}
+    <h6 class="table_title"><img src="../static/images/magazine.png"> MAGAZINES</h6>
+    <table id="magazine_table">
+        <tr class="row_header">
+            <td>Title</td>
+            <td>Publisher</td>
+            <td>Year Published</td>
+            <td>ISBN</td>
+        </tr>
+        {% for magazine in magazines %}
+        <tr>
+            <td>{{magazine.title}}</td>
+            <td>{{magazine.publisher}}</td>
+            <td>{{magazine.year_published}}</td>
+            <td>{{magazine.isbn_13}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+<br><br>
 
 {% if movies | length != 0%}
-    <h6>MOVIES</h6>
-    <table>
-        <tr>
+    <h6 class="table_title"><img src="../static/images/movie.png"> MOVIES</h6>
+    <table id="movie_table">
+        <tr class="row_header">
             <td>Title</td>
             <td>Director</td>
             <td>Producer</td>
@@ -43,11 +67,12 @@
         {% endfor %}
     </table>
 {% endif %}
+<br><br>
 
 {% if musics | length != 0 %}
-    <h6>MUSIC</h6>
-    <table>
-        <tr>
+    <h6 class="table_title"><img src="../static/images/music.png"> MUSIC</h6>
+    <table id="music_table">
+        <tr class="row_header">
             <td>Title</td>
             <td>Artist</td>
             <td>Label</td>

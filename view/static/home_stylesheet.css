@@ -112,6 +112,12 @@ input[type="button"].button-menu
     padding-top: 15px;
 }
 
+select#catalog_select
+{
+    margin-top:25px;
+    width:20%;
+}
+
 .table_title
 {
     font-family:apu;
@@ -130,31 +136,23 @@ tr td
     padding:5px;
     color:black;
     background: white;
-
-
 }
 
 tr:first-child td
 {
     background: #A5D6D9;
-
 }
-
-
 
 table tr.row_header
 {
     font-size:22px;
-    font-weight: bold;
+    font-weight:bold;
 }
 
 table
 {
     width:97%;
 }
-
-
-
 
 tr:not(:first-child):hover td
 {

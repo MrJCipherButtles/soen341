@@ -1,10 +1,53 @@
 {% extends 'home.html' %}
 {% block content %}
-{% if books | length != 0 %}
-    <h4 id="catalog_title">View Catalog</h4>
-    <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
+<script>
+$(document).ready(function(){
+    $('#book_table').show();
+    $('#magazine_table').hide();
+    $('#movie_table').hide();
+    $('#music_table').hide();
+    $( "#catalog_select" ).change(function() {
+        if(this.value == "1"){
+            $('#book_table').show();
+            $('#magazine_table').hide();
+            $('#movie_table').hide();
+            $('#music_table').hide();	
+        }
+        if(this.value == "2"){
+            $('#book_table').hide();
+            $('#magazine_table').show();
+            $('#movie_table').hide();
+            $('#music_table').hide();
+        }
+        if(this.value == "3"){
+            $('#book_table').hide();
+            $('#magazine_table').hide();
+            $('#movie_table').show();
+            $('#music_table').hide();
+        }
+        if(this.value == "4"){
+            $('#book_table').hide();
+            $('#magazine_table').hide();
+            $('#movie_table').hide();
+            $('#music_table').show();
+        }   
+    });
+});
+</script>
 
-    <table id="book_table">
+<h4 id="catalog_title">Catalog</h4>
+Show for: 
+<select id="catalog_select">
+    <option value="1">Books</option>
+    <option value="2">Magazines</option>
+    <option value="3">Movies</option>
+    <option value="4">Music</option>
+</select>
+
+<div id="book_table">
+{% if books | length != 0 %}
+    <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
+    <table>
         <tr class="row_header">
             <td>Title</td>
             <td>Author</td>
@@ -25,11 +68,13 @@
         {% endfor %}
     </table>
 {% endif %}
+</div>
 <br><br>
 
+<div id="magazine_table">
 {% if magazines | length != 0 %}
     <h6 class="table_title"><img src="../static/images/magazine.png"> MAGAZINES</h6>
-    <table id="magazine_table">
+    <table>
         <tr class="row_header">
             <td>Title</td>
             <td>Publisher</td>
@@ -47,10 +92,13 @@
     </table>
 {% endif %}
 <br><br>
+</div>
 
+
+<div id="movie_table">
 {% if movies | length != 0%}
     <h6 class="table_title"><img src="../static/images/movie.png"> MOVIES</h6>
-    <table id="movie_table">
+    <table>
         <tr class="row_header">
             <td>Title</td>
             <td>Director</td>
@@ -68,10 +116,13 @@
     </table>
 {% endif %}
 <br><br>
+</div>
 
+
+<div id="music_table">
 {% if musics | length != 0 %}
     <h6 class="table_title"><img src="../static/images/music.png"> MUSIC</h6>
-    <table id="music_table">
+    <table>
         <tr class="row_header">
             <td>Title</td>
             <td>Artist</td>
@@ -90,4 +141,6 @@
         {% endfor %}
     </table>
 {% endif %}
+<br><br>
+</div>
 {% endblock %}

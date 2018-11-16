@@ -10,7 +10,7 @@ html {
     font-weight:bold;
     font-size:17;
     background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
     text-align: center;
 }
@@ -104,11 +104,20 @@ input[type="button"].button-menu
 }
 
 /*css for catalog table views*/
+#catalog_title
+{
+    font-family:t100f;
+    font-weight:bold;
+    font-size:30px;
+}
 .table_title
 {
     font-family:apu;
+    text-align:left;
+    font-size:20px;
 }
-table tr td
+
+tr td
 {
     font-family:t100f;
     font-weight:bold;
@@ -116,6 +125,16 @@ table tr td
     border-style:solid;
     border-color:black;
     padding:5px;
+}
+
+table tr.row_header
+{
+    font-size:22px;
+}
+
+table
+{
+    width:97%;
 }
 
 

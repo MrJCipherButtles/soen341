@@ -1,9 +1,10 @@
 {% extends 'home.html' %}
 {% block content %}
 {% if books | length != 0 %}
+    <h4 id="catalog_title">View Selection Below</h4>
     <h6 class="table_title">BOOKS</h6>
     <table id="book_table">
-        <tr>
+        <tr class="row_header">
             <td>Title</td>
             <td>Author</td>
             <td>Publisher</td>
@@ -23,11 +24,11 @@
         {% endfor %}
     </table>
 {% endif %}
-
+<br><br>
 {% if movies | length != 0%}
     <h6 class="table_title">MOVIES</h6>
     <table id="movie_table">
-        <tr>
+        <tr class="row_header">
             <td>Title</td>
             <td>Director</td>
             <td>Producer</td>
@@ -43,10 +44,11 @@
         {% endfor %}
     </table>
 {% endif %}
+<br><br>
 {% if magazines | length != 0 %}
     <h6 class="table_title">MAGAZINES</h6>
     <table id="magazine_table">
-        <tr>
+        <tr class="row_header">
             <td>Title</td>
             <td>Publisher</td>
             <td>Year Published</td>
@@ -62,10 +64,11 @@
         {% endfor %}
     </table>
 {% endif %}
+<br><br>
 {% if musics | length != 0 %}
     <h6 class="table_title">MUSIC</h6>
     <table id="music_table">
-        <tr>
+        <tr class="row_header">
             <td>Title</td>
             <td>Artist</td>
             <td>Label</td>

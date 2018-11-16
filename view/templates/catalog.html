@@ -1,8 +1,9 @@
 {% extends 'home.html' %}
 {% block content %}
 {% if books | length != 0 %}
-    <h4 id="catalog_title">View Selection Below</h4>
-    <h6 class="table_title">BOOKS</h6>
+    <h4 id="catalog_title">View Catalog Below</h4>
+    <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
+
     <table id="book_table">
         <tr class="row_header">
             <td>Title</td>
@@ -26,7 +27,7 @@
 {% endif %}
 <br><br>
 {% if movies | length != 0%}
-    <h6 class="table_title">MOVIES</h6>
+    <h6 class="table_title"><img src="../static/images/movie.png"> MOVIES</h6>
     <table id="movie_table">
         <tr class="row_header">
             <td>Title</td>
@@ -46,7 +47,7 @@
 {% endif %}
 <br><br>
 {% if magazines | length != 0 %}
-    <h6 class="table_title">MAGAZINES</h6>
+    <h6 class="table_title"><img src="../static/images/magazine.png"> MAGAZINES</h6>
     <table id="magazine_table">
         <tr class="row_header">
             <td>Title</td>
@@ -66,7 +67,7 @@
 {% endif %}
 <br><br>
 {% if musics | length != 0 %}
-    <h6 class="table_title">MUSIC</h6>
+    <h6 class="table_title"><img src="../static/images/music.png"> MUSIC</h6>
     <table id="music_table">
         <tr class="row_header">
             <td>Title</td>

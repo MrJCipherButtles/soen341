@@ -4,7 +4,7 @@ import datetime
 from models.book.book import Book
 from models.movie.movie import Movie
 from models.music.music import Music
-
+from models.magazine.magazine import Magazine
 
 class Loan:
     @staticmethod
@@ -23,4 +23,5 @@ class Loan:
         books = db_gateway.get_all(Book, email)
         musics = db_gateway.get_all(Music, email)
         movies = db_gateway.get_all(Movie, email)
-        return render_template('active_loans.html', books=books, musics=musics, movies=movies)
+        magazines = db_gateway.get_all(Magazine, email)
+        return render_template('active_loans.html', books=books, musics=musics, movies=movies, magazines = magazines)

@@ -131,6 +131,7 @@ def editItem():
 @app.route("/search", methods=['GET', 'POST'])
 @login_required
 @admin(db_gateway)
+
 def search():
     if request.method == 'GET':
         return render_template('search.html')

@@ -80,10 +80,7 @@ def delete_item():
 @app.route("/home", methods=['GET', 'POST'])
 @login_required
 def home():
-    if db_gateway.verify_admin(request.cookies.get('username')):
-        return redirect(url_for('search'))
-    else:
-        return Catalog.view_catalog(db_gateway, request)
+    return Catalog.view_catalog(db_gateway, request)
 
 @app.route("/search_catalog", methods=['GET', 'POST'])
 @login_required
@@ -134,7 +131,15 @@ def editItem():
     if request.method == 'GET':
         return render_template('EditItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-        return Loan.loan_item(db_gateway, request)
+        return render_template('view_edit_item.html', item=db_gateway.get_item_by_id(request.form['id']))
+
+@app.route('/view_edit_item', methods=['GET','POST'])
+@admin(db_gateway)
+def view_edit_item():
+    if request.method == 'GET':
+        return render_template('view_edit_item.html')
+    elif request.method == 'POST':
+        ProcessItem.edit(request, db_gateway)
 
 
 @app.route("/search", methods=['GET', 'POST'])
@@ -144,11 +149,6 @@ def search():
         return render_template('search.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return SearchItem.searchItem(db_gateway,request)
-
-
-
-
-
 
 @app.route("/restricted")
 def restricted():

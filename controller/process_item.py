@@ -2,6 +2,7 @@ from models.book.book import Book
 from models.magazine.magazine import Magazine
 from models.movie.movie import Movie
 from models.music.music import Music
+from flask import redirect, url_for
 
 
 class ProcessItem():
@@ -16,6 +17,11 @@ class ProcessItem():
         db_connection.insert_item(item)
 
     @staticmethod
+    def edit(request, db_connection):
+        ItemId = request.form['id']
+        print('id')
+
+    @staticmethod
     def remove(request, db_connection):
         db_connection.remove_item(request.form['id'])
-        return 'success'
+        return redirect(url_for('home'))

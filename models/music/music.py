@@ -11,3 +11,4 @@ class Music(Item, Loanable):
         self.artist = artist
         self.label = label
         self.asin = asin
+        self.object_class = 'Music'

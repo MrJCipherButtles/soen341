@@ -2,6 +2,10 @@ import hashlib
 
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
+from models.book.book import Book
+from models.magazine.magazine import Magazine
+from models.music.music import Music
+from models.movie.movie import Movie
 
 
 class DBGateway:
@@ -163,3 +167,54 @@ class DBGateway:
 
     def get_loans_for_user(self, c, email):
         return self.get_all(c, email)
+    
+    def get_item_by_id(self, id):
+        query = "SELECT itemType FROM library.items WHERE id=%s" % (id) #get itemType
+
+        self.cursor.execute(query)
+        itemType = self.cursor.fetchone()
+        
+        if 'BOOK' in itemType:
+            query = "SELECT * FROM library.prints WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Book(t[1], t[2], t[3], t[4], t[5], t[6], t[7], t[8])
+            print()
+
+            return item
+            
+        elif 'MAGAZINE' in itemType:
+            query = "SELECT * FROM library.prints WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Magazine(t[1], t[4], t[5], t[6], t[7], t[8])
+            return item
+            
+
+            
+        elif 'MUSIC' in itemType:
+            query = "SELECT * FROM library.medias WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Music(t[1], t[2], t[3], t[4], t[5], t[6])
+            return item
+            
+        elif 'MOVIE' in itemType:
+            query = "SELECT * FROM library.medias WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Movie(t[2], t[3], t[7], t[8], t[9], t[10], t[11], t[12], t[13])
+            return item
+
+        else:
+            print('Error retrieving itemType.')
+            return False
+
+        return item
+            
+
+        

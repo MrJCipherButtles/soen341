@@ -15,3 +15,4 @@ class Movie(Item, Loanable):
         self.dubbed = dubbed
         self.release_date = release_date
         self.runtime = runtime
+        self.object_class = 'Movie'

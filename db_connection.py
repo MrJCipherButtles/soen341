@@ -20,13 +20,27 @@ class DBGateway:
 
         self.class_to_table = {"BOOK": "prints", "MAGAZINE": "prints", "MOVIE": "medias", "MUSIC": "medias"}
 
-    def get_all(self, Class, email=None):
+    def get_all(self, Class, email=None, dictionary=None):
         res = []
-        if email is None:
-            query = "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper()
-        else:
+        if dictionary:
+            fields = ''
+            for key, value in dictionary.items():
+                fields = fields + " AND " + key + '=' + "\'" + value + "\'"
+            if Class.__name__.upper() == "BOOK" or Class.__name__.upper() == "MAGAZINE":
+                type = 'prints'
+            else:
+                type = 'medias'
+
+            query = "SELECT * FROM %s INNER JOIN items ON itemId = id WHERE items.itemType = '%s' %s;" % (
+                type, Class.__name__.upper(), fields)
+
+        elif email:
             query = "SELECT * FROM library.items INNER JOIN loans ON items.id = loans.itemId WHERE items.itemType = '%s' AND loans.clientId = '%s';" % (
-            Class.__name__.upper(), email)
+                Class.__name__.upper(), email)
+        else:
+            query = "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper()
+
+        print("QUERY:   " + query)
         self.cursor.execute(query)
         ids = [res[0] for res in self.cursor.fetchall()]
         if len(ids) == 0:

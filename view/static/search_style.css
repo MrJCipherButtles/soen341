@@ -46,6 +46,7 @@ input[type=date].textFieldStyle{
 }
 input[type=text].textFieldStyle{
     font-size: 70%;
+    text-indent: 2%;
 }
 .link
 {
@@ -56,15 +57,20 @@ input[type=text].textFieldStyle{
     margin-left: auto;
     margin-right: auto;
 }
-.clearfix button
+tr td
 {
-    background-color:white;
-    border:black;
-    border-style:ridge;
-    color:black;
-    font-size: 25px;
-    font-weight:bold;
-    font-family: t100f;
-    cursor:pointer;
+    width: 47%;
+    font-family:t100f;
+    font-weight:none !important;
+    text-align:none !important;
+    border-style:none !important;
+    border-color:none !important;
+    padding:0px !important;
+    color:none !important;
+    background: none !important;
 }
 
+tr:first-child td
+{
+    background: none !important;
+}

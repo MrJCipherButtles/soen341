@@ -38,7 +38,7 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
-        return render_template('register.html')
+        return render_template('register.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return Register.register_user(db_gateway, request)
 
@@ -47,7 +47,7 @@ def register():
 @admin(db_gateway)
 def registeradmin():
     if request.method == 'GET':
-        return render_template('registerAdmin.html')
+        return render_template('registerAdmin.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return Register.register_user_admin(db_gateway, request)
 
@@ -55,7 +55,7 @@ def registeradmin():
 @app.route("/successLogin", methods=['GET'])
 def successLogin():
     if request.method == 'GET':
-        return render_template('successLogin.html')
+        return render_template('successLogin.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif not (request.method == 'GET'):
         return "Illegal action"
 
@@ -65,7 +65,7 @@ def successLogin():
 def add_item():
     if request.method == 'POST':
         ProcessItem.add(request, db_gateway)
-    return render_template('AddItem.html')
+    return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
@@ -73,16 +73,16 @@ def add_item():
 def delete_item():
     if request.method == 'POST':
         return ProcessItem.remove(request, db_gateway)
-    return render_template('DeleteItem.html')
+    return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 
 @app.route("/home", methods=['GET', 'POST'])
 @login_required
 def home():
-  if request.method == 'GET':
-    return Catalog.view_catalog(db_gateway, request)
-  elif request.method == 'POST':
-    return None
+    if db_gateway.verify_admin(request.cookies.get('username')):
+        return redirect(url_for('search'))
+    else:
+        return Catalog.view_catalog(db_gateway, request)
 
 
 @app.route("/logout")
@@ -96,7 +96,7 @@ def logout():
 @admin(db_gateway, denied=True)
 def loan():
     if request.method == 'GET':
-        return render_template('loan_cart.html')
+        return render_template('loan_cart.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return Loan.loan_item(db_gateway)
 
@@ -105,7 +105,7 @@ def loan():
 @admin(db_gateway)
 def deleteItem():
     if request.method == 'GET':
-        return render_template('DeleteItem.html')
+        return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return ProcessItem.remove(request, db_gateway)
 
@@ -114,7 +114,7 @@ def deleteItem():
 @admin(db_gateway)
 def addItem():
     if request.method == 'GET':
-        return render_template('AddItem.html')
+        return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         ProcessItem.add(request, db_gateway)
 
@@ -123,7 +123,7 @@ def addItem():
 @admin(db_gateway)
 def editItem():
     if request.method == 'GET':
-        return render_template('EditItem.html')
+        return render_template('EditItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return Loan.loan_item(db_gateway, request)
 
@@ -131,17 +131,16 @@ def editItem():
 @app.route("/search", methods=['GET', 'POST'])
 @login_required
 @admin(db_gateway)
-
 def search():
     if request.method == 'GET':
-        return render_template('search.html')
+        return render_template('search.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
         return Loan.loan_item(db_gateway, request)
 
 
 @app.route("/restricted")
 def restricted():
-    return render_template('restriction.html')
+    return render_template('restriction.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 
 @app.route("/active_loans")
@@ -154,7 +153,8 @@ def active_loans():
 @app.route("/active_users")
 @admin(db_gateway)
 def active_users():
-    return render_template('active_users.html', active_users=Login.active_users)
+    return render_template('active_users.html', active_users=Login.active_users,
+                           is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 
 # @app.route("/catalog")

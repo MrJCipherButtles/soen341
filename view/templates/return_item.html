@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% block extrahead %}
+	<title>Custom Search</title>
+	<link rel="stylesheet" href="../static/fonts.css">
+	<link rel="stylesheet" href="../static/deleteItem_style.css">
+{% endblock %}
+
+{% block content %}
+<form method="post" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Process return of an Item</h1>
+        <p>
+            <label for="id">Please enter the ID of the item that is returned</label>
+            <br>
+            <input type="number" class="numberFieldStyle" name="id" placeholder="Enter the Item ID">
+        </p>
+        <button class="button" type="submit" formmethod="post">Return</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,9 +1,10 @@
 {% extends 'home.html' %}
 {% block content %}
+
+        <h1 style="color: red"> {%  if items == []  %} No Results{%endif %} </h1>
 {% if books | length != 0 %}
     <h4 id="catalog_title">View Search Results</h4>
     <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
-
     <table id="book_table">
         <tr class="row_header">
             <td>Title</td>

@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, url_for, redirect, session, make_response
+from flask import Flask, render_template, request, url_for, redirect
 
-from models.book.book import Book
-from models.movie.movie import Movie
-from models.music.music import Music
+from models.music import Music
 from utils.login_required import login_required, admin
 from db_connection import DBGateway
 from controller.login import Login
@@ -21,6 +19,11 @@ app.static_folder = 'view/static'
 app.active_users = 0
 
 
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('error.html'), 500
+
+
 @app.route('/', defaults={'path': ''})
 @app.route("/<path:path>")
 @login_required
@@ -31,7 +34,7 @@ def index(path):
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return Login.show_login_page()
+        return Login.show_login_page(request.args['err'])
     elif request.method == 'POST':
         return Login.verify_login(db_gateway, request)
 
@@ -41,7 +44,10 @@ def register():
     if request.method == 'GET':
         return render_template('register.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-        return Register.register_user(db_gateway, request)
+        try:
+            return Register.register_user(db_gateway, request)
+        except:
+            return redirect(url_for('login', err=True))
 
 
 @app.route("/registerAdmin", methods=['GET', 'POST'])
@@ -61,12 +67,7 @@ def successLogin():
         return "Illegal action"
 
 
-@app.route("/add_item", methods=['GET', 'POST'])
-@admin(db_gateway)
-def add_item():
-    if request.method == 'POST':
-        ProcessItem.add(request, db_gateway)
-    return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
+
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
@@ -77,18 +78,20 @@ def delete_item():
     return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 
+@app.route("/return_item", methods=['GET', 'POST'])
+@admin(db_gateway)
+def return_item():
+    if request.method == 'POST':
+        Loan.return_item(request, db_gateway)
+    return render_template('return_item.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
+
+
 @app.route("/home", methods=['GET', 'POST'])
 @login_required
 def home():
     return Catalog.view_catalog(db_gateway, request)
 
-@app.route("/search_catalog", methods=['GET', 'POST'])
-@login_required
-def search_catalog(items):
-  if request.method == 'GET':
-    return render_template('catalog.html', musics=items)
-  elif request.method == 'POST':
-    return None
+
 
 
 @app.route("/logout")
@@ -107,22 +110,30 @@ def loan():
         return Loan.loan_item(db_gateway)
 
 
-@app.route("/DeleteItem", methods=['GET', 'POST'])
-@admin(db_gateway)
-def deleteItem():
-    if request.method == 'GET':
-        return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
-    elif request.method == 'POST':
-        return ProcessItem.remove(request, db_gateway)
-
 
 @app.route("/AddItem", methods=['GET', 'POST'])
 @admin(db_gateway)
-def addItem():
-    if request.method == 'GET':
-        return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
-    elif request.method == 'POST':
+def add_item():
+    success = False
+    if request.method == 'POST':
         ProcessItem.add(request, db_gateway)
+        success = True
+    return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')), success = success)
+
+
+
+
+@app.route("/DeleteItem", methods=['GET', 'POST'])
+@admin(db_gateway)
+def deleteItem():
+
+    if request.method == 'GET':
+        return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
+    elif request.method == 'POST':
+
+        return ProcessItem.remove(request, db_gateway)
+
+
 
 
 @app.route("/EditItem", methods=['GET', 'POST'])

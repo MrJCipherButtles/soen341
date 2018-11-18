@@ -43,9 +43,11 @@
 }
 input[type=text].textFieldStyle{
     font-size: 70%;
+    text-indent: 2%;
 }
 input[type=date].textFieldStyle{
     font-size: 70%;
+    text-indent: 2%;
 }
 .button {
     text-decoration: none;
@@ -55,4 +57,21 @@ input[type=date].textFieldStyle{
     color: black !important;
     width:auto !important;
     font-size: medium;
+}
+tr td
+{
+    width: 47%;
+    font-family:t100f;
+    font-weight:none !important;
+    text-align:none !important;
+    border-style:none !important;
+    border-color:none !important;
+    padding:0px !important;
+    color:none !important;
+    background: none !important;
+}
+
+tr:first-child td
+{
+    background: none !important;
 }

@@ -1,5 +1,5 @@
-from models.item.item import Item
-from models.loanable.loanable import Loanable
+from models.item import Item
+from models.loanable import Loanable
 
 
 class Book(Item, Loanable):

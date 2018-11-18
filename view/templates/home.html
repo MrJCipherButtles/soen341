@@ -19,21 +19,21 @@
                 <p class="list_title">User Actions</p>
                 <ul class="actions_list">
                     <li>
-                        <form> 
-                            <input class="button-menu" type="button" value="Search" 
+                        <form>
+                            <input class="button-menu" type="button" value="Search"
                             onclick="window.location.href='{{url_for('search')}}'" />
                         </form>
                     </li>
                     {% if not is_admin %}
                     <li>
                         <form >
-                            <input class="button-menu" type="button" value="View Active Loans" 
+                            <input class="button-menu" type="button" value="View Active Loans"
                             onclick="window.location.href='{{url_for('active_loans')}}'" />
                         </form>
                     </li>
                     <li>
                         <form>
-                            <input class="button-menu" type="button" value="Make Loan" 
+                            <input class="button-menu" type="button" value="Make Loan"
                             onclick="window.location.href='{{url_for('loan')}}'" />
                         </form>
                     </li>
@@ -44,7 +44,7 @@
                 <ul class="actions_list">
                     <li>
                         <form>
-                            <input class="button-menu" type="button" value="Add Library Record" 
+                            <input class="button-menu" type="button" value="Add Library Record"
                             onclick="window.location.href='{{url_for('add_item')}}'" />
                         </form>
                     </li>
@@ -56,19 +56,26 @@
                     </li>
                     <li>
                         <form>
-                            <input class="button-menu" type="button" value="Remove Library Record" 
+                            <input class="button-menu" type="button" value="Remove Library Record"
                             onclick="window.location.href='{{url_for('deleteItem')}}'" />
                         </form>
                     </li>
                     <li>
                         <form>
-                            <input class="button-menu" type="button" value="Register Administrator" 
+                            <input class="button-menu" type="button" value="Process Return"
+                            onclick="window.location.href='{{url_for('return_item')}}'" />
+                        </form>
+                    </li>
+
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Register Administrator"
                             onclick="window.location.href='{{url_for('registeradmin')}}'" />
                         </form>
                     </li>
                     <li>
                         <form>
-                            <input class="button-menu" type="button" value="View Active User Count" 
+                            <input class="button-menu" type="button" value="View Active User Count"
                             onclick="window.location.href='{{url_for('active_users')}}'" />
                         </form>
                     </li>

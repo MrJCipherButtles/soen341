@@ -1,5 +1,6 @@
 import hashlib
 
+import datetime
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
 from models.book.book import Book
@@ -100,6 +101,10 @@ class DBGateway:
 
     def remove_item(self, id):
         self.cursor.execute("DELETE FROM items WHERE id = %s" % id)
+        self.conn.commit()
+
+    def process_return(self, id):
+        self.cursor.execute("DELETE FROM loans WHERE itemId = %s" % id)
         self.conn.commit()
 
     def verify_login(self, user, password):
@@ -218,3 +223,18 @@ class DBGateway:
             
 
         
+
+    def loan_item(self, user, itemID):
+        self.cursor.execute("SELECT loanable FROM items WHERE id= %s AND loanable='Y'" % itemID)
+        self.cursor.fetchall()
+        if self.cursor.rowcount == 0:
+            return False
+        try:
+            self.cursor.execute(
+                "INSERT INTO library.loans (clientId, itemId, loan_date) VALUES ('%s', '%s', '%s')" % (
+                    user, itemID, datetime.datetime.today().strftime('%Y-%m-%d')))
+            self.conn.commit()
+        except:
+            return False
+        return True
+

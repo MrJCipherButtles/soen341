@@ -1,8 +1,8 @@
 from flask import render_template
-from models.book.book import Book
-from models.magazine.magazine import Magazine
-from models.movie.movie import Movie
-from models.music.music import Music
+from models.book import Book
+from models.magazine import Magazine
+from models.movie import Movie
+from models.music import Music
 
 
 class SearchItem:
@@ -20,6 +20,6 @@ class SearchItem:
 
         html_type = {'books':[], 'magazines':[], 'movies':[], 'musics':[]}
         html_type[html_types]= items
-        return render_template('search_results.html', books = html_type['books'], magazines = html_type['magazines'], movies = html_type['movies'], musics = html_type['musics'], is_admin=db.verify_admin(request.cookies.get('username')))
+        return render_template('search_results.html', books = html_type['books'], magazines = html_type['magazines'], movies = html_type['movies'], musics = html_type['musics'], is_admin=db.verify_admin(request.cookies.get('username')), items = items)
 
 

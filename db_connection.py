@@ -25,7 +25,10 @@ class DBGateway:
         if dictionary:
             fields = ''
             for key, value in dictionary.items():
-                fields = fields + " AND " + key + '=' + "\'" + value + "\'"
+                if value.isdigit():
+                    fields = fields + " AND " + key + '=' + value
+                else:
+                    fields = fields + " AND " + key + '=' + "\'" + value + "\'"
             if Class.__name__.upper() == "BOOK" or Class.__name__.upper() == "MAGAZINE":
                 type = 'prints'
             else:

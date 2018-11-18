@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        {% block extrahead %}
+        {% endblock %}
     </head>
     <body>
         <div class="sidenav">
@@ -22,6 +24,7 @@
                             onclick="window.location.href='{{url_for('search')}}'" />
                         </form>
                     </li>
+                    {% if not is_admin %}
                     <li>
                         <form >
                             <input class="button-menu" type="button" value="View Active Loans" 
@@ -33,8 +36,10 @@
                             <input class="button-menu" type="button" value="Make Loan" 
                             onclick="window.location.href='{{url_for('loan')}}'" />
                         </form>
-                    </li> 
+                    </li>
+                    {% endif %}
                 </ul>
+                {% if is_admin %}
                 <p class="list_title">Administrator Actions</p>
                 <ul class="actions_list">
                     <li>
@@ -68,6 +73,7 @@
                         </form>
                     </li>
                 </ul>
+                {% endif %}
                 <p class="list_title">Exit</p>
                 <ul class="actions_list">
                     <li><button class="button button-menu" type="button" onclick="window.location.href='/logout'">Sign Out</button></li>

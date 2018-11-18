@@ -34,7 +34,7 @@ def index(path):
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return Login.show_login_page()
+        return Login.show_login_page(request.args['err'])
     elif request.method == 'POST':
         return Login.verify_login(db_gateway, request)
 
@@ -47,7 +47,7 @@ def register():
         try:
             return Register.register_user(db_gateway, request)
         except:
-            return Login.show_login_page(has_account_error=True)
+            return redirect(url_for('login', err=True))
 
 
 @app.route("/registerAdmin", methods=['GET', 'POST'])

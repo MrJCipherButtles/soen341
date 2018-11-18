@@ -29,4 +29,4 @@ class Login:
 
     @staticmethod
     def show_login_page(has_account_error=False):
-        return render_template('login.html', has_account_error=has_account_error)
+        return render_template('login.html', err=has_account_error)

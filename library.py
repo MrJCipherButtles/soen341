@@ -147,17 +147,6 @@ def search():
         return SearchItem.searchItem(db_gateway,request)
 
 
-@app.route("/search2", methods=['GET', 'POST'])
-def search2():
-    if request.method == 'GET':
-        return render_template('search.html')
-    elif request.method == 'POST':
-        dic = {}
-        for key in request.form.keys():
-            if request.form[key] != '':
-                dic[key] = request.form[key]
-        items = db_gateway.get_all(Music, dictionary=dic)
-        return render_template('catalog.html', musics=items)
 
 
 

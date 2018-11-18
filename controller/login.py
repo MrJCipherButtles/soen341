@@ -1,5 +1,4 @@
 from flask import render_template, url_for, redirect, session, make_response
-from models.book.book import Book
 
 
 class Login:

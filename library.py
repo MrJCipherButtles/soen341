@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, url_for, redirect, session, make_response
+from flask import Flask, render_template, request, url_for, redirect
 
-from models.book.book import Book
-from models.movie.movie import Movie
-from models.music.music import Music
+from models.music import Music
 from utils.login_required import login_required, admin
 from db_connection import DBGateway
 from controller.login import Login
@@ -75,6 +73,14 @@ def delete_item():
     if request.method == 'POST':
         return ProcessItem.remove(request, db_gateway)
     return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
+
+
+@app.route("/return_item", methods=['GET', 'POST'])
+@admin(db_gateway)
+def return_item():
+    if request.method == 'POST':
+        Loan.return_item(request, db_gateway)
+    return render_template('return_item.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 
 @app.route("/home", methods=['GET', 'POST'])

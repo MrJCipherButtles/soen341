@@ -1,10 +1,11 @@
 from flask import request, render_template
 import datetime
 
-from models.book.book import Book
-from models.movie.movie import Movie
-from models.music.music import Music
-from models.magazine.magazine import Magazine
+from models.book import Book
+from models.movie import Movie
+from models.music import Music
+from models.magazine import Magazine
+
 
 class Loan:
     @staticmethod
@@ -24,4 +25,8 @@ class Loan:
         musics = db_gateway.get_all(Music, email)
         movies = db_gateway.get_all(Movie, email)
         magazines = db_gateway.get_all(Magazine, email)
-        return render_template('active_loans.html', books=books, musics=musics, movies=movies, magazines = magazines)
+        return render_template('active_loans.html', books=books, musics=musics, movies=movies, magazines=magazines)
+
+    @staticmethod
+    def return_item(request, db_gateway):
+        db_gateway.process_return(request.form['id'])

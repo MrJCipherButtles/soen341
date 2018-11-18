@@ -1,8 +1,8 @@
 from flask import render_template
-from models.book.book import Book
-from models.magazine.magazine import Magazine
-from models.movie.movie import Movie
-from models.music.music import Music
+from models.book import Book
+from models.magazine import Magazine
+from models.movie import Movie
+from models.music import Music
 
 
 class SearchItem:

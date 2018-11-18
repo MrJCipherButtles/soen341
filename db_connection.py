@@ -98,6 +98,10 @@ class DBGateway:
         self.cursor.execute("DELETE FROM items WHERE id = %s" % id)
         self.conn.commit()
 
+    def process_return(self, id):
+        self.cursor.execute("DELETE FROM loans WHERE itemId = %s" % id)
+        self.conn.commit()
+
     def verify_login(self, user, password):
         h = hashlib.md5(bytes(password, "utf-8"))
         pwd = h.hexdigest()

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect
-
-from models.music import Music
+from models import Music
 from utils.login_required import login_required, admin
 from db_connection import DBGateway
 from controller.login import Login

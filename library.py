@@ -33,7 +33,10 @@ def index(path):
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return Login.show_login_page(request.args['err'])
+        try:
+            return Login.show_login_page(request.args['err'])
+        except:
+            return Login.show_login_page(False)
     elif request.method == 'POST':
         return Login.verify_login(db_gateway, request)
 

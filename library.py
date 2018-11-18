@@ -19,6 +19,11 @@ app.static_folder = 'view/static'
 app.active_users = 0
 
 
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('error.html'), 500
+
+
 @app.route('/', defaults={'path': ''})
 @app.route("/<path:path>")
 @login_required
@@ -39,7 +44,10 @@ def register():
     if request.method == 'GET':
         return render_template('register.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-        return Register.register_user(db_gateway, request)
+        try:
+            return Register.register_user(db_gateway, request)
+        except:
+            return Login.show_login_page(has_account_error=True)
 
 
 @app.route("/registerAdmin", methods=['GET', 'POST'])

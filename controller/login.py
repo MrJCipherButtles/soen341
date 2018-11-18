@@ -28,5 +28,5 @@ class Login:
         return resp
 
     @staticmethod
-    def show_login_page():
-        return render_template('login.html')
+    def show_login_page(has_account_error=False):
+        return render_template('login.html', has_account_error=has_account_error)

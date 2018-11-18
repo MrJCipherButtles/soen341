@@ -12,11 +12,9 @@ class Loan:
     def loan_item(db_gateway):
         user = request.cookies.get('username')
         itemID = request.form['itemID']
-        db_gateway.cursor.execute(
-            "INSERT INTO library.loans (clientId, itemId, loan_date) VALUES ('%s', '%s', '%s')" % (
-                user, itemID, datetime.datetime.today().strftime('%Y-%m-%d')))
-        db_gateway.conn.commit()
-        return "loan successful"
+        success = 1 if db_gateway.loan_item(user, itemID) else 2
+        return render_template('loan_cart.html', success=success)
+
 
     @staticmethod
     def view_active_loans(request, db_gateway):

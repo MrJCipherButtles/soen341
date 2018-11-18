@@ -1,5 +1,6 @@
 import hashlib
 
+import datetime
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
 
@@ -167,3 +168,18 @@ class DBGateway:
 
     def get_loans_for_user(self, c, email):
         return self.get_all(c, email)
+
+    def loan_item(self, user, itemID):
+        self.cursor.execute("SELECT loanable FROM items WHERE id= %s AND loanable='Y'" % itemID)
+        self.cursor.fetchall()
+        if self.cursor.rowcount == 0:
+            return False
+        try:
+            self.cursor.execute(
+                "INSERT INTO library.loans (clientId, itemId, loan_date) VALUES ('%s', '%s', '%s')" % (
+                    user, itemID, datetime.datetime.today().strftime('%Y-%m-%d')))
+            self.conn.commit()
+        except:
+            return False
+        return True
+

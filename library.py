@@ -59,12 +59,7 @@ def successLogin():
         return "Illegal action"
 
 
-@app.route("/add_item", methods=['GET', 'POST'])
-@admin(db_gateway)
-def add_item():
-    if request.method == 'POST':
-        ProcessItem.add(request, db_gateway)
-    return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
+
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
@@ -116,6 +111,19 @@ def loan():
         return Loan.loan_item(db_gateway)
 
 
+
+@app.route("/AddItem", methods=['GET', 'POST'])
+@admin(db_gateway)
+def add_item():
+    success = False
+    if request.method == 'POST':
+        ProcessItem.add(request, db_gateway)
+        success = True
+    return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')), success = success)
+
+
+
+
 @app.route("/DeleteItem", methods=['GET', 'POST'])
 @admin(db_gateway)
 def deleteItem():
@@ -125,13 +133,6 @@ def deleteItem():
         return ProcessItem.remove(request, db_gateway)
 
 
-@app.route("/AddItem", methods=['GET', 'POST'])
-@admin(db_gateway)
-def addItem():
-    if request.method == 'GET':
-        return render_template('AddItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
-    elif request.method == 'POST':
-        ProcessItem.add(request, db_gateway)
 
 
 @app.route("/EditItem", methods=['GET', 'POST'])

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Custom Search</title>
+	<title>Search</title>
 	<link rel="stylesheet" href="../static/fonts.css">
 	<link rel="stylesheet" href="../static/search_style.css">
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -13,36 +13,36 @@
 				if(this.value == "1"){
 					$('#display_Book').hide();
      				$('#display_Magazine').hide();
-     				$('#display_Movies').hide();
-     				$('#display_Musics').hide();	
+     				$('#display_Movie').hide();
+     				$('#display_Music').hide();
 				}
 				if(this.value == "2"){
 					$('#display_Book').show();
      				$('#display_Magazine').hide();
-     				$('#display_Movies').hide();
-     				$('#display_Musics').hide();	
+     				$('#display_Movie').hide();
+     				$('#display_Music').hide();
 				}
 				if(this.value == "3"){
 					$('#display_Book').hide();
      				$('#display_Magazine').show();
-     				$('#display_Movies').hide();
-     				$('#display_Musics').hide();
+     				$('#display_Movie').hide();
+     				$('#display_Music').hide();
 				}
 				if(this.value == "4"){
 					$('#display_Book').hide();
      				$('#display_Magazine').hide();
-     				$('#display_Movies').show();
-     				$('#display_Musics').hide();
+     				$('#display_Movie').show();
+     				$('#display_Music').hide();
 				}
 				if(this.value == "5"){
 					$('#display_Book').hide();
      				$('#display_Magazine').hide();
-     				$('#display_Movies').hide();
-     				$('#display_Musics').show();
+     				$('#display_Movie').hide();
+     				$('#display_Music').show();
 				}
-  				
+
 			});
-	
+
 	  });
 	</script>
 </head>
@@ -51,7 +51,7 @@
 <body>
 	<form method="POST" style="border:1px solid #ccc">
   		<div class="container">
-			<h1>Custom Search</h1>
+			<h1>Search</h1>
 			<p>
              	<label>Please Select the item you want to Search</label>
              	<br>
@@ -59,15 +59,15 @@
                	<option class="dropdownMenu" value="1" selected>--- Please Select an Item ---</option>
                	<option class="dropdownMenu" id = "Book" value = "2">Book</option>
                	<option class="dropdownMenu" id = "Magazine" value = "3">Magazine</option>
-               	<option class="dropdownMenu" id = "Movies" value = "4">Movies</option>
-               	<option class="dropdownMenu" id = "Musics" value = "5">Musics</option>
+               	<option class="dropdownMenu" id = "Movie" value = "4">Movie</option>
+               	<option class="dropdownMenu" id = "Music" value = "5">Music</option>
              	</select>
           	</p>
           	<div id="display_Book" style="display: none">
           		<p>Please enter an field to search --- BOOKS </p>
           		<form>
                          <table class="tableAlignment">
-                         <tr>     
+                         <tr>
                               <td><label class="labelStyle" for="Title">Title : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="Title" ></td>
                          </tr>
@@ -81,7 +81,7 @@
                          </tr>
                          <tr>
                               <td><label class="labelStyle" for="Pages">Pages : </label></td>
-          				<td><input class="textFieldStyle" placeholder="Enter Pages" type="text" name="Pages" ></td>
+          				<td><input class="textFieldStyle" placeholder="Enter Pages" type="text" name="num_pages" ></td>
                          </tr>
                          <tr>
                               <td><label class="labelStyle" for="Publisher">Publisher : </label></td>
@@ -100,14 +100,15 @@
           				<td><input class="textFieldStyle" placeholder="Enter ISBN-13" type="text" name="ISBN-13" ></td>
                          </tr>
                          </table>
-          			<button class="button" type="button">Search!</button>
+                    <input name="media_type" value="Book" style="display: none">
+          			<button class="button" type="submit" formmethod="POST">Search!</button>
           		</form>
           	</div>
           	<div id ="display_Magazine" style="display: none">
           		<p>Please enter an field to search --- MAGAZINES</p>
           		<form>
                          <table class="tableAlignment">
-                         <tr>  
+                         <tr>
                               <td><label class="labelStyle" for="Title">Title : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="Title" ></td>
                          </tr>
@@ -128,89 +129,92 @@
           				<td><input class="textFieldStyle" placeholder="Enter ISBN-13" type="text" name="ISBN-13" ></td>
                          </tr>
                          </table>
-          			<button class="button" type="button">Search!</button>
-          		</form>          		
+                    <input name="media_type" value="Magazine" style="display: none">
+          			<button class="button" type="submit" formmethod="POST">Search!</button>
+          		</form>
           	</div>
-          	<div id="display_Movies" style="display: none">
+          	<div id="display_Movie" style="display: none">
           		<p>Please enter an field to search --- MOVIES</p>
           		<form>
                          <table class="tableAlignment">
-                         <tr> 
+                         <tr>
                               <td><label class="labelStyle" for="Title">Title : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="Title" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Director">Director : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Director" type="text" name="Director" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Producers">Producers : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Producers" type="text" name="Producers" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Actors">Actors : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Actors" type="text" name="Actors" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Language">Language : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Language" type="text" name="Language" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Subtitles">Subtitles : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Subtitles" type="text" name="Subtitles" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Dubbed">Dubbed : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Dubbed" type="text" name="Dubbed" ></td>
-                         </tr> 
-                         <tr> 
-                              <td><label class="labelStyle" for="ReleaseDate">Release Date : </label></td>
-          				<td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="Release Date" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
+                              <td><label class="labelStyle" for="ReleaseDate">Release Date (YYYY-MM-DD): </label></td>
+          				<td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="release_date" ></td>
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="RunTime">Run Time : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Run Time" type="text" name="Run Time" ></td>
                     </tr>
                     </table>
-          			<button class="button" type="button">Search!</button>
+                    <input name="media_type" value="Movie" style="display: none">
+          			<button class="button" type="submit" formmethod="POST">Search!</button>
           		</form>
           	</div>
-          	<div id="display_Musics" style="display: none">
-          		<p>Please enter an field to search --- MUSICS</p>
+          	<div id="display_Music" style="display: none">
+          		<p>Please enter an field to search --- MUSIC</p>
           		<form>
                          <table class="tableAlignment">
                          <tr>
                               <td><label class="labelStyle" for="Type">Type : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Type" type="text" name="Type" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Title">Title : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Title" type="text" name="Title" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Artist">Artist : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Artist" type="text" name="Artist" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="Label">Label : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter Label" type="text" name="Label" ></td>
-                         </tr> 
-                         <tr> 
-                              <td><label class="labelStyle" for="ReleaseDate">Release Date : </label></td>
-          				<td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="Release Date" ></td>
-                         </tr> 
-                         <tr> 
+                         </tr>
+                         <tr>
+                              <td><label class="labelStyle" for="ReleaseDate">Release Date (YYYY-MM-DD): </label></td>
+          				<td><input class="textFieldStyle" placeholder="Enter Release Date" type="date" name="release_date"></td>
+                         </tr>
+                         <tr>
                               <td><label class="labelStyle" for="ASIN">ASIN : </label></td>
           				<td><input class="textFieldStyle" placeholder="Enter ASIN" type="text" name="ASIN" ></td>
                          </tr>
                          </table>
-          			<button class="button" type="button">Search!</button>
+                    <input name="media_type" value="Music" style="display: none">
+          			<button class="button" type="submit" formmethod="POST">Search!</button>
           		</form>
           	</div>
           	<div>
-          	</div>	
+          	</div>
   		</div>
-	</form> 
+	</form>
 </body>
 </html>
 {% endblock %}

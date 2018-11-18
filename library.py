@@ -10,6 +10,7 @@ from controller.register import Register
 from controller.process_item import ProcessItem
 from controller.catalog import Catalog
 from controller.loan import Loan
+from controller.search import SearchItem
 
 app = Flask(__name__)
 app.secret_key = b'\xfb\xcf\x9e\x10\xd2\xdc2\x86\xe3\xf8\xf6\xf1\x89\xe1\xf8R'
@@ -84,6 +85,14 @@ def home():
     else:
         return Catalog.view_catalog(db_gateway, request)
 
+@app.route("/search_catalog", methods=['GET', 'POST'])
+@login_required
+def search_catalog(items):
+  if request.method == 'GET':
+    return render_template('catalog.html', musics=items)
+  elif request.method == 'POST':
+    return None
+
 
 @app.route("/logout")
 @login_required
@@ -135,7 +144,22 @@ def search():
     if request.method == 'GET':
         return render_template('search.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-        return Loan.loan_item(db_gateway, request)
+        return SearchItem.searchItem(db_gateway,request)
+
+
+@app.route("/search2", methods=['GET', 'POST'])
+def search2():
+    if request.method == 'GET':
+        return render_template('search.html')
+    elif request.method == 'POST':
+        dic = {}
+        for key in request.form.keys():
+            if request.form[key] != '':
+                dic[key] = request.form[key]
+        items = db_gateway.get_all(Music, dictionary=dic)
+        return render_template('catalog.html', musics=items)
+
+
 
 
 @app.route("/restricted")

@@ -1,7 +1,7 @@
-from models.book.book import Book
-from models.magazine.magazine import Magazine
-from models.movie.movie import Movie
-from models.music.music import Music
+from models import Book
+from models import Magazine
+from models import Movie
+from models import Music
 from flask import redirect, url_for
 
 

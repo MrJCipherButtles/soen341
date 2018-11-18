@@ -3,10 +3,7 @@ import hashlib
 import datetime
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
-from models.book.book import Book
-from models.magazine.magazine import Magazine
-from models.music.music import Music
-from models.movie.movie import Movie
+from models import Book, Magazine, Movie, Music
 
 
 class DBGateway:

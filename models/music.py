@@ -1,5 +1,5 @@
-from models.item import Item
-from models.loanable import Loanable
+from models import Item
+from models import Loanable
 
 
 class Music(Item, Loanable):

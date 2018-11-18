@@ -1,9 +1,9 @@
 from flask import render_template
 
-from models.book import Book
-from models.magazine import Magazine
-from models.music import Music
-from models.movie import Movie
+from models import Book
+from models import Magazine
+from models import Music
+from models import Movie
 
 class Catalog():
     

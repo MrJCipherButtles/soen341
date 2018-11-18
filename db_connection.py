@@ -3,8 +3,10 @@ import hashlib
 import datetime
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
-from models import Book, Magazine, Movie, Music
-
+from models.book import Book
+from models.magazine import Magazine
+from models.movie import Movie
+from models.music import Music
 
 class DBGateway:
     def __init__(self, app):

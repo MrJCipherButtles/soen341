@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect
-from models import Music
+from models.music import Music
 from utils.login_required import login_required, admin
 from db_connection import DBGateway
 from controller.login import Login
@@ -89,8 +89,6 @@ def return_item():
 @login_required
 def home():
     return Catalog.view_catalog(db_gateway, request)
-
-
 
 
 @app.route("/logout")

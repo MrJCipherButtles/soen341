@@ -1,5 +1,5 @@
-from models import Item
-from models import Loanable
+from models.item import Item
+from models.loanable import Loanable
 
 
 class Movie(Item, Loanable):

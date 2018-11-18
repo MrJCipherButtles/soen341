@@ -1,4 +1,4 @@
-from models import Client
+from models.client import Client
 
 
 class Admin(Client):

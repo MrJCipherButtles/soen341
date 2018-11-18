@@ -1,4 +1,4 @@
-from models import Item
+from models.item import Item
 
 
 class Magazine(Item):

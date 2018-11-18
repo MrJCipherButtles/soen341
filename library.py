@@ -127,9 +127,11 @@ def add_item():
 @app.route("/DeleteItem", methods=['GET', 'POST'])
 @admin(db_gateway)
 def deleteItem():
+
     if request.method == 'GET':
         return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
+
         return ProcessItem.remove(request, db_gateway)
 
 

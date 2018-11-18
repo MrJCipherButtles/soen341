@@ -139,7 +139,6 @@ def editItem():
 
 @app.route("/search", methods=['GET', 'POST'])
 @login_required
-@admin(db_gateway)
 def search():
     if request.method == 'GET':
         return render_template('search.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))

@@ -94,13 +94,7 @@ def home():
     else:
         return Catalog.view_catalog(db_gateway, request)
 
-@app.route("/search_catalog", methods=['GET', 'POST'])
-@login_required
-def search_catalog(items):
-  if request.method == 'GET':
-    return render_template('catalog.html', musics=items)
-  elif request.method == 'POST':
-    return None
+
 
 
 @app.route("/logout")

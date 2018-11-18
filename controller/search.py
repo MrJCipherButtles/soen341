@@ -20,6 +20,6 @@ class SearchItem:
 
         html_type = {'books':[], 'magazines':[], 'movies':[], 'musics':[]}
         html_type[html_types]= items
-        return render_template('search_results.html', books = html_type['books'], magazines = html_type['magazines'], movies = html_type['movies'], musics = html_type['musics'], is_admin=db.verify_admin(request.cookies.get('username')))
+        return render_template('search_results.html', books = html_type['books'], magazines = html_type['magazines'], movies = html_type['movies'], musics = html_type['musics'], is_admin=db.verify_admin(request.cookies.get('username')), items = items)
 
 

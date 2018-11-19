@@ -1,19 +1,17 @@
-<!DOCTYPE html>
+{% extends 'home.html' %}
+{% block content %}
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bibl.io</title>
+  <title>Account registered</title>
   <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='success.css')}}">
-  <script src="../../scripts/js/load_scripts.js"></script>
 </head>
 <body>
-<div class="container">
-  <h1 class="container titles">Success</h1>
-  <div id="login_box" class="container">
+  <div class="container" style="padding-top: 50px;">
+    <h1 class="container titles">Success</h1>
+    </br>
     <p id="user_login_redirect">You have successfully registered an Admin.</p>
   </div>
-</div>
-
 </body>
 </html>
+{% endblock %}

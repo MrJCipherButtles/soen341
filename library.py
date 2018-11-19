@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, make_response
 from models.music import Music
 from utils.login_required import login_required, admin
 from db_connection import DBGateway
@@ -16,7 +16,6 @@ app.template_folder = 'view/templates'
 app.static_folder = 'view/static'
 
 app.active_users = 0
-
 
 @app.errorhandler(500)
 def page_not_found(e):
@@ -130,10 +129,7 @@ def deleteItem():
     if request.method == 'GET':
         return render_template('DeleteItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-
         return ProcessItem.remove(request, db_gateway)
-
-
 
 
 @app.route("/EditItem", methods=['GET', 'POST'])
@@ -142,15 +138,15 @@ def editItem():
     if request.method == 'GET':
         return render_template('EditItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-        return render_template('view_edit_item.html', item=db_gateway.get_item_by_id(request.form['id']))
+        return ProcessItem.view_item(request, db_gateway)
 
-@app.route('/view_edit_item', methods=['GET','POST'])
+@app.route("/view_edit_item", methods=['GET','POST'])
 @admin(db_gateway)
 def view_edit_item():
     if request.method == 'GET':
-        return render_template('view_edit_item.html')
+        return render_template('view_edit_item.html', id=request.args.get('itemId') ,item=db_gateway.get_item_by_id(request.args.get('itemId')), is_admin=db_gateway.verify_admin(request.cookies.get('username')))
     elif request.method == 'POST':
-        ProcessItem.edit(request, db_gateway)
+        return ProcessItem.edit(request, db_gateway)
 
 
 @app.route("/search", methods=['GET', 'POST'])
@@ -164,7 +160,6 @@ def search():
 @app.route("/restricted")
 def restricted():
     return render_template('restriction.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
-
 
 @app.route("/active_loans")
 @login_required

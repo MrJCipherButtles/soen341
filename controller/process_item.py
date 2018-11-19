@@ -2,7 +2,7 @@ from models.book import Book
 from models.magazine import Magazine
 from models.movie import Movie
 from models.music import Music
-from flask import redirect, url_for
+from flask import redirect, url_for, render_template
 
 
 class ProcessItem():
@@ -18,10 +18,19 @@ class ProcessItem():
 
     @staticmethod
     def edit(request, db_connection):
-        ItemId = request.form['id']
-        print('id')
+        fields = request.form
+        item_id = fields['ID']
+        item_type = db_connection.get_item_by_id(item_id).object_class
+
+        db_connection.edit_item(item_type, fields, item_id)
+        return redirect(url_for('home'))
+        
 
     @staticmethod
     def remove(request, db_connection):
         db_connection.remove_item(request.form['id'])
         return redirect(url_for('home'))
+    
+    @staticmethod
+    def view_item(request, db_connection):
+        return redirect(url_for('view_edit_item', itemId=request.form['id'], is_admin=db_connection.verify_admin(request.cookies.get('username'))))

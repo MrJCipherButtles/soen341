@@ -79,6 +79,7 @@ tr td
     padding:0px !important;
     color:none !important;
     background: none !important;
+    font-size:30px;
 }
 
 tr:first-child td

@@ -236,4 +236,27 @@ class DBGateway:
         except:
             return False
         return True
+        
+    def edit_item(self, item_type, fields, item_id):
+        if item_type == 'Book':
+            query = "UPDATE library.prints SET title='%s', author='%s', num_pages='%s', publisher='%s', year_published=%s, language='%s', isbn_10=%s, isbn_13=%s WHERE itemId=%s" % (fields['Title'], fields['Author'], fields['Pages'], fields['Publisher'], fields['Year'], fields['Language'], fields['ISBN_10'], fields['ISBN_13'], item_id)
+            print(query)
+            self.cursor.execute(query)
+            self.conn.commit()
+            return True
+        if item_type == 'Magazine':
+            query = "UPDATE library.prints SET title='%s', publisher='%s', year_published=%s, language='%s', isbn_10=%s, isbn_13=%s WHERE itemId=%s" % (fields['Title'], fields['Publisher'], fields['Year'], fields['Language'], fields['ISBN_10'], fields['ISBN_13'], item_id) 
+            self.cursor.execute(query)
+            self.conn.commit()
+            return True
+        if item_type == 'Movie':
+            query = "UPDATE library.medias SET title='%s', release_date='%s', director='%s', producer='%s', actors='%s', languages='%s' subtitles='%s' dubbed='%s' runtime=%s WHERE itemId=%s" % (fields['Title'], fields['ReleaseDate'], fields['Director'], fields['Producers'], fields['Actors'], fields['Languages'], fields['Subtitles'], fields['Dubbed'], fields['Run Time'], item_id)
+            self.cursor.execute(query)
+            self.conn.commit()
+            return True
+        if item_type == 'Music':
+            query = "UPDATE library.medias SET mediaType='%s' title='%s', release_date='%s', artist='%s', label='%s', asin='%s' WHERE itemId=%s" % (fields['Type'], fields['Title'], fields['ReleaseDate'], fields['Artist'], fields['Label'], fields['ASIN'], item_id)
+            self.cursor.execute(query)
+            self.conn.commit()
+            return True
 

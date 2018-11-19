@@ -52,19 +52,23 @@ Show for:
             <td>ID</td>
             <td>Title</td>
             <td>Author</td>
+            <td>Pages</td>
             <td>Publisher</td>
             <td>Year Published</td>
             <td>Language</td>
-            <td>ISBN</td>
+            <td>ISBN_10</td>
+            <td>ISBN_13</td>
         </tr>
         {% for book in books %}
         <tr>
             <td>{{book.id}}</td>
             <td>{{book.title}}</td>
             <td>{{book.author}}</td>
+            <td>{{book.num_pages}}</td>
             <td>{{book.publisher}}</td>
             <td>{{book.year_published}}</td>
             <td>{{book.language}}</td>
+            <td>{{book.isbn_10}}</td>
             <td>{{book.isbn_13}}</td>
         </tr>
         {% endfor %}
@@ -82,7 +86,9 @@ Show for:
             <td>Title</td>
             <td>Publisher</td>
             <td>Year Published</td>
-            <td>ISBN</td>
+            <td>Language</td>
+            <td>ISBN_10</td>
+            <td>ISBN_13</td>
         </tr>
         {% for magazine in magazines %}
         <tr>
@@ -90,6 +96,8 @@ Show for:
             <td>{{magazine.title}}</td>
             <td>{{magazine.publisher}}</td>
             <td>{{magazine.year_published}}</td>
+            <td>{{magazine.language}}</td>
+            <td>{{magazine.isbn_10}}</td>
             <td>{{magazine.isbn_13}}</td>
         </tr>
         {% endfor %}
@@ -108,7 +116,12 @@ Show for:
             <td>Title</td>
             <td>Director</td>
             <td>Producer</td>
+            <td>Actors</td>
+            <td>Languages</td>
+            <td>Subtitles</td>
+            <td>Dubbed</td>
             <td>Release Date</td>
+            <td>Runtime</td>
         </tr>
         {% for movie in movies %}
         <tr>
@@ -116,7 +129,12 @@ Show for:
             <td>{{movie.title}}</td>
             <td>{{movie.director}}</td>
             <td>{{movie.producer}}</td>
+            <td>{{movie.actors}}</td>
+            <td>{{movie.languages}}</td>
+            <td>{{movie.subtitles}}</td>
+            <td>{{movie.dubbed}}</td>
             <td>{{movie.release_date}}</td>
+            <td>{{movie.runtime}}</td>
         </tr>
         {% endfor %}
     </table>
@@ -136,6 +154,7 @@ Show for:
             <td>Label</td>
             <td>Type</td>
             <td>Release Date</td>
+            <td>ASIN</td>
         </tr>
         {% for music in musics %}
         <tr>
@@ -145,6 +164,7 @@ Show for:
             <td>{{music.label}}</td>
             <td>{{music.mediaType}}</td>
             <td>{{music.release_date}}</td>
+            <td>{{music.asin}}</td>
         </tr>
         {% endfor %}
     </table>

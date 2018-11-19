@@ -156,12 +156,5 @@ def active_loans():
 def active_users():
     return render_template('active_users.html', active_users=Login.active_users)
 
-
-# @app.route("/catalog")
-# # @login_required
-# def catalog():
-#     return view_catalog(db_gateway, request)
-
-
 if __name__ == "__main__":
     app.run(debug=True)

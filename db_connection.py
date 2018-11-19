@@ -239,13 +239,13 @@ class DBGateway:
         
     def edit_item(self, item_type, fields, item_id):
         if item_type == 'Book':
-            query = "UPDATE library.prints SET title='%s', author='%s', num_pages='%s', publisher='%s', year_published=%s, language='%s', isbn_10=%s, isbn_13=%s WHERE itemId=%s;" % (fields['Title'], fields['Author'], fields['Pages'], fields['Publisher'], fields['Year'], fields['Language'], fields['ISBN_10'], fields['ISBN_13'], item_id)
+            query = "UPDATE library.prints SET title='%s', author='%s', num_pages='%s', publisher='%s', year_published=%s, language='%s', isbn_10=%s, isbn_13='%s' WHERE itemId=%s;" % (fields['Title'], fields['Author'], fields['Pages'], fields['Publisher'], fields['Year'], fields['Language'], fields['ISBN_10'], fields['ISBN_13'], item_id)
             print(query)
             self.cursor.execute(query)
             self.conn.commit()
             return True
         if item_type == 'Magazine':
-            query = "UPDATE library.prints SET title='%s', publisher='%s', year_published=%s, language='%s', isbn_10=%s, isbn_13=%s WHERE itemId=%s;" % (fields['Title'], fields['Publisher'], fields['Year'], fields['Language'], fields['ISBN_10'], fields['ISBN_13'], item_id) 
+            query = "UPDATE library.prints SET title='%s', publisher='%s', year_published=%s, language='%s', isbn_10=%s, isbn_13='%s' WHERE itemId=%s;" % (fields['Title'], fields['Publisher'], fields['Year'], fields['Language'], fields['ISBN_10'], fields['ISBN_13'], item_id) 
             self.cursor.execute(query)
             self.conn.commit()
             return True

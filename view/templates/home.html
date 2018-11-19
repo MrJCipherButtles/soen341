@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Welcome to Bibli.io</title>
-        <link rel="stylesheet" href="{{url_for('static', filename='home_stylesheet.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='fonts.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='home_stylesheet.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fonts.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         {% block extrahead %}
@@ -21,20 +21,20 @@
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Search"
-                            onclick="window.location.href='{{url_for('search')}}'" />
+                            onclick="window.location.href='{{ url_for('search') }}'" />
                         </form>
                     </li>
                     {% if not is_admin %}
                     <li>
                         <form >
                             <input class="button-menu" type="button" value="View Active Loans"
-                            onclick="window.location.href='{{url_for('active_loans')}}'" />
+                            onclick="window.location.href='{{ url_for('active_loans') }}'" />
                         </form>
                     </li>
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Make Loan"
-                            onclick="window.location.href='{{url_for('loan')}}'" />
+                            onclick="window.location.href='{{ url_for('loan') }}'" />
                         </form>
                     </li>
                     {% endif %}
@@ -45,38 +45,38 @@
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Add Library Record"
-                            onclick="window.location.href='{{url_for('add_item')}}'" />
+                            onclick="window.location.href='{{ url_for('add_item') }}'" />
                         </form>
                     </li>
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Edit Library Record" 
-                            onclick="window.location.href='{{url_for('editItem')}}'" />
+                            onclick="window.location.href='{{ url_for('editItem') }}'" />
                         </form>
                     </li>
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Remove Library Record"
-                            onclick="window.location.href='{{url_for('deleteItem')}}'" />
+                            onclick="window.location.href='{{ url_for('deleteItem') }}'" />
                         </form>
                     </li>
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Process Return"
-                            onclick="window.location.href='{{url_for('return_item')}}'" />
+                            onclick="window.location.href='{{ url_for('return_item') }}'" />
                         </form>
                     </li>
 
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Register Administrator"
-                            onclick="window.location.href='{{url_for('registeradmin')}}'" />
+                            onclick="window.location.href='{{ url_for('registeradmin') }}'" />
                         </form>
                     </li>
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="View Active User Count"
-                            onclick="window.location.href='{{url_for('active_users')}}'" />
+                            onclick="window.location.href='{{ url_for('active_users') }}'" />
                         </form>
                     </li>
                 </ul>

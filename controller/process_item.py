@@ -12,6 +12,8 @@ class ProcessItem():
         Class = name_to_class[request.form['media_type']]
         kwargs = {}
         for key, item in request.form.items():
+            if key == "object_class":
+                continue
             kwargs[key] = item
         item = Class(**kwargs)
         db_connection.insert_item(item)

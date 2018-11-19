@@ -78,6 +78,7 @@ class DBGateway:
         (16,'Design News','UBM','1946','English','9000119407','987-9000119407');
         """
         vals = [val for key, val in item.__dict__.items()]
+        vals = vals[:-1]
         item_query = "INSERT INTO items (loanable, itemType) VALUES ('%s', '%s')" % (
             'N' if type(item).__name__.upper() == 'MAGAZINE' else 'Y', type(item).__name__.upper())
         print(item_query)
@@ -90,6 +91,7 @@ class DBGateway:
                 vals[i] = int(vals[i])
 
         fields = [key for key, val in item.__dict__.items()]
+        fields.remove("object_class")
         fields[0] = "itemId"
         fields = self.arr_to_mysqlarr(fields).replace("'", "")
         vals = self.arr_to_mysqlarr(vals)

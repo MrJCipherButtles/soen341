@@ -1,13 +1,13 @@
+from controller.controller import Controller
 from models.book import Book
 from models.magazine import Magazine
 from models.movie import Movie
 from models.music import Music
-from flask import redirect, url_for, render_template
+from flask import redirect, url_for, render_template, request
 
 
-class ProcessItem():
-    @staticmethod
-    def add(request, db_connection):
+class ProcessItem(Controller):
+    def add(self):
         name_to_class = {'BOOK': Book, 'MOVIE': Movie, 'MAGAZINE': Magazine, 'MUSIC': Music}
         Class = name_to_class[request.form['media_type']]
         kwargs = {}
@@ -16,23 +16,20 @@ class ProcessItem():
                 continue
             kwargs[key] = item
         item = Class(**kwargs)
-        db_connection.insert_item(item)
+        self.db.insert_item(item)
 
-    @staticmethod
-    def edit(request, db_connection):
+    def edit(self):
         fields = request.form
         item_id = fields['ID']
-        item_type = db_connection.get_item_by_id(item_id).object_class
+        item_type = self.db.get_item_by_id(item_id).object_class
 
-        db_connection.edit_item(item_type, fields, item_id)
+        self.db.edit_item(item_type, fields, item_id)
         return redirect(url_for('home'))
         
 
-    @staticmethod
-    def remove(request, db_connection):
-        db_connection.remove_item(request.form['id'])
+    def remove(self):
+        self.db.remove_item(request.form['id'])
         return redirect(url_for('home'))
     
-    @staticmethod
-    def view_item(request, db_connection):
-        return redirect(url_for('view_edit_item', itemId=request.form['id'], is_admin=db_connection.verify_admin(request.cookies.get('username'))))
+    def view_item(self):
+        return redirect(url_for('view_edit_item', itemId=request.form['id'], is_admin=self.db.verify_admin(request.cookies.get('username'))))

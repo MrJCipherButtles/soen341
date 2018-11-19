@@ -16,15 +16,23 @@
                 <p>Logged in as: {{ request.cookies.get('username') }}</p>
             </div>
             <div class="navlist">
-                <p class="list_title">User Actions</p>
                 <ul class="actions_list">
+                    <li>
+                        <form>
+                            <input class="button-menu" type="button" value="Catalog"
+                            onclick="window.location.href='{{ url_for('home') }}'" />
+                        </form>
+                    </li>
                     <li>
                         <form>
                             <input class="button-menu" type="button" value="Search"
                             onclick="window.location.href='{{ url_for('search') }}'" />
                         </form>
                     </li>
-                    {% if not is_admin %}
+                </ul>
+                {% if not is_admin %}
+                <p class="list_title">User Actions</p>
+                <ul class="actions_list">
                     <li>
                         <form >
                             <input class="button-menu" type="button" value="View Active Loans"

@@ -7,6 +7,7 @@
     <h6 class="table_title"> <img src="../static/images/book.png"> BOOKS </h6>
     <table id="book_table">
         <tr class="row_header">
+            <td>ID</td>
             <td>Title</td>
             <td>Author</td>
             <td>Publisher</td>
@@ -16,6 +17,7 @@
         </tr>
         {% for book in books %}
         <tr>
+            <td>{{book.id}}</td>
             <td>{{book.title}}</td>
             <td>{{book.author}}</td>
             <td>{{book.publisher}}</td>
@@ -32,6 +34,7 @@
     <h6 class="table_title"><img src="../static/images/magazine.png"> MAGAZINES</h6>
     <table id="magazine_table">
         <tr class="row_header">
+            <td>ID</td>
             <td>Title</td>
             <td>Publisher</td>
             <td>Year Published</td>
@@ -39,6 +42,7 @@
         </tr>
         {% for magazine in magazines %}
         <tr>
+            <td>{{magazine.id}}</td>
             <td>{{magazine.title}}</td>
             <td>{{magazine.publisher}}</td>
             <td>{{magazine.year_published}}</td>
@@ -53,6 +57,7 @@
     <h6 class="table_title"><img src="../static/images/movie.png"> MOVIES</h6>
     <table id="movie_table">
         <tr class="row_header">
+            <td>ID</td>
             <td>Title</td>
             <td>Director</td>
             <td>Producer</td>
@@ -60,6 +65,7 @@
         </tr>
         {% for movie in movies %}
         <tr>
+            <td>{{movie.id}}</td>
             <td>{{movie.title}}</td>
             <td>{{movie.director}}</td>
             <td>{{movie.producer}}</td>
@@ -74,6 +80,7 @@
     <h6 class="table_title"><img src="../static/images/music.png"> MUSIC</h6>
     <table id="music_table">
         <tr class="row_header">
+            <td>ID</td>
             <td>Title</td>
             <td>Artist</td>
             <td>Label</td>
@@ -82,6 +89,7 @@
         </tr>
         {% for music in musics %}
         <tr>
+            <td>{{music.id}}</td>
             <td>{{music.title}}</td>
             <td>{{music.artist}}</td>
             <td>{{music.label}}</td>

@@ -146,7 +146,7 @@ def editItem():
 
 @app.route('/view_edit_item', methods=['GET','POST'])
 @admin(db_gateway)
-def view_edit_item():zx
+def view_edit_item():
     if request.method == 'GET':
         return render_template('view_edit_item.html')
     elif request.method == 'POST':

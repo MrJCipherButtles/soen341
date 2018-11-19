@@ -1,5 +1,4 @@
 from flask import render_template, url_for, redirect, session, make_response
-from models.book.book import Book
 
 
 class Login:
@@ -29,5 +28,5 @@ class Login:
         return resp
 
     @staticmethod
-    def show_login_page():
-        return render_template('login.html')
+    def show_login_page(has_account_error=False):
+        return render_template('login.html', err=has_account_error)

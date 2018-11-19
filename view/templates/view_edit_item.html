@@ -1,0 +1,176 @@
+{% extends 'home.html' %}
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/editItem_style.css">
+    </head>
+    <body>
+            {% if item.object_class == 'Book' %}
+            <div id="display_Book">
+                    <p>Edit details of item below</p>
+                    <form>
+                           <table class="tableAlignment">
+                           <tr>     
+                                <td><label class="labelStyle" for="Title">Title : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.title}}" placeholder="Enter Title" type="text" name="Title" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Author">Author : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.author}}" placeholder="Enter Author" type="text" name="Author" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Format">Format : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.format}}" placeholder="Enter Format" type="text" name="Format" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Pages">Pages : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.num_pages}}" placeholder="Enter Pages" type="text" name="Pages" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Publisher">Publisher : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.publisher}}" placeholder="Enter Publisher" type="text" name="Publisher" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Year">Year Published : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.year_published}}" placeholder="Enter Year" type="text" name="Year" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Language">Language : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.language}}" placeholder="Enter Language" type="text" name="Language" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="ISBN-10">ISBN-10 : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.isbn_10}}" placeholder="Enter ISBN-10" type="text" name="ISBN-10" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="ISBN-13">ISBN-13 : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.isbn_13}}" placeholder="Enter ISBN-13" type="text" name="ISBN-13" ></td>
+                           </tr>
+                           </table>
+                           <button class="button" type="button">Confirm Changes</button>
+                      </form>
+                </div>
+                {% endif %}
+
+                {% if item.object_class == 'Magazine' %}
+                <div id ="display_Magazine">
+                    <p>Edit details of item below</p>
+                    <form>
+                           <table class="tableAlignment">
+                           <tr>  
+                                <td><label class="labelStyle" for="Title">Title : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.title}}" placeholder="Enter Title" type="text" name="Title" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Publisher">Publisher : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.publisher}}" placeholder="Enter Publisher" type="text" name="Publisher" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Year">Year Published : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.year_published}}" placeholder="Enter Year" type="text" name="Year" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="Language">Language : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.language}}" placeholder="Enter Language" type="text" name="Language" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="ISBN-10">ISBN-10 : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.isbn_10}}" placeholder="Enter ISBN-10" type="text" name="ISBN-10" ></td>
+                           </tr>
+                           <tr>
+                                <td><label class="labelStyle" for="ISBN-13">ISBN-13 : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.isbn_13}}" placeholder="Enter ISBN-13" type="text" name="ISBN-13" ></td>
+                           </tr>
+                           </table>
+                           <button class="button" type="button">Confirm Changes</button>
+                      </form>        		
+                </div>
+                {% endif %}
+
+                {% if item.object_class == 'Movie' %}
+                <div id="display_Movies">
+                    <p>Edit details of item below</p>
+                    <form>
+                           <table class="tableAlignment">
+                           <tr> 
+                                <td><label class="labelStyle" for="Title">Title : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.title}}" placeholder="Enter Title" type="text" name="Title" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Director">Director : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.director}}" placeholder="Enter Director" type="text" name="Director" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Producers">Producers : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.producers}}" placeholder="Enter Producers" type="text" name="Producers" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Actors">Actors : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.actors}}" placeholder="Enter Actors" type="text" name="Actors" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Language">Language : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.languages}}" placeholder="Enter Language" type="text" name="Languages" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Subtitles">Subtitles : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.subtitles}}" placeholder="Enter Subtitles" type="text" name="Subtitles" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Dubbed">Dubbed : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.dubbed}}" placeholder="Enter Dubbed" type="text" name="Dubbed" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="ReleaseDate">Release Date : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.release_date}}" placeholder="Enter Release Date" type="date" name="Release Date" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="RunTime">Run Time : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.runtime}}" placeholder="Enter Run Time" type="text" name="Run Time" ></td>
+                      </tr>
+                      </table>
+                           <button class="button" type="button">Confirm Changes</button>
+                      </form>
+                </div>
+                {% endif %}
+
+                {% if item.object_class == 'Music' %}
+                <div id="display_Musics">
+                    <p>Edit details of item below</p>
+                    <form>
+                           <table class="tableAlignment">
+                           <tr>
+                                <td><label class="labelStyle" for="Type">Type : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.mediaType}}" placeholder="Enter Type" type="text" name="Type" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Title">Title : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.title}}" placeholder="Enter Title" type="text" name="Title" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Artist">Artist : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.artist}}" placeholder="Enter Artist" type="text" name="Artist" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="Label">Label : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.label}}" placeholder="Enter Label" type="text" name="Label" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="ReleaseDate">Release Date : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.release_date}}" placeholder="Enter Release Date" type="date" name="ReleaseDate" ></td>
+                           </tr> 
+                           <tr> 
+                                <td><label class="labelStyle" for="ASIN">ASIN : </label></td>
+                                <td><input class="textFieldStyle" value="{{item.asin}}" placeholder="Enter ASIN" type="text" name="ASIN" ></td>
+                           </tr>
+                           </table>
+                           <button class="button" type="button">Confirm Changes</button>
+                      </form>
+                </div>
+                {% endif %}
+                <div>
+                </div>	
+        
+    </body>
+</html>
+{% endblock %}

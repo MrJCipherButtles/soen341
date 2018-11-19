@@ -10,7 +10,7 @@ html {
     font-weight:bold;
     font-size:17;
     background: rgba(42, 199, 226, 0.2) no-repeat center center fixed;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
     text-align: center;
 }

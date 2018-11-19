@@ -1,5 +1,5 @@
-from models.item.item import Item
-from models.loanable.loanable import Loanable
+from models.item import Item
+from models.loanable import Loanable
 
 
 class Music(Item, Loanable):
@@ -11,3 +11,4 @@ class Music(Item, Loanable):
         self.artist = artist
         self.label = label
         self.asin = asin
+        self.object_class = 'Music'

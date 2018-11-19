@@ -1,5 +1,5 @@
-from models.item.item import Item
-from models.loanable.loanable import Loanable
+from models.item import Item
+from models.loanable import Loanable
 
 
 class Book(Item, Loanable):
@@ -14,3 +14,4 @@ class Book(Item, Loanable):
         self.language = language
         self.isbn_10 = isbn_10
         self.isbn_13 = isbn_13
+        self.object_class = 'Book'

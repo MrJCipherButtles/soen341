@@ -22,6 +22,7 @@ body
 }
 input[type=date].textFieldStyle{
     font-size: 70%;
+    text-indent: 2%;
 }
 .labelStyle{
     font-size: 90%;
@@ -67,4 +68,20 @@ input[type=number].numberFieldStyle{
     font-family: t100f;
     cursor:pointer;
 }
+tr td
+{
+    width: 47%;
+    font-family:t100f;
+    font-weight:none !important;
+    text-align:none !important;
+    border-style:none !important;
+    border-color:none !important;
+    padding:0px !important;
+    color:none !important;
+    background: none !important;
+}
 
+tr:first-child td
+{
+    background: none !important;
+}

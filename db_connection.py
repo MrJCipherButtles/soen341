@@ -1,8 +1,12 @@
 import hashlib
 
+import datetime
 from flaskext.mysql import MySQL
 from helper.db_config import db_user, db_password, db_name, db_host
-
+from models.book import Book
+from models.magazine import Magazine
+from models.movie import Movie
+from models.music import Music
 
 class DBGateway:
     def __init__(self, app):
@@ -20,13 +24,30 @@ class DBGateway:
 
         self.class_to_table = {"BOOK": "prints", "MAGAZINE": "prints", "MOVIE": "medias", "MUSIC": "medias"}
 
-    def get_all(self, Class, email=None):
+    def get_all(self, Class, email=None, dictionary=None):
         res = []
-        if email is None:
-            query = "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper()
-        else:
+        if dictionary:
+            fields = ''
+            for key, value in dictionary.items():
+                if value.isdigit():
+                    fields = fields + " AND " + key + '=' + value
+                else:
+                    fields = fields + " AND " + key + '=' + "\'" + value + "\'"
+            if Class.__name__.upper() == "BOOK" or Class.__name__.upper() == "MAGAZINE":
+                type = 'prints'
+            else:
+                type = 'medias'
+
+            query = "SELECT * FROM %s INNER JOIN items ON itemId = id WHERE items.itemType = '%s' %s;" % (
+                type, Class.__name__.upper(), fields)
+
+        elif email:
             query = "SELECT * FROM library.items INNER JOIN loans ON items.id = loans.itemId WHERE items.itemType = '%s' AND loans.clientId = '%s';" % (
-            Class.__name__.upper(), email)
+                Class.__name__.upper(), email)
+        else:
+            query = "SELECT * FROM library.items WHERE items.itemType = '%s';" % Class.__name__.upper()
+
+        print("QUERY:   " + query)
         self.cursor.execute(query)
         ids = [res[0] for res in self.cursor.fetchall()]
         if len(ids) == 0:
@@ -79,6 +100,10 @@ class DBGateway:
 
     def remove_item(self, id):
         self.cursor.execute("DELETE FROM items WHERE id = %s" % id)
+        self.conn.commit()
+
+    def process_return(self, id):
+        self.cursor.execute("DELETE FROM loans WHERE itemId = %s" % id)
         self.conn.commit()
 
     def verify_login(self, user, password):
@@ -146,3 +171,69 @@ class DBGateway:
 
     def get_loans_for_user(self, c, email):
         return self.get_all(c, email)
+    
+    def get_item_by_id(self, id):
+        query = "SELECT itemType FROM library.items WHERE id=%s" % (id) #get itemType
+
+        self.cursor.execute(query)
+        itemType = self.cursor.fetchone()
+        
+        if 'BOOK' in itemType:
+            query = "SELECT * FROM library.prints WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Book(t[1], t[2], t[3], t[4], t[5], t[6], t[7], t[8])
+            print()
+
+            return item
+            
+        elif 'MAGAZINE' in itemType:
+            query = "SELECT * FROM library.prints WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Magazine(t[1], t[4], t[5], t[6], t[7], t[8])
+            return item
+            
+
+            
+        elif 'MUSIC' in itemType:
+            query = "SELECT * FROM library.medias WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Music(t[1], t[2], t[3], t[4], t[5], t[6])
+            return item
+            
+        elif 'MOVIE' in itemType:
+            query = "SELECT * FROM library.medias WHERE itemId=%s" % (id)
+            self.cursor.execute(query)
+            t = self.cursor.fetchone()
+
+            item = Movie(t[2], t[3], t[7], t[8], t[9], t[10], t[11], t[12], t[13])
+            return item
+
+        else:
+            print('Error retrieving itemType.')
+            return False
+
+        return item
+            
+
+        
+
+    def loan_item(self, user, itemID):
+        self.cursor.execute("SELECT loanable FROM items WHERE id= %s AND loanable='Y'" % itemID)
+        self.cursor.fetchall()
+        if self.cursor.rowcount == 0:
+            return False
+        try:
+            self.cursor.execute(
+                "INSERT INTO library.loans (clientId, itemId, loan_date) VALUES ('%s', '%s', '%s')" % (
+                    user, itemID, datetime.datetime.today().strftime('%Y-%m-%d')))
+            self.conn.commit()
+        except:
+            return False
+        return True
+

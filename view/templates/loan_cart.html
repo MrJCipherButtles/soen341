@@ -21,6 +21,13 @@
 			</div>
   		</div>
 	</form>
+	{% if success == 1 %}
+	<h1 style="color: green">Success</h1>
+	{% endif %}
+	{% if success == 2 %}
+    <h1 style="color: red">Fail</h1>
+	{% endif %}
+
 </body>
 </html>
 {% endblock %}

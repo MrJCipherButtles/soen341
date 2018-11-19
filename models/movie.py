@@ -1,5 +1,5 @@
-from models.item.item import Item
-from models.loanable.loanable import Loanable
+from models.item import Item
+from models.loanable import Loanable
 
 
 class Movie(Item, Loanable):
@@ -15,3 +15,4 @@ class Movie(Item, Loanable):
         self.dubbed = dubbed
         self.release_date = release_date
         self.runtime = runtime
+        self.object_class = 'Movie'

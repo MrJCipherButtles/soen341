@@ -61,14 +61,14 @@ Show for:
         </tr>
         {% for book in books %}
         <tr>
-            <td><span style="white-space: nowrap;">{{book.id}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.title}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.author}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.num_pages}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.publisher}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.year_published}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.language}}</span></td>
-            <td><span style="white-space: nowrap;">{{book.isbn_10}}</span></td>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.num_pages}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.year_published}}</td>
+            <td>{{book.language}}</td>
+            <td>{{book.isbn_10}}</td>
             <td><span style="white-space: nowrap;">{{book.isbn_13}}</span></td>
         </tr>
         {% endfor %}
@@ -92,12 +92,12 @@ Show for:
         </tr>
         {% for magazine in magazines %}
         <tr>
-            <td><span style="white-space: nowrap;">{{magazine.id}}</span></td>
-            <td><span style="white-space: nowrap;">{{magazine.title}}</span></td>
-            <td><span style="white-space: nowrap;">{{magazine.publisher}}</span></td>
-            <td><span style="white-space: nowrap;">{{magazine.year_published}}</span></td>
-            <td><span style="white-space: nowrap;">{{magazine.language}}</span></td>
-            <td><span style="white-space: nowrap;">{{magazine.isbn_10}}</span></td>
+            <td>{{magazine.id}}</td>
+            <td>{{magazine.title}}</td>
+            <td>{{magazine.publisher}}</td>
+            <td>{{magazine.year_published}}</td>
+            <td>{{magazine.language}}</td>
+            <td>{{magazine.isbn_10}}</td>
             <td><span style="white-space: nowrap;">{{magazine.isbn_13}}</span></td>
         </tr>
         {% endfor %}
@@ -125,16 +125,16 @@ Show for:
         </tr>
         {% for movie in movies %}
         <tr>
-            <td><span style="white-space: nowrap;">{{movie.id}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.title}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.director}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.producer}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.actors}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.languages}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.subtitles}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.dubbed}}</span></td>
+            <td>{{movie.id}}</td>
+            <td>{{movie.title}}</td>
+            <td>{{movie.director}}</td>
+            <td>{{movie.producer}}</td>
+            <td>{{movie.actors}}</td>
+            <td>{{movie.languages}}</td>
+            <td>{{movie.subtitles}}</td>
+            <td>{{movie.dubbed}}</td>
             <td><span style="white-space: nowrap;">{{movie.release_date}}</span></td>
-            <td><span style="white-space: nowrap;">{{movie.runtime}}</span></td>
+            <td>{{movie.runtime}}</td>
         </tr>
         {% endfor %}
     </table>
@@ -158,13 +158,13 @@ Show for:
         </tr>
         {% for music in musics %}
         <tr>
-            <td><span style="white-space: nowrap;">{{music.id}}</span></td>
-            <td><span style="white-space: nowrap;">{{music.title}}</span></td>
-            <td><span style="white-space: nowrap;">{{music.artist}}</span></td>
-            <td><span style="white-space: nowrap;">{{music.label}}</span></td>
-            <td><span style="white-space: nowrap;">{{music.mediaType}}</span></td>
+            <td>{{music.id}}</td>
+            <td>{{music.title}}</td>
+            <td>{{music.artist}}</td>
+            <td>{{music.label}}</td>
+            <td>{{music.mediaType}}</td>
             <td><span style="white-space: nowrap;">{{music.release_date}}</span></td>
-            <td><span style="white-space: nowrap;">{{music.asin}}</span></td>
+            <td>{{music.asin}}</td>
         </tr>
         {% endfor %}
     </table>

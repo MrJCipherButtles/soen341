@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect, make_response
-from utils.login_required import login_required, admin
+from utils.login_required import LoginValidator
 from db_connection import DBGateway
 from controller.login import Login
 from controller.register import Register
@@ -28,7 +28,7 @@ def page_not_found(e):
 
 @app.route('/', defaults={'path': ''})
 @app.route("/<path:path>")
-@login_required
+@LoginValidator.login_required
 def index(path):
     return redirect(url_for('home'))
 
@@ -56,7 +56,7 @@ def register():
 
 
 @app.route("/registerAdmin", methods=['GET', 'POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def registeradmin():
     if request.method == 'GET':
         return render_template('registerAdmin.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
@@ -76,7 +76,7 @@ def successLogin():
 
 
 @app.route("/delete_item", methods=['GET', 'POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def delete_item():
     if request.method == 'POST':
         return ProcessItem.remove()
@@ -84,7 +84,7 @@ def delete_item():
 
 
 @app.route("/return_item", methods=['GET', 'POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def return_item():
     if request.method == 'POST':
         Loan.return_item()
@@ -92,20 +92,20 @@ def return_item():
 
 
 @app.route("/home", methods=['GET', 'POST'])
-@login_required
+@LoginValidator.login_required
 def home():
     return Catalog.view_catalog()
 
 
 @app.route("/logout")
-@login_required
+@LoginValidator.login_required
 def logout():
     return Login.logout()
 
 
 @app.route("/loan_cart", methods=['GET', 'POST'])
-@login_required
-@admin(db_gateway, denied=True)
+@LoginValidator.login_required
+@LoginValidator.admin(db_gateway, denied=True)
 def loan():
     if request.method == 'GET':
         return render_template('loan_cart.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
@@ -115,7 +115,7 @@ def loan():
 
 
 @app.route("/AddItem", methods=['GET', 'POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def add_item():
     success = False
     if request.method == 'POST':
@@ -127,7 +127,7 @@ def add_item():
 
 
 @app.route("/DeleteItem", methods=['GET', 'POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def deleteItem():
 
     if request.method == 'GET':
@@ -137,7 +137,7 @@ def deleteItem():
 
 
 @app.route("/EditItem", methods=['GET', 'POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def editItem():
     if request.method == 'GET':
         return render_template('EditItem.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
@@ -145,7 +145,7 @@ def editItem():
         return ProcessItem.view_item()
 
 @app.route("/view_edit_item", methods=['GET','POST'])
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def view_edit_item():
     if request.method == 'GET':
         return render_template('view_edit_item.html', id=request.args.get('itemId') ,item=db_gateway.get_item_by_id(request.args.get('itemId')), is_admin=db_gateway.verify_admin(request.cookies.get('username')))
@@ -154,7 +154,7 @@ def view_edit_item():
 
 
 @app.route("/search", methods=['GET', 'POST'])
-@login_required
+@LoginValidator.login_required
 def search():
     if request.method == 'GET':
         return render_template('search.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
@@ -166,14 +166,14 @@ def restricted():
     return render_template('restriction.html', is_admin=db_gateway.verify_admin(request.cookies.get('username')))
 
 @app.route("/active_loans")
-@login_required
-@admin(db_gateway, denied=True)
+@LoginValidator.login_required
+@LoginValidator.admin(db_gateway, denied=True)
 def active_loans():
     return Loan.view_active_loans()
 
 
 @app.route("/active_users")
-@admin(db_gateway)
+@LoginValidator.admin(db_gateway)
 def active_users():
     return render_template('active_users.html', active_users=Login.active_users,
                            is_admin=db_gateway.verify_admin(request.cookies.get('username')))

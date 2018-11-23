@@ -1,4 +1,6 @@
 # SOEN341_TEAM5
+# NOTE TO THE TA: PLEASE REFER TO THE INSTALLATION.MD FILE FOR INSTALLATION INSTRUCTIONS. THANK YOU!
+
 SOEN 341 Library Project
 
 All team members should clone this repo on their local machine, add their name below by modifying the local readme file, and using git command line to push the edited readme file back to the remote repository.  
